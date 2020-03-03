@@ -1,0 +1,50 @@
+body{
+    font-family: 'Open Sans', sans-serif;
+}
+
+.hero-image{
+    background-color: gray;
+    height:100vh;
+    background-size: cover;
+    background-attachment: fixed;
+    background-repeat:no-repeat;
+    background-position: center;
+    position: relative;
+}
+
+
+.heading-text{
+    font-family: Mr Dafoe, sans-serif ;
+    color:#F297FF;
+    font-size: 5rem;
+    text-align: center;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: black;
+
+}
+
+.hero-text-box p{
+    text-align: center;
+    color:aliceblue;
+    font-size: 2rem;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: black;
+}
+
+.user-input{
+    color:aliceblue;
+    background-color: rgba(60,60,60,0.5);
+    border-radius: 20px;
+    font-size: 1.5rem;
+    margin-right: 4px;
+    border: 2px solid black;
+}
+
+.user-output{
+    margin-left: 4px;
+    color:aliceblue;
+    background-color: rgba(60,60,60,0.5);
+    border-radius: 20px;
+    font-size: 1.5rem;
+     border: 2px solid black;
+}
