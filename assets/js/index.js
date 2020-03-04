@@ -1,27 +1,29 @@
 
 function displaydatainmypage(music_search) {
-     console.log(music_search);
 
-    for (let i = 0; i < music_search.length; i++) {
-      //  artist_name = music_search[1].artist.name;
-      //  song_name = music_search[1].title;
-       // album = music_search[1].album.title;
-      //  picture = music_search[1].album.cover_medium;
-      //  preview = music_search[1].preview;
+    // console.log(music_search);
 
-        console.log(music_search.data[1].title);
+    for (var i = 0; i < music_search.data.length; i++) {
+        artist_name = music_search.data[i].artist.name;
+        song_name = music_search.data[i].title;
+        album_name = music_search.data[i].album.title;
+        picture = music_search.data[i].artist.picture_medium;
+        // preview = music_search.data[i].preview;
 
-      //  var artist_name = document.getElementById("artist_name").innerHTML = artist_name;
-     //   var song_name = document.getElementById("song_name").innerHTML = song_names;
-     //   var album = document.getElementById("album").innerHTML = album;
-     //   var picture = document.getElementById("picture").innerHTML = picture;
-     //   var preview = document.getElementById("preview").innerHTML = preview;
+        console.log(picture);
 
-        
+        var artist_name = document.getElementById("artist_name").innerHTML = artist_name;
+        var song_name = document.getElementById("song_name").innerHTML = song_name;
+        var album_name = document.getElementById("album_name").innerHTML = album_name;
+        var picture = document.getElementById("picture").picture = picture.scr;
+    
+        // var preview = document.getElementById("preview").innerHTML = preview;
+
     };
+//"<img src=\"" + url + "\" alt="artist picture" height="42" width="42">";
+// 
+};
 
-
-}
 
 function search() {
 
@@ -31,10 +33,10 @@ function search() {
     api_request.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
             var the_response = api_request.responseText;
-            
-            var music_search = JSON.parse(the_response);
+
+            var music_search = JSON.parse(the_response);                  //  removed this to get the data
             displaydatainmypage(music_search);
-            
+
         }
         else {
             console.log("this stuff is not working");

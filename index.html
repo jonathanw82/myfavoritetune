@@ -22,7 +22,7 @@
 		<div class="container-fluid hero-image">
 			<div class="container-md hero-text-box">
 				<h1 class="heading-text">Music</h1>
-			
+
 			</div>
 			<div class="container ">
 				<div class="row">
@@ -31,16 +31,30 @@
 						<input type="text" id="user_input" placeholder="search"></input>
 						<button id="trigger_function" onclick="search()">Go!</button>
 					</div>
-					<div class="col-sm user-output">
+                    </div>
+					<div class="row">
+                    <div class="col-sm user-output">
 						<p>Artist Name: <span id="artist_name"></span></p>
-                        <p>Song name: <span id="song_varieties"></span></p>
+						<p>Song name: <span id="song_name"></span></p>
 						<p>Album: <span id="album_name"></span></p>
-                        <p>picture: <span id="picture"></span></p>
-                        <p>preview: <span id="preview"></span></p>
-                       
+						
+					 <div> <img  id="picture" src="url" alt="artist picture" height="42" width="42"></div>
+                   
+<!--
+
+ <div> <img  id="picture" src="picture.src" alt="artist picture" height="42" width="42"></div>
+	<p>picture:<span id="picture"></span></p>
+						  
+                        <p>preview: </p>
+						<audio controls>
+							<source id="preview" src="preview" type="audio/mpeg">
+						</audio>
+-->
 					</div>
-				</div>
+				
 			</div>
+		</div>
+		</div>
 		</div>
 
 
