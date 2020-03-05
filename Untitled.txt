@@ -23,3 +23,21 @@ the acurate artist ifo in displayed then click on album list select and see trac
 
 
 
+.box {
+/*     margin: -1.5rem; */
+    width: 12rem;
+    height: 12rem;
+    box-shadow: 0px 0px 2rem 0px #888888;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    /* transition: 1s all; */
+}
+
+.bs-example {
+	font-family: sans-serif;
+    position: relative;
+	margin: 100px;
+}

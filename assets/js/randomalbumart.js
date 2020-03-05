@@ -13,7 +13,7 @@ $(document).ready(function () {
             console.log("this stuff is not working");
         }
     };
-    api_request.open("GET", "https://deezerdevs-deezer.p.rapidapi.com/search?q=*");
+    api_request.open("GET", "https://deezerdevs-deezer.p.rapidapi.com/search?q=queen");
     api_request.setRequestHeader("x-rapidapi-host", "deezerdevs-deezer.p.rapidapi.com");
     api_request.setRequestHeader("x-rapidapi-key", "ef9686a9b9msh4dbce73327763a8p14d988jsn38434b35145a");
     api_request.send();

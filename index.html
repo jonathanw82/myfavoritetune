@@ -10,7 +10,7 @@
 	<link href="https://fonts.googleapis.com/css?family=Mr+Dafoe|Open+Sans&display=swap" rel="stylesheet">
 	<script src="https://code.jquery.com/jquery-3.4.1.js"
 		integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<script type="text/javascript" src="/examples/js/typeahead/0.11.1/typeahead.bundle.js"></script>
 	<link rel="stylesheet" href="assets/css/style.css" type="text/css">
 	<link rel="stylesheet" href="assets/css/styleimagecarousel.css" type="text/css">
@@ -27,25 +27,24 @@
 			</div>
 			<div class="container ">
 				<div class="row">
-					<div class="col-sm user-input bs-example">
+					<div class="col-sm-12 user-input bs-example">
 						<p>Type your search here</p>
 						<!--		<input type="text" id="user_input" placeholder="search"></input> 
 						<button id="trigger_function" onclick="search()">Go!</button>-->
 						<div class="bs-example">
-							<h2>Type your favorite music name</h2>
 							<input type="text" id="user_input" class="typeahead tt-query" onKeyUp="search()" autocomplete="off" spellcheck="false">
                              </div>
 
 						</div>
 					</div>
 					<div class="row">
-						<div class="col-sm user-output">
+						<div class="col-sm-12 user-output">
 							<p>Artist Name: <span id="artist_name" onclick=""></span></p>
 							<p>Song name: <span id="song_name"></span></p>
 							<p>Album: <span id="album_name"></span></p>
 							<img  id="picture" src="picture" alt="artist picture" height="200" width="200">
 							<p>preview: </p>
-							<audio controls volume=0.1 source id="preview" src="preview" type="audio/mpeg">
+							<audio controls volume=0.1 source id="preview" src="preview" class="preview_audio" type="audio/mpeg">
 							</audio>
 
 						</div>
@@ -57,14 +56,14 @@
 
 				<!--==============   Image Carousel written by Author loveneet4 https://github.com/internwt/3d-slider =========-->
 
-                
+
 				<div class="container image-carousel">
-					<div class="button" onclick="shiftLeft()">
+					<div class="button" onmouseover="shiftLeft()">
 						<img src="https://image.ibb.co/mRsEb7/left_arrow.png" alt=""></div>
 						<div class="cards-wrapper">
 							<ul class="cards__container">
 								<li class="box">
-									<img  id="albumart1" src="albumart1" alt="artist picture" ></li>
+									<img  id="albumart1" src="albumart1" alt="artist picture" onclick=albumselect()></li>
 								<li class="box">
 									<img  id="albumart2" src="albumart2" alt="artist picture" ></li>
 								<li class="box">
@@ -88,7 +87,7 @@
 						<div class="button" onclick="shiftRight()">
 							<img src="https://image.ibb.co/dfPSw7/right_arrow.png" alt=""></div>
 						</div>
-                        
+
 						<!--==============   Image Carousel written by Author loveneet4 https://github.com/internwt/3d-slider =========-->
 
 	</section>
