@@ -58,3 +58,15 @@ the acurate artist ifo in displayed then click on album list select and see trac
             name: 'music_search',
             source: music_search
         });
+
+
+   artist_name = music_search.data[i].artist.name;
+            album_name = music_search.data[i].album.title;
+            picture = music_search.data[i].artist.picture_medium;
+            artistid = music_search.data[i].artist.id;
+
+
+            var artist_name = document.getElementById("artist_name").innerHTML = artist_name;
+            var album_name = document.getElementById("album_name").innerHTML = album_name;
+            var picture = document.getElementById("picture").src = picture;
+            var artistid = document.getElementById("artistid").innerHTML = artistid;

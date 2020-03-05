@@ -6,13 +6,11 @@ body{
 
 .hero-image{
     background-image: url("../images/concert-inside-concert-hall-2728557.jpg");
-    
     background-size: cover;
     background-attachment: fixed;
     background-repeat:no-repeat;
     background-position: center;   
     z-index: -1;
-    
 }
 
 .heading-text{
@@ -47,10 +45,16 @@ body{
     border-radius: 20px;
     font-size: 1.5rem;
      border: 2px solid black;
+     position: relative;
 }
 
 .preview_audio{
-    width: 50vw;
+    width: 50%;
+}
+
+#picture{
+    float: right;
+   
 }
 
 /*------------------------------------------ type a head ----------------------------------------*/

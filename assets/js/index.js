@@ -4,15 +4,18 @@ function displaydatainmypage(music_search) {
     for (var i = 0; i < music_search.data.length; i++) {
         artist_name = music_search.data[i].artist.name;
         //song_name = music_search.data[i].title;
-        //album_name = music_search.data[i].album.title;
+        album_name = music_search.data[i].album.title;
+        artistid = music_search.data[i].artist.id;
+
         picture = music_search.data[i].artist.picture_medium;
         preview = music_search.data[i].preview;
 
-           // console.log(music_search)
+            console.log(music_search)
 
-        var artist_name = document.getElementById("artist_name").innerHTML += artist_name + "<br>";
+        var artist_name = document.getElementById("artist_name").innerHTML = artist_name + "<br>";
         //var song_name = document.getElementById("song_name").innerHTML = song_name + "<br>";
-        //var album_name = document.getElementById("album_name").innerHTML += album_name + "<br>";
+        var album_name = document.getElementById("album_name").innerHTML += album_name + "<br>";
+        var artistid = document.getElementById("artistid").innerHTML = artistid;
         var picture = document.getElementById("picture").src = picture;
         var preview = document.getElementById("preview").src = preview;
     };
