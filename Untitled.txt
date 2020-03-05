@@ -8,3 +8,18 @@
 
 
 <p>preview: <audio controls id="preview"><source src="preview" type="audio/mpeg"></audio></span></p>
+
+
+how to pull 10 random album covers?
+
+how to keep the background tarnsparent?
+
+how to make whats in the list clickable?
+
+seach for ther artist 
+click on the artist     ===== =when you do that the id is sent to another api endpoint 
+the acurate artist ifo in displayed then click on album list select and see track list and play samples
+
+
+
+

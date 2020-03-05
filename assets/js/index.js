@@ -1,24 +1,27 @@
 
 function displaydatainmypage(music_search) {
 
-
+console.log(music_search)
     for (var i = 0; i < music_search.data.length; i++) {
         artist_name = music_search.data[i].artist.name;
-        song_name = music_search.data[i].title;
-        album_name = music_search.data[i].album.title;
+        //song_name = music_search.data[i].title;
+        //album_name = music_search.data[i].album.title;
         picture = music_search.data[i].artist.picture_medium;
         preview = music_search.data[i].preview;
 
         var artist_name = document.getElementById("artist_name").innerHTML += artist_name + "<br>";
-        var song_name = document.getElementById("song_name").innerHTML += song_name + "<br>";
-        var album_name = document.getElementById("album_name").innerHTML += album_name + "<br>";
+        //var song_name = document.getElementById("song_name").innerHTML = song_name + "<br>";
+        //var album_name = document.getElementById("album_name").innerHTML += album_name + "<br>";
         var picture = document.getElementById("picture").src = picture;
         var preview = document.getElementById("preview").src = preview;
 
+    };
 
-        
-        /*
-        function nameonce(music_search) {
+};
+
+/* this.contact_number.value = Math.random() * 100000 | 0;
+
+ function nameonce(music_search) {
             if (artist_name == artist_name < 1) {
                 console.log(artist_name);
             }
@@ -26,13 +29,7 @@ function displaydatainmypage(music_search) {
                console.log("this did not work");
             }
         };
-        */
-    };
-
-};
-
-// this.contact_number.value = Math.random() * 100000 | 0;
-
+*/
 
 function search() {
     var user_input = document.getElementById("user_input").value;
