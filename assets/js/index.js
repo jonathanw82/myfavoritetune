@@ -49,23 +49,32 @@ function search() {
     api_request.setRequestHeader("x-rapidapi-key", "ef9686a9b9msh4dbce73327763a8p14d988jsn38434b35145a");
     api_request.send();
 
-    // Constructing the suggestion engine
-    var user_input = new Bloodhound({
+      // Sonstructs the suggestion engine
+    var music_search = new Bloodhound({
         datumTokenizer: Bloodhound.tokenizers.whitespace,
         queryTokenizer: Bloodhound.tokenizers.whitespace,
-        local: music_search
+        // The url points to a json file that contains an array of country names
+        
     });
-    // Initializing the typeahead
-    $('.typeahead').typeahead({
-        hint: true,
-        highlight: true, /* Enable substring highlighting */
-        minLength: 1 /* Specify minimum characters required for showing result */
-    },
-        {
-            name: 'user_input',
-            source: music_search
-        });
-
+    
+    // Initializing the typeahead with remote dataset
+    $('.typeahead').typeahead(null, {
+        name: 'music_search',
+        source: music_search,
+        limit: 10 /* Specify maximum number of suggestions to be displayed */
+    });
 }
 
 
+
+
+
+function clearfield(){
+document.getElementById("user_input").value = "";
+
+};
+
+
+
+
+   

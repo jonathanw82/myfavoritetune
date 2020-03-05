@@ -41,3 +41,20 @@ the acurate artist ifo in displayed then click on album list select and see trac
     position: relative;
 	margin: 100px;
 }
+
+// Constructing the suggestion engine
+    var music_search = new Bloodhound({
+        datumTokenizer: Bloodhound.tokenizers.whitespace,
+        queryTokenizer: Bloodhound.tokenizers.whitespace,
+        local: music_search
+    });
+    // Initializing the typeahead
+    $('.typeahead').typeahead({
+        hint: true,
+        highlight: true, /* Enable substring highlighting */
+        minLength: 1 /* Specify minimum characters required for showing result */
+    },
+        {
+            name: 'music_search',
+            source: music_search
+        });

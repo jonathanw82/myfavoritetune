@@ -4,7 +4,7 @@
 
 /*__________________________ image caroucel _____________________*/
 
-/*
+
 .image-carousel {
     display: flex;
     justify-content: space-around;
@@ -40,11 +40,22 @@
     height: 25rem;
     z-index: 3;
 }
-*/
+
+.box {
+    margin: -1.5rem; 
+    width: 12rem;
+    height: 12rem;
+    box-shadow: 0px 0px 2rem 0px #888888;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    /* transition: 1s all; */
+}
 
 
 
-/*
 .box:nth-child(2n) {
     transform: scale(0.85);
     z-index: -1;
