@@ -36,12 +36,12 @@
 				</div>
 				<div class="row">
 					<div class="col-sm user-output">
-						<p>Artist Name: <span id="artist_name"></span></p>
+						<p>Artist Name: <span id="artist_name" onclick="gotoartist()"></span></p>
 						<p>Song name: <span id="song_name"></span></p>
 						<p>Album: <span id="album_name"></span></p>
 						<img  id="picture" src="picture" alt="artist picture" height="200" width="200">
 						<p>preview: </p>
-						<audio controls source id="preview" src="preview" type="audio/mpeg">
+						<audio controls  volume=0.1 source id="preview" src="preview" type="audio/mpeg">
 						</audio>
 
 					</div>
@@ -73,6 +73,7 @@
 	<script src="assets/js/index.js"></script>
     <script src="assets/js/search_artist.js"></script>
     <script src="assets/js/imagecarousel.js"></script>
+     <script src="assets/js/artistsearch.js"></script>
 </body>
 
 </html>
