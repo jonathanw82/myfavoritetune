@@ -7,7 +7,6 @@ $(document).ready(function () {
             var the_response = api_request.responseText;
             var music_search = JSON.parse(the_response);
             displaydatainmyimagecaroucelpage(music_search);
-
         }
         else {
             console.log("this stuff is not working");

@@ -6,6 +6,10 @@ instead of cloning the repository simply click the fork button top right hand si
 to uor own gitHub account from there you can follow the deployment detals as as stated avouve.
 
 
+nice to have 
+type ahead.
+
+
 
 Image acrousel 
 I wanted to incorporate an image carousel, as at this stage in my coding career i have not learnt enough to create one myself i felt the 

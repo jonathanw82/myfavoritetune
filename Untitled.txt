@@ -4,24 +4,24 @@
 
 
 
-
-
-
 <p>preview: <audio controls id="preview"><source src="preview" type="audio/mpeg"></audio></span></p>
 
 
-how to pull 10 random album covers?
 
-how to keep the background tarnsparent?
+
 
 how to make whats in the list clickable?
+
+how to clear forms
 
 seach for ther artist 
 click on the artist     ===== =when you do that the id is sent to another api endpoint 
 the acurate artist ifo in displayed then click on album list select and see track list and play samples
 
 
-
+  //song_name = music_search.data[i].title;
+   //var song_name = document.getElementById("song_name").innerHTML = song_name + "<br>";
+   
 
 .box {
 /*     margin: -1.5rem; */
