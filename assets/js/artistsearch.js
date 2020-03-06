@@ -1,10 +1,12 @@
+
+
 function displaydatainmyartistpage(music_search_artist){
 
-    //console.log(music_search_artist);
+    console.log(music_search_artist);
 }
 
 
-function gotoartist() {
+function artist_search() {
     var user_input_artist = document.getElementById("user_input_artist").value;
     var api_request = new XMLHttpRequest();
 

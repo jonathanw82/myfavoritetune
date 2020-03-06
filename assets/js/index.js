@@ -46,7 +46,6 @@ function displaydatainmypage(music_search) {
 
 
 
-
     };
 
 };

@@ -31,10 +31,13 @@
 						<p>Type your search here</p>
 						<input type="text" id="user_input" placeholder="search"></input>
 						<button id="trigger_function" onclick="search()">Go!</button>
-						<!--
-						<div class="bs-example">
-							<input type="text" id="user_input" class="typeahead tt-query" onKeyUp="search()" onclick="clearfield()" autocomplete="off" spellcheck="false">
-                             </div>-->
+
+						<input type="text" id="user_input_album" placeholder="album id search"></input>
+						<button id="trigger_function1" onclick="album_search()">Go!</button>
+
+						<input type="text" id="user_input_artist" placeholder="artist id search"></input>
+						<button id="trigger_function2" onclick="artist_search()">Go!</button>
+
 
 					</div>
 				</div>
@@ -100,7 +103,7 @@
 						<div class="modal-dialog" role="document">
 							<div class="modal-content">
 								<div class="modal-header">
-									<h5 class="modal-title" id="exampleModalLongTitle">Album Tracklist</h5>        
+									<h5 class="modal-title" id="exampleModalLongTitle">Album Tracklist</h5>
 								</div>
 								<div class="modal-body">
 									...
@@ -114,16 +117,13 @@
 
 
 
-
-
-
 	</section>
 	<script src="assets/js/index.js"></script>
 	<script src="assets/js/typeahead0.11.1.js"></script>
 	<script src="assets/js/typeahead.js"></script>
-	<script src="assets/js/search_artist.js"></script>
-	<script src="assets/js/imagecarousel.js"></script>
 	<script src="assets/js/artistsearch.js"></script>
+	<script src="assets/js/imagecarousel.js"></script>
+	<script src="assets/js/search_album.js"></script>
 	<script src="assets/js/initialpoulation.js"></script>
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
 		integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">

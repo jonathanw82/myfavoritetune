@@ -54,8 +54,13 @@ body{
 
 #picture{
     float: right;
-   
 }
+
+#tracklistModal{
+background-color: transparent;
+}
+
+
 
 /*------------------------------------------ type a head ----------------------------------------*/
 
