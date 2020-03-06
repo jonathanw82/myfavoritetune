@@ -29,12 +29,14 @@ $(document).ready(function () {
             album_name = music_search.data[i].album.title;
             picture = music_search.data[i].artist.picture_medium;
             artistid = music_search.data[i].artist.id;
+            albumid = music_search.data[i].album.id;
 
 
             var artist_name = document.getElementById("artist_name").innerHTML = artist_name;
             var album_name = document.getElementById("album_name").innerHTML = album_name;
             var picture = document.getElementById("picture").src = picture;
             var artistid = document.getElementById("artistid").innerHTML = artistid;
+            var albumid = document.getElementById("albumid").innerHTML = albumid;
 
             albumart1 = music_search.data[0].album.cover_medium;
             albumart2 = music_search.data[1].album.cover_medium;
@@ -47,16 +49,38 @@ $(document).ready(function () {
             albumart9 = music_search.data[8].album.cover_medium;
             albumart10 = music_search.data[9].album.cover_medium;
 
-            var albumart1 = document.getElementById("albumart1").src = albumart1;           // caroucel artwork 
-            var albumart2 = document.getElementById("albumart2").src = albumart2;
-            var albumart3 = document.getElementById("albumart3").src = albumart3;
-            var albumart4 = document.getElementById("albumart4").src = albumart4;
-            var albumart5 = document.getElementById("albumart5").src = albumart5;
-            var albumart6 = document.getElementById("albumart6").src = albumart6;
-            var albumart7 = document.getElementById("albumart7").src = albumart7;
-            var albumart8 = document.getElementById("albumart8").src = albumart8;
-            var albumart9 = document.getElementById("albumart9").src = albumart9;
-            var albumart10 = document.getElementById("albumart10").src = albumart10;
+            albumid1 = music_search.data[0].album.id;
+            albumid2 = music_search.data[1].album.id;
+            albumid3 = music_search.data[2].album.id;
+            albumid4 = music_search.data[3].album.id;
+            albumid5 = music_search.data[4].album.id;
+            albumid6 = music_search.data[5].album.id;
+            albumid7 = music_search.data[6].album.id;
+            albumid8 = music_search.data[7].album.id;
+            albumid9 = music_search.data[8].album.id;
+            albumid10 = music_search.data[9].album.id;
+
+            artistid1 = music_search.data[0].artist.id;
+            artistid2 = music_search.data[1].artist.id;
+            artistid3 = music_search.data[2].artist.id;
+            artistid4 = music_search.data[3].artist.id;
+            artistid5 = music_search.data[4].artist.id;
+            artistid6 = music_search.data[5].artist.id;
+            artistid7 = music_search.data[6].artist.id;
+            artistid8 = music_search.data[7].artist.id;
+            artistid9 = music_search.data[8].artist.id;
+            artistid10 = music_search.data[9].artist.id;
+
+            var albumart1 = document.getElementById("albumart1").src = albumart1, artistid, albumid;         // caroucel artwork 
+            var albumart2 = document.getElementById("albumart2").src = albumart2, artistid, albumid;
+            var albumart3 = document.getElementById("albumart3").src = albumart3, artistid, albumid;
+            var albumart4 = document.getElementById("albumart4").src = albumart4, artistid, albumid;
+            var albumart5 = document.getElementById("albumart5").src = albumart5, artistid, albumid;
+            var albumart6 = document.getElementById("albumart6").src = albumart6, artistid, albumid;
+            var albumart7 = document.getElementById("albumart7").src = albumart7, artistid, albumid;
+            var albumart8 = document.getElementById("albumart8").src = albumart8, artistid, albumid;
+            var albumart9 = document.getElementById("albumart9").src = albumart9, artistid, albumid;
+            var albumart10 = document.getElementById("albumart10").src = albumart10, artistid, albumid;
         }
     }
 });

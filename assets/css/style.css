@@ -56,8 +56,9 @@ body{
     float: right;
 }
 
-#tracklistModal{
-background-color: transparent;
+.modal-header, .modal-body, .modal-footer, .modal-content{
+background-color: orange;
+color: red;
 }
 
 
