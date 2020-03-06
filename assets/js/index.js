@@ -6,7 +6,6 @@ function displaydatainmypage(music_search) {
         //song_name = music_search.data[i].title;
         album_name = music_search.data[i].album.title;
         artistid = music_search.data[i].artist.id;
-
         picture = music_search.data[i].artist.picture_medium;
         preview = music_search.data[i].preview;
 
