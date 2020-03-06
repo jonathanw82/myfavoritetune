@@ -1,0 +1,98 @@
+ROADMAP
+-------
+
+What do we want?
+
+> User search for an artist
+> Get Albums of that artist displayed
+> Clicking on one album display the tracks for that album
+
+
+How do we do it?
+
+> User search for an artist
+
+  > Create a user input field
+  > Button to trigger the function ("Go")
+   
+> Get Albums of that artist displayed
+  
+  > Call the API with the user input
+     > Retrieve the user input
+     > Create a request (new XMLHttpRequest)
+     > Define the functions to be ran when getting the data back
+     > Build the URL (endpoint + user)
+     > Open
+     > Send
+ 
+  > Process the data:
+     > We are receiving an ARRAY of TRACKS (songs).
+     > Each item of the ARRAY is a TRACK / song.
+     > We need to transform the data received from a string to an object (JSON.parse())
+     > Each item has a key that is the album
+     > We want to have an ARRAY where we store the Albums:
+       
+        let albums = []
+        let albums_name = []
+
+        for (i = 0; i < the_array_with_all_the_tracks.length; i++) {
+
+            var album = get_the_album_object_from_the_item ;
+            var album_name = get_the_album_name;
+
+            if (!albums_name.includes(album_name)) {
+                
+                albums_name.push(albums_name);
+                albums.push(album);
+
+            }
+        }
+        
+        
+        // now albums looks like this : album = [{this: ..., that:....}, {this: ..., that:....}, {this: ..., that:....}, {this: ..., that:....}]
+
+  > Inject the html for the album
+
+     > Use the data from albums to create the string (html code)
+     > Select the element we want to put the html code input and inject the string
+     > We will use a for loops to loop through the array "albums" and build the string for each album.
+
+     > var all_the_albums_html_code = ""
+     > for items in the array :
+           this_album_string = `<div>  ${album.name} ${album.id} </div>`
+           all_the_albums_html_code = all_the_albums_html_code + this_album_string
+
+     > FOR THE IMAGE TO BE TRIGGERING THE FUNCTION :
+         > in the html code, add an onclick attribute where we pass in the argument (album_id):
+            
+            example of js code for that:
+            
+                var foo = "Hello";
+
+                function myFunction(something) {
+                    api_call(); (see next step)
+                    fill_in_the_modal();  // meanwhile : just put the data in a classic div
+                    show_the_modal();     // next week : put that into a modal, that we will make appearing
+                };
+
+                document.getElementById("demo").innerHTML=`<img src="some_url" onclick="myFunction('${album_id}')">`;
+
+
+> Clicking on one album display the tracks for that album
+
+    > Make the function with for the api call : it take the album_id as an argument so that :
+      url = whatever_endpoint_we_need + album_id
+      create request
+      define what we do when the data get back:
+         transform the data from string to JSON
+         pass that data as an argument into the fill_in_the_modal function.
+         That data must certainly comes back as a list of track (for the album) : need to use for loops to loop through the array and do the same damn thing for each element.
+
+         var tracks_array = [{"one":"something"}, {"one": "something else"}, {"one": "another thing"}]
+
+        for (i=0 ; i < tracks_array.length; i++ ) {
+
+            // whatever I want to do with each element
+            console.log(tracks_array[i].one)
+
+        }
