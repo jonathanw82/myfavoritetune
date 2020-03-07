@@ -4,6 +4,10 @@ body{
     font-family: 'Open Sans', sans-serif;
 }
 
+.album_list{
+    color: white;
+}
+
 .hero-image{
     background-image: url("../images/concert-inside-concert-hall-2728557.jpg");
     background-size: cover;

@@ -1,6 +1,9 @@
 
 function displaydatainmypage(music_search) {
 
+    let albums = [];
+    let albums_name = [];
+
     for (var i = 0; i < music_search.data.length; i++) {
         artist_name = music_search.data[i].artist.name;
         album_name_indentity = music_search.data[i].album.title;
@@ -8,27 +11,15 @@ function displaydatainmypage(music_search) {
         picture = music_search.data[i].artist.picture_medium;
         preview = music_search.data[i].preview;
 
-
-
-        let albums = [];
-        let albums_name = [];
-
         for (i = 0; i < music_search.data.length; i++) {
-
             var album = music_search.data[i].album;
             var album_name = music_search.data[i].album.title;
 
             if (!albums_name.includes(album_name)) {
 
-                albums_name.push(albums_name);
+                albums_name.push(album_name);
                 albums.push(album);
-            };
-        }
-
-        var album_list = document.getElementById("album_list").innerHTML = album_list;
-        for (i = 0; i < albums.lenght; i++) {
-            this_album_string = `<div>  ${album.name} ${album.id} </div>`
-            album_list = album_list + this_album_string;
+            }
         }
 
 
@@ -62,14 +53,14 @@ function displaydatainmypage(music_search) {
             var albumart9 = document.getElementById("albumart9").src = albumart9;
             var albumart10 = document.getElementById("albumart10").src = albumart10;
         }
-
-
-
-
-
-
+console.log(albums)
     }
-
+    var album_list = document.getElementById("album_list").innerHTML += album_list;         // get the album title and id and display on html not working
+    for (i = 0; i < albums.length; i++) {
+        this_album_string = `<div>  ${album.title} ${album.id} </div>`;
+        album_list += this_album_string;
+        console.log(album_list);
+    }
 }
 
 function search() {
