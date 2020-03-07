@@ -53,12 +53,12 @@ function displaydatainmypage(music_search) {
             var albumart9 = document.getElementById("albumart9").src = albumart9;
             var albumart10 = document.getElementById("albumart10").src = albumart10;
         }
-console.log(albums)
+//console.log(albums_name)
     }
-    var album_list = document.getElementById("album_list").innerHTML += album_list;         // get the album title and id and display on html not working
+    var album_list = document.getElementById("album_list");         // get the album title and id and display on html not working
     for (i = 0; i < albums.length; i++) {
         this_album_string = `<div>  ${album.title} ${album.id} </div>`;
-        album_list += this_album_string;
+        album_list.innerHTML = this_album_string;
         console.log(album_list);
     }
 }
