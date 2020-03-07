@@ -3,37 +3,16 @@ function displaydatainmypage(music_search) {
 
     for (var i = 0; i < music_search.data.length; i++) {
         artist_name = music_search.data[i].artist.name;
-        album_name_indentity = music_search.data[i].album.title;
+        album_name = music_search.data[i].album.title;
         artistid = music_search.data[i].artist.id;
         picture = music_search.data[i].artist.picture_medium;
         preview = music_search.data[i].preview;
 
-
-
-        let albums = [];
-        let albums_name = [];
-
-        for (i = 0; i < music_search.data.length; i++) {
-
-            var album = music_search.data[i].album;
-            var album_name = music_search.data[i].album.title;
-
-            if (!albums_name.includes(album_name)) {
-
-                albums_name.push(albums_name);
-                albums.push(album);
-            };
-        }
-
-        var album_list = document.getElementById("album_list").innerHTML = album_list;
-        for (i = 0; i < albums.lenght; i++) {
-            this_album_string = `<div>  ${album.name} ${album.id} </div>`
-            album_list = album_list + this_album_string;
-        }
+        console.log(music_search)
 
 
         var artist_name = document.getElementById("artist_name").innerHTML = artist_name + "<br>";
-        var album_name_indentity = document.getElementById("album_name").innerHTML = album_name_indentity + "<br>";
+        var album_name = document.getElementById("album_name").innerHTML = album_name + "<br>";
         var artistid = document.getElementById("artistid").innerHTML = artistid;
         var picture = document.getElementById("picture").src = picture;
         var preview = document.getElementById("preview").src = preview;
@@ -68,9 +47,9 @@ function displaydatainmypage(music_search) {
 
 
 
-    }
+    };
 
-}
+};
 
 function search() {
     var user_input = document.getElementById("user_input").value;
@@ -91,7 +70,7 @@ function search() {
     api_request.setRequestHeader("x-rapidapi-key", "ef9686a9b9msh4dbce73327763a8p14d988jsn38434b35145a");
     api_request.send();
 
-}
+};
 
 
 
