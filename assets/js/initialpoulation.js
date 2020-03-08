@@ -32,11 +32,12 @@ $(document).ready(function () {
             albumid = music_search.data[i].album.id;
 
 
-            var artist_name = document.getElementById("artist_name").innerHTML = artist_name;
-            var album_name = document.getElementById("album_name").innerHTML = album_name;
-            var picture = document.getElementById("picture").src = picture;
-            var artistid = document.getElementById("artistid").innerHTML = artistid;
-            var albumid = document.getElementById("albumid").innerHTML = albumid;
+            document.getElementById("artist_name").innerHTML = artist_name;
+            document.getElementById("album_name").innerHTML = album_name;
+            document.getElementById("picture").src = picture;
+            document.getElementById("artistid").innerHTML = artistid;
+            document.getElementById("albumid").innerHTML = albumid;
+           
 
             albumart1 = music_search.data[0].album.cover_medium;
             albumart2 = music_search.data[1].album.cover_medium;
@@ -71,17 +72,16 @@ $(document).ready(function () {
             artistid9 = music_search.data[8].artist.id;
             artistid10 = music_search.data[9].artist.id;
 
-            var albumart1 = document.getElementById("albumart1").src = albumart1, artistid, albumid;         // caroucel artwork 
-            var albumart2 = document.getElementById("albumart2").src = albumart2, artistid, albumid;
-            var albumart3 = document.getElementById("albumart3").src = albumart3, artistid, albumid;
-            var albumart4 = document.getElementById("albumart4").src = albumart4, artistid, albumid;
-            var albumart5 = document.getElementById("albumart5").src = albumart5, artistid, albumid;
-            var albumart6 = document.getElementById("albumart6").src = albumart6, artistid, albumid;
-            var albumart7 = document.getElementById("albumart7").src = albumart7, artistid, albumid;
-            var albumart8 = document.getElementById("albumart8").src = albumart8, artistid, albumid;
-            var albumart9 = document.getElementById("albumart9").src = albumart9, artistid, albumid;
-            var albumart10 = document.getElementById("albumart10").src = albumart10, artistid, albumid;
+            var albumart1Div = document.getElementById("albumart1").src = albumart1;         // caroucel artwork 
+            var albumart2Div = document.getElementById("albumart2").src = albumart2;
+            var albumart3Div = document.getElementById("albumart3").src = albumart3;
+            var albumart4Div = document.getElementById("albumart4").src = albumart4;
+            var albumart5Div = document.getElementById("albumart5").src = albumart5;
+            var albumart6Div = document.getElementById("albumart6").src = albumart6;
+            var albumart7Div = document.getElementById("albumart7").src = albumart7;
+            var albumart8Div = document.getElementById("albumart8").src = albumart8;
+            var albumart9Div = document.getElementById("albumart9").src = albumart9;
+            var albumart10Div = document.getElementById("albumart10").src = albumart10;
         }
     }
 });
-

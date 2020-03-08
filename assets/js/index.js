@@ -22,15 +22,15 @@ function displaydatainmypage(music_search) {
             }
         }
 
-
-        var artist_name = document.getElementById("artist_name").innerHTML = artist_name + "<br>";
-        var album_name_indentity = document.getElementById("album_name").innerHTML = album_name_indentity + "<br>";
-        var artistid = document.getElementById("artistid").innerHTML = artistid;
-        var picture = document.getElementById("picture").src = picture;
-        var preview = document.getElementById("preview").src = preview;
+        document.getElementById("artist_name").innerHTML = artist_name + "<br>";
+        document.getElementById("album_name").innerHTML = album_name_indentity + "<br>";
+        document.getElementById("artistid").innerHTML = artistid;
+        document.getElementById("picture").src = picture;
+        document.getElementById("preview").src = preview;
 
 
         for (let i = 0; i < music_search.data.length; i++) {
+
             albumart1 = music_search.data[i].album.cover_medium;
             albumart2 = music_search.data[i].album.cover_medium;
             albumart3 = music_search.data[i].album.cover_medium;
@@ -42,25 +42,26 @@ function displaydatainmypage(music_search) {
             albumart9 = music_search.data[i].album.cover_medium;
             albumart10 = music_search.data[i].album.cover_medium;
 
-            var albumart1 = document.getElementById("albumart1").src = albumart1;           // caroucel artwork 
-            var albumart2 = document.getElementById("albumart2").src = albumart2;
-            var albumart3 = document.getElementById("albumart3").src = albumart3;
-            var albumart4 = document.getElementById("albumart4").src = albumart4;
-            var albumart5 = document.getElementById("albumart5").src = albumart5;
-            var albumart6 = document.getElementById("albumart6").src = albumart6;
-            var albumart7 = document.getElementById("albumart7").src = albumart7;
-            var albumart8 = document.getElementById("albumart8").src = albumart8;
-            var albumart9 = document.getElementById("albumart9").src = albumart9;
-            var albumart10 = document.getElementById("albumart10").src = albumart10;
+            var albumart1Div = document.getElementById("albumart1").src = albumart1;           // caroucel artwork 
+            var albumart2Div = document.getElementById("albumart2").src = albumart2;
+            var albumart3Div = document.getElementById("albumart3").src = albumart3;
+            var albumart4Div = document.getElementById("albumart4").src = albumart4;
+            var albumart5Div = document.getElementById("albumart5").src = albumart5;
+            var albumart6Div = document.getElementById("albumart6").src = albumart6;
+            var albumart7Div = document.getElementById("albumart7").src = albumart7;
+            var albumart8Div = document.getElementById("albumart8").src = albumart8;
+            var albumart9Div = document.getElementById("albumart9").src = albumart9;
+            var albumart10Div = document.getElementById("albumart10").src = albumart10;
         }
-//console.log(albums_name)
+        //console.log(albums_name)
     }
-    var album_list = document.getElementById("album_list");         // get the album title and id and display on html not working
+    var album_list = document.getElementById("album_list");         // get the album title and id and display just wrong ******data
     for (i = 0; i < albums.length; i++) {
         this_album_string = `<div>  ${album.title} ${album.id} </div>`;
-        album_list.innerHTML = this_album_string;
-        console.log(album_list);
+        album_list.innerHTML += this_album_string;
+
     }
+    //console.log(this_album_string);
 }
 
 function search() {
@@ -83,34 +84,5 @@ function search() {
     api_request.send();
 
 }
-
-
-
-/*
- function albumlistnameonce() {
-     let nameonce = 0;
-     for (let i = 0; i <music_search.data.labum.title; i++) {
-            if () {
-                console.log(album_name);
-            }
-            else {
-               console.log("this did not work");
-            }
-        };
-    }
-*/
-
-/*
-  let artistnameonce;
-  for (let i = 0; i < music_search.data.artist.name; i++) {
-      if (music_search.data.artist[i].name == music_search.data.artist[i].name) {
-          music_search.data.artist[i].name = artistnameonce;
-          console.log(artistnameonce);
-      }
-      else {
-          console.log("this did not work");
-      }
-  };
-*/
 
 
