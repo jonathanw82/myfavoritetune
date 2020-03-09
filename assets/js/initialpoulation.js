@@ -36,7 +36,7 @@ $(document).ready(function () {
             document.getElementById("album_name").innerHTML = album_name;
             document.getElementById("picture").src = picture;
             document.getElementById("artistid").innerHTML = artistid;
-            document.getElementById("albumid").innerHTML = albumid;
+            //document.getElementById("albumid").innerHTML = albumid;
            
 
             albumart1 = music_search.data[0].album.cover_medium;

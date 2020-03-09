@@ -1,7 +1,7 @@
 
 function displayalbumdatainmypage(album_id_search) {
 
-    // console.log(album_id_search);
+     console.log(album_id_search);
 
     let albums_tracks = [];
     let tracks_preview = [];
@@ -10,10 +10,8 @@ function displayalbumdatainmypage(album_id_search) {
 
     for (var i = 0; i < album_id_search.tracks.data.length; i++) {
 
-        var album_track = album_id_search.tracks.data[i].title;
-        console.log(album_track)
+        var album_track = album_id_search.tracks.data[i].title;         console.log(album_track)
         var track_preview = album_id_search.tracks.data[i].preview;
-
 
         if (!albums_tracks.includes(album_track)) {
             albums_tracks.push(album_track);
@@ -26,7 +24,7 @@ function displayalbumdatainmypage(album_id_search) {
     for (var i = 0; i < album_track.length; i++) {
          album_track_disp = album_track[i]; 
     }
-console.log(albumid);
+            console.log(albumid);
    
 
     document.getElementById("track_list").innerHTML = album_track_disp + "<br>";
@@ -35,7 +33,6 @@ console.log(albumid);
     // console.log(tracks_preview);
 
 }
-
 
 function album_id() {
     var api_request = new XMLHttpRequest();

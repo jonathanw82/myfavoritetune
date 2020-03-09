@@ -8,7 +8,7 @@ to uor own gitHub account from there you can follow the deployment detals as as 
 
 nice to have 
 type ahead.
-
+I found they type a head function was not the best away to archede what i wanted my app to maybe in the future i would be a ghreat addion.
 
 
 Image acrousel 

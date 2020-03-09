@@ -21,6 +21,7 @@ function displaydatainmypage(music_search) {
                 albums.push(album);
             }
         }
+       // console.log(music_search)
 
         document.getElementById("artist_name").innerHTML = artist_name + "<br>";
         document.getElementById("album_name").innerHTML = album_name_indentity + "<br>";
@@ -53,15 +54,14 @@ function displaydatainmypage(music_search) {
             var albumart9Div = document.getElementById("albumart9").src = albumart9;
             var albumart10Div = document.getElementById("albumart10").src = albumart10;
         }
-        //console.log(albums_name)
+        console.log(albums_name)
     }
-    var album_list = document.getElementById("album_list");         // get the album title and id and display just wrong ******data
+    var album_list = document.getElementById("album_list");                                     // get the album title and id and display just wrong ******data
     for (i = 0; i < albums.length; i++) {
         this_album_string = `<div>  ${album.title} ${album.id} </div>`;
         album_list.innerHTML += this_album_string;
-
     }
-    //console.log(this_album_string);
+   // console.log(this_album_string);
 }
 
 function search() {
