@@ -1,3 +1,10 @@
+
+// how to clear the html not add to it 
+// how to create an onclick event that takes data with it.
+
+
+
+
 function displaydatainmypage(music_search) {
 
     let albums = [];
