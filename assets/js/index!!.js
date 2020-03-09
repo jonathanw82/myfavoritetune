@@ -28,11 +28,8 @@ function displaydatainmypage(music_search) {
     console.log(albums_name);
     console.log("Array 'albums:'");    
     console.log(albums);
-
-
-
-
-        // console.log(music_search)
+    
+            // console.log(music_search)
 
         // document.getElementById("artist_name").innerHTML = artist_name + "<br>";
         // document.getElementById("album_name").innerHTML = album_name_indentity + "<br>";

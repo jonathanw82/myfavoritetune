@@ -34,7 +34,7 @@ body{
     -webkit-text-stroke-color: black;
 }
 
-.user-input{
+.user-input-box{
     color:aliceblue;
     background-color: rgba(60,60,60,0.5);
     border-radius: 20px;
@@ -42,13 +42,8 @@ body{
     border: 2px solid black;
 }
 
-.user-output{
-    color:aliceblue;
-    background-color: rgba(60,60,60,0.5);
-    border-radius: 20px;
-    font-size: 1.5rem;
-    border: 2px solid black;
-    position: relative;
+#user_input{
+    width: 80%;
 }
 
 .preview_audio{
@@ -57,10 +52,7 @@ body{
 
 #picture_artistsearch{
     border-radius: 50%;
-    border-style: ridge;
-     box-shadow: 0 0 40px 10px #fff;
-       
-        
+    box-shadow: 0 0 40px 10px #fff;      
 }
 
 .artist_image{
@@ -74,4 +66,28 @@ color: red;
 
 .card{
    width: 18rem;
+}
+
+
+@media only screen and (max-width: 768px) {  
+
+.artist_image{
+    margin-top: 20px;
+}
+
+#user_input{
+    width: 90%;
+}
+
+}
+
+@media only screen and (max-width: 575px) {  
+.artist_image{
+    margin-bottom: 20px;
+}
+
+.user-input-box{
+   text-align: center;
+}
+
 }

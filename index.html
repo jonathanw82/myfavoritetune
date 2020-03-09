@@ -27,7 +27,7 @@
 			</div>
 			<div class="container ">
 				<div class="row">
-					<div class="col-sm-6 user-input bs-example">
+					<div class="col-sm-6 user-input-box bs-example">
 						<p>Type your search here</p>
 						<input type="text" id="user_input" placeholder="search"></input>
 						<button id="trigger_function"  onclick="artist_search() + search()">Go!</button>
@@ -40,67 +40,15 @@
 						</div>
 					</div>
 
-
-					<!--
-					<div class="col-sm-6 user-output">
-						
-						<p>preview: </p>
-						<audio controls volume=0.1 source id="preview" src="preview" class="preview_audio"
-							type="audio/mpeg">
-						</audio>
-					</div>
--->
-					<div class="conatiner-fluid">
-						<div class="card">
-							<span id="album_list"></span>
-						</div>
-					</div>
+		
+                    <div class="container">
+							<div id="album_list" data-toggle="modal" data-target="#tracklistModal"></div>						
+			        </div>
 				</div>
 			</div>
 
 
 		</div>
-
-
-
-
-		<!--==============   Image Carousel written by Author loveneet4 https://github.com/internwt/3d-slider =========
-			<div class="container image-carousel">
-				<div class="button" onclick="shiftLeft()">
-					<img src="https://image.ibb.co/mRsEb7/left_arrow.png" alt=""></div>
-					<div class="cards-wrapper">
-						<ul class="cards__container">
-							<li class="box">
-								<img  id="albumart1" src="albumart1" alt="artist picture" onclick="album_id()" data-toggle="modal" data-target="#tracklistModal"></li>
-							<li class="box">
-								<img  id="albumart2" src="albumart2" alt="artist picture" onclick="album_id()" data-toggle="modal" data-target="#tracklistModal"></li>
-							<li class="box">
-								<img  id="albumart3" src="albumart3" alt="artist picture" onclick="album_id()" data-toggle="modal" data-target="#tracklistModal"></li>
-							<li class="box">
-								<img  id="albumart4" src="albumart4" alt="artist picture" onclick="album_id()" data-toggle="modal" data-target="#tracklistModal"></li>
-							<li class="box">
-								<img  id="albumart5" src="albumart5" alt="artist picture" onclick="album_id()" data-toggle="modal" data-target="#tracklistModal"></li>
-							<li class="box ">
-								<img  id="albumart6" src="albumart6" alt="artist picture" onclick="album_id()" data-toggle="modal" data-target="#tracklistModal"></li>
-							<li class="box ">
-								<img  id="albumart7" src="albumart7" alt="artist picture" onclick="album_id()" data-toggle="modal" data-target="#tracklistModal"></li>
-							<li class="box ">
-								<img  id="albumart8" src="albumart8" alt="artist picture" onclick="album_id()" data-toggle="modal" data-target="#tracklistModal"></li>
-							<li class="box ">
-								<img  id="albumart9" src="albumart9" alt="artist picture" onclick="album_id()" data-toggle="modal" data-target="#tracklistModal"></li>
-							<li class="box ">
-								<img  id="albumart10" src="albumart10" alt="artist picture" onclick="album_id()" data-toggle="modal" data-target="#tracklistModal"></li>
-						</ul>
-					</div>
-					<div class="button" onclick="shiftRight()">
-						<img src="https://image.ibb.co/dfPSw7/right_arrow.png" alt=""></div>
-					</div>
-
-					==============   Image Carousel written by Author loveneet4 https://github.com/internwt/3d-slider =========-->
-
-
-
-
 
 		<!-- Modal -->
 		<div class="modal fade" id="tracklistModal" tabindex="-1" role="dialog" aria-labelledby="tracklistModal"
@@ -112,7 +60,6 @@
 					</div>
 					<div class="modal-body">
 						<div id="track_list"></div>
-						<div id="preview_track"></div>
 					</div>
 					<div class="modal-footer">
 						<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -139,3 +86,12 @@
 </body>
 
 </html>
+					<!--
+					<div class="col-sm-6 user-output">
+						
+						<p>preview: </p>
+						<audio controls volume=0.1 source id="preview" src="preview" class="preview_audio"
+							type="audio/mpeg">
+						</audio>
+					</div>
+-->
