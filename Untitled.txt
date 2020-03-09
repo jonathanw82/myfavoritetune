@@ -132,3 +132,4 @@ function album_id() {
 }
 
 
+ //   this_album_string = `<div><p>${albums[i].id}</p><br><p>${albums[i].title}</p><img src="${albums[i].cover}"></div>`;

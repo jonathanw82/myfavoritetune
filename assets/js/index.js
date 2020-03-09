@@ -18,15 +18,15 @@ function displaydatainmypage(music_search) {
         }
     }
 
-    console.log("Array 'albums_names:'");
-    console.log(albums_name);
-    console.log("Array 'albums:'");    
+    //console.log("Array 'albums_names:'");
+    //console.log(albums_name);
+    //console.log("Array 'albums:'");
     console.log(albums);
 
-        var album_list = document.getElementById("album_list");                                     // get the album title and id and display just wrong ******data
-    
+    var album_list = document.getElementById("album_list");                          
+
     for (i = 0; i < albums.length; i++) {
-        this_album_string = `<div><p>${albums[i].id}</p><br><p>${albums[i].title}</p><img src="${albums[i].cover}"></div>`;
+        this_album_string = `<img src="${albums[i].cover_big}" class="card-img-top" alt="Album art"><div class="card-body"><p class="card-text">${albums[i].title}</p>`;
         album_list.innerHTML += this_album_string;
     }
 }
