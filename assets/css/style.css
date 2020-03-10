@@ -56,6 +56,8 @@ body{
 #picture_artistsearch{
     border-radius: 50%;
     box-shadow: 0 0 40px 10px #fff;    
+    height: 200px;
+    width: 200px;
 }
 
 .artist_image{
@@ -70,7 +72,11 @@ background-color: orange;
 .card{
    width: 18rem;
 }
+/*---------------------------------------- Model ----------------------------*/
 
+.model_album_name{
+    text-align: center;
+}
 
 @media only screen and (max-width: 768px) {  
 

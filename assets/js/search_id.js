@@ -1,11 +1,13 @@
 
 function displayalbumdatainmypage(album_id_search) {
 
-
+console.log(album_id_search)
     let albums_tracks = [];
     let tracks_preview = [];
+   
 
     var total_tracks = album_id_search.nb_tracks;
+    var album_title_modal = album_id_search.title;
 
     for (var i = 0; i < album_id_search.tracks.data.length; i++) {
 
@@ -26,6 +28,7 @@ function displayalbumdatainmypage(album_id_search) {
     }
     
     document.getElementById("track_total").innerHTML = total_tracks;
+    document.getElementById("album_title_modal").innerHTML = album_title_modal;
 }
 
 function album_id(album_id_id) {

@@ -37,7 +37,7 @@ function displaydatainmypage(music_search) {
             albums.push(album);
         }
     }
- console.log(music_search);
+     console.log(music_search);
     //console.log("Array 'albums_names:'");
     //console.log(albums_name);
     //console.log("Array 'albums:'");
