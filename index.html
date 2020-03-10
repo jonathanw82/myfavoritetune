@@ -12,7 +12,6 @@
 		integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<link rel="stylesheet" href="assets/css/style.css" type="text/css">
-	<link rel="stylesheet" href="assets/css/styleimagecarousel.css" type="text/css">
 
 	<title>Music</title>
 </head>
@@ -30,7 +29,7 @@
 					<div class="col-sm-6 user-input-box bs-example">
 						<p>Type your search here</p>
 						<input type="text" id="user_input" placeholder="search"></input>
-						<button id="trigger_function"  onclick="artist_search() + search()">Go!</button>
+						<button id="trigger_function"  onclick="clearHTML() + artist_search() + search()">Go!</button>
 						<p>Artist Name: <span id="artist_name_artistsearch" onclick=""></span></p>
 						<p>Number of Albums: <span id="number_of_albums_artistsearch"></span></p>
 
@@ -60,6 +59,7 @@
 					</div>
 					<div class="modal-body">
 						<div id="track_list"></div>
+                        <div id="preview_music"></div>
 					</div>
 					<div class="modal-footer">
 						<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -79,7 +79,7 @@
 	<script src="assets/js/artistsearch.js"></script>
 
 	<script src="assets/js/search_album.js"></script>
-	<!--<script src="assets/js/initialpoulation.js"></script>-->
+	<script src="assets/js/initialpoulation.js"></script>
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
 		integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
 	</script>
