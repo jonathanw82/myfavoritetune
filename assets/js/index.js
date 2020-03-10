@@ -29,7 +29,6 @@ function search() {
             pickArtistSearch = `</p><p onclick="fillUserInput('${artistList[i]}');artist_search()">${artistList[i]}</p>`;
             pick_name.innerHTML += pickArtistSearch;
         }
-
     };
     api_request.open("GET", "https://deezerdevs-deezer.p.rapidapi.com/search?q=" + user_input);
     api_request.setRequestHeader("x-rapidapi-host", "deezerdevs-deezer.p.rapidapi.com");
@@ -38,12 +37,19 @@ function search() {
 
 }
 //===================================== passes the data to the user input ====================
+// function will check to see if ther is any spaces and if ther is replace the space with a - https://www.developintelligence.com/blog/2016/02/replace-spaces-underscores-javascript/
 
 function fillUserInput(artistClickdOnName) {
-    user_input.value = artistClickdOnName;
+    let artistClickdOnName9;
+    var i = 0, strLength = artistClickdOnName.length;
+    for (i; i < strLength; i++) {
+        artistClickdOnName9 = artistClickdOnName.replace(" ", "-");
+        user_input.value = artistClickdOnName9;
+    }
 };
 
 //===================================== Data to be displayed in the html ====================
+
 function displaydatainmypage(music_search) {
 
     let albums = [];
@@ -66,7 +72,7 @@ function displaydatainmypage(music_search) {
     //console.log("Array 'albums:'");
     //console.log(albums);
 
-
+    // Injects the album art and names into the html
     var album_list = document.getElementById("album_list");
     for (i = 0; i < albums.length; i++) {
         this_album_string = `<div class="col sm-4"><div class="card"><img src="${albums[i].cover_big}" class="card-img-top" alt="Album cover" onclick="album_id(${albums[i].id})" ${albums[i].id}"><div class="card-body"><p class="card-text">${albums[i].title}</p></div></div>`;
@@ -77,13 +83,14 @@ function displaydatainmypage(music_search) {
 
 //============= this function clears the input box and the main html page ==================
 // when the text input box is clicked it clears the previouse data
+
 function clear_html_input() {
     document.getElementById("user_input").value = "";
     album_list.innerHTML = "<div></div>";
     pick_name.innerHTML = "";
 }
 
-function clearModal(){
+function clearModal() {
     track_list.innerHTML = " ";
 }
 

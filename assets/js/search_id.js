@@ -28,7 +28,7 @@ console.log(album_id_search)
             tracks_preview.push(track_preview);
         }
     }
-
+        // injects the album modal with data
     for (var i = 0; i < albums_tracks.length;  i++) {
         album_track_disp =`<div class="col sm-12"><p> ${albums_tracks[i]}</p></div><audio controls source id="preview_music" src="${tracks_preview[i]}" class="preview_audio" type="audio/mpeg"></audio>`;   
         track_list.innerHTML += album_track_disp; 
