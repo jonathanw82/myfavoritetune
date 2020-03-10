@@ -26,7 +26,7 @@ function search() {
         }
 
         for (i = 0; i < artistList.length; i++) {
-            pickArtistSearch = `</p><p onclick="fillUserInput('${artistList[i]}');artist_search()">${artistList[i]}</p>`;
+            pickArtistSearch = `</p><p onclick="fillUserInput('${artistList[i]}');artist_search();clearArtistSearchList()">${artistList[i]}</p>`;
             pick_name.innerHTML += pickArtistSearch;
         }
     };
@@ -40,16 +40,15 @@ function search() {
 // function will check to see if ther is any spaces and if ther is replace the space with a - https://www.developintelligence.com/blog/2016/02/replace-spaces-underscores-javascript/
 
 function fillUserInput(artistClickdOnName) {
-    let artistClickdOnName9;
-    var i = 0, strLength = artistClickdOnName.length;
-    for (i; i < strLength; i++) {
-        artistClickdOnName9 = artistClickdOnName.replace(" ", "-");
-        user_input.value = artistClickdOnName9;
+    let artistClickdOnNameNospace;
+    strLength = artistClickdOnName.length;
+    for (let i = 0; i < strLength; i++) {
+        artistClickdOnNameNospace = artistClickdOnName.replace(" ", "-");
+        user_input.value = artistClickdOnNameNospace;
     }
 };
 
 //===================================== Data to be displayed in the html ====================
-
 function displaydatainmypage(music_search) {
 
     let albums = [];
@@ -83,14 +82,15 @@ function displaydatainmypage(music_search) {
 
 //============= this function clears the input box and the main html page ==================
 // when the text input box is clicked it clears the previouse data
-
 function clear_html_input() {
     document.getElementById("user_input").value = "";
     album_list.innerHTML = "<div></div>";
-    pick_name.innerHTML = "";
 }
 
 function clearModal() {
     track_list.innerHTML = " ";
 }
 
+function clearArtistSearchList(){
+     pick_name.innerHTML = "";
+}

@@ -5,6 +5,8 @@ follow stepa as abouve to open github etc, log in to git hub follow the instucti
 instead of cloning the repository simply click the fork button top right hand side of the page this will copy the repository 
 to uor own gitHub account from there you can follow the deployment detals as as stated avouve.
 
+Spinning artist image code https://stackoverflow.com/questions/16771225/css3-rotate-animation
+
 
 nice to have 
 type ahead.
@@ -27,4 +29,7 @@ Photo by Ronê Ferreira from Pexels
 initial filler image,
 unknonwn lens 
 music-light-plant-white-photography-play-858499-pxhere.com.jpg
+
+vinyl recored
+Brett Jordan from Pexels
 
