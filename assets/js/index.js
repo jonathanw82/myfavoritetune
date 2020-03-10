@@ -11,22 +11,22 @@ function search() {
             displaydatainmypage(music_search);
         }
         else {
-            console.log("this stuff is not working");
+            //console.log("this stuff is not working");
         }
 
-        var artistList =[];
+        var artistList = [];
 
-        for (i = 0; i < music_search.data.length; i++){
+        for (i = 0; i < music_search.data.length; i++) {
             var artistSearchNames = music_search.data[i].artist.name;
-            if(artistSearchNames.toLowerCase().includes(user_input.toLowerCase())){
-                if(artistList.includes(artistSearchNames) == false){
+            if (artistSearchNames.toLowerCase().includes(user_input.toLowerCase())) {
+                if (artistList.includes(artistSearchNames) == false) {
                     artistList.push(artistSearchNames);
                 }
             }
         }
 
-        for (i =0; i <artistList.length; i++){
-            pickArtistSearch = `<p onclick="fillUserInput(${artistList[i]})">${artistList[i]}</p>`;
+        for (i = 0; i < artistList.length; i++) {
+            pickArtistSearch = `</p><p onclick="fillUserInput('${artistList[i]}');artist_search()">${artistList[i]}</p>`;
             pick_name.innerHTML += pickArtistSearch;
         }
 
@@ -37,10 +37,11 @@ function search() {
     api_request.send();
 
 }
+//===================================== passes the data to the user input ====================
 
-function fillUserInput(artistClickdOnName){
-     user_input.innerHTML = artistClickdOnName;
-}
+function fillUserInput(artistClickdOnName) {
+    user_input.value = artistClickdOnName;
+};
 
 //===================================== Data to be displayed in the html ====================
 function displaydatainmypage(music_search) {
@@ -59,11 +60,12 @@ function displaydatainmypage(music_search) {
             albums.push(album);
         }
     }
-    console.log(music_search);
+    //console.log(music_search);
     //console.log("Array 'albums_names:'");
     //console.log(albums_name);
     //console.log("Array 'albums:'");
-    console.log(albums);
+    //console.log(albums);
+
 
     var album_list = document.getElementById("album_list");
     for (i = 0; i < albums.length; i++) {
@@ -72,12 +74,16 @@ function displaydatainmypage(music_search) {
     }
 
 }
-//============= this function clears the input box and the main html page ==================
 
+//============= this function clears the input box and the main html page ==================
+// when the text input box is clicked it clears the previouse data
 function clear_html_input() {
     document.getElementById("user_input").value = "";
     album_list.innerHTML = "<div></div>";
     pick_name.innerHTML = "";
 }
 
+function clearModal(){
+    track_list.innerHTML = " ";
+}
 

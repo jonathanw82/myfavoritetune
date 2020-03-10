@@ -9,7 +9,7 @@ function displaydatainmyartistpage(music_search_artist) {
     document.getElementById("artist_name_artistsearch").innerHTML = artist_name_artistsearch;
     document.getElementById("number_of_albums_artistsearch").innerHTML = number_of_albums;
     document.getElementById("picture_artistsearch").src = picture_artistsearch;
-    console.log(music_search_artist + "did it work")
+    console.log(artist_name_artistsearch)
 }
 
 function artist_search() {
@@ -23,7 +23,7 @@ function artist_search() {
             displaydatainmyartistpage(music_search_artist);
         }
         else {
-            console.log("this stuff is not working");
+           // console.log("this stuff is not working");
         }
     };
     api_request.open("GET", "https://deezerdevs-deezer.p.rapidapi.com/artist/" + user_input);

@@ -12,7 +12,6 @@
 		integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<link rel="stylesheet" href="assets/css/style.css" type="text/css">
-
 	<title>Music</title>
 </head>
 
@@ -28,13 +27,9 @@
 				<div class="row">
 					<div class="col-sm-6 user-input-box bs-example">
 						<p>Type your search here</p>
-                        <div class="dropdown-menu">
-                        <input type="text"></input>
-                        <a class="dropdown-item" id="inputBox" >Action</a>
-                        </div>
 						<input type="text" id="user_input" onclick="clear_html_input()" value="Type Artist name"></input>
-						<button id="trigger_function"  onclick="artist_search();search()">Go!</button>
-                        <p>Pick your artist: <span id="pick_name"></span></p>
+						<button id="trigger_function"  onclick="search()">Go!</button>
+                        <p><span id="pick_name"></span></p>
 						<p>Artist Name: <span id="artist_name_artistsearch" onclick=""></span></p>
 						<p>Number of Albums: <span id="number_of_albums_artistsearch"></span></p>
 					</div>
@@ -55,7 +50,7 @@
 			<div class="modal-dialog" role="document">
 				<div class="modal-content">
 					<div class="modal-header">
-						<h5 class="modal-title" id="exampleModalLongTitle">Album Tracklist</h5>
+						<h5 class="modal-title" id="modal_title">Album Tracklist</h5>
 						<h5>Total Tracks: <span id="track_total"></span></h5>
 					</div>
                     <div class="model_album_name"><h5 id="album_title_modal"></h5></div>

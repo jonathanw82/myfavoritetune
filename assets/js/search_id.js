@@ -39,7 +39,7 @@ console.log(album_id_search)
 }
 
 function album_id(album_id_id) {
-    console.log(album_id_id);
+    //console.log(album_id_id);
    
     var api_request = new XMLHttpRequest();
 
@@ -50,7 +50,7 @@ function album_id(album_id_id) {
             displayAlbumdatainmypage(album_id_search);
         }
         else {
-            console.log("this stuff is not working");
+         //   console.log("this stuff is not working");
         }
     };
     api_request.open("GET", "https://deezerdevs-deezer.p.rapidapi.com/album/" + album_id_id);
