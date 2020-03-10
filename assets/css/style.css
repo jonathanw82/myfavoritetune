@@ -9,12 +9,14 @@ body{
 }
 
 .hero-image{
-    background-image: url("../images/concert-inside-concert-hall-2728557.jpg");
+    background-image: url("../images/music-light-plant-white-photography-play-858499-pxhere.com.jpg");
     background-size: cover;
     background-attachment: fixed;
     background-repeat:no-repeat;
     background-position: center;   
     z-index: -1;
+    min-width: 100vw;
+    min-height: 100vw;
 }
 
 .heading-text{
@@ -49,12 +51,11 @@ body{
 #preview_music{
     width: 50%;
     height: 20px
-
 }
 
 #picture_artistsearch{
     border-radius: 50%;
-    box-shadow: 0 0 40px 10px #fff;      
+    box-shadow: 0 0 40px 10px #fff;    
 }
 
 .artist_image{

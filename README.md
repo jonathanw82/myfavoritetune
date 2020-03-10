@@ -9,18 +9,22 @@ to uor own gitHub account from there you can follow the deployment detals as as 
 nice to have 
 type ahead.
 I found they type a head function was not the best away to archede what i wanted my app to maybe in the future i would be a ghreat addion.
-
-
 Image acrousel 
 I wanted to incorporate an image carousel, as at this stage in my coding career i have not learnt enough to create one myself i felt the 
-caroucel created by, Basic 3D Carousel In Pure JavaScript author loveneet4 https://github.com/internwt/3d-slider was a great adition to my project.
+caroucel created by, Basic 3D Carousel In Pure JavaScript author loveneet4 https://github.com/internwt/3d-slider would be a great adition to my future projects.
+
 
 typeahaed 0.11.1
 this file is an example taken from https://github.com/twitter/typeahead.js
 
 favicon.ioc
 Photo by Anton Hooijdonk from Pexels
+
 background image
 concert-inside-concert-hall-2728557.jpg
 Photo by Ronê Ferreira from Pexels
+
+initial filler image,
+unknonwn lens 
+music-light-plant-white-photography-play-858499-pxhere.com.jpg
 

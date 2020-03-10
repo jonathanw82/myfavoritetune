@@ -32,21 +32,16 @@
 						<button id="trigger_function"  onclick="artist_search();search()">Go!</button>
 						<p>Artist Name: <span id="artist_name_artistsearch" onclick=""></span></p>
 						<p>Number of Albums: <span id="number_of_albums_artistsearch"></span></p>
-
 					</div>
 					<div class="col-sm-6 artist_image">
 						<img  id="picture_artistsearch" src="picture_artistsearch" alt="artist picture" height="200" width="200">
 						</div>
 					</div>
-
-		
-                    <div class="container">
-							<div id="album_list" data-toggle="modal" data-target="#tracklistModal"></div>						
-			        </div>
+					<div class="container">
+						<div id="album_list" data-toggle="modal" data-target="#tracklistModal"></div>
+					</div>
 				</div>
 			</div>
-
-
 		</div>
 
 		<!-- Modal -->
@@ -56,11 +51,11 @@
 				<div class="modal-content">
 					<div class="modal-header">
 						<h5 class="modal-title" id="exampleModalLongTitle">Album Tracklist</h5>
-                        <h4 class="track_total">Total Tracks</h4>
+						<h5>Total Tracks: <span id="track_total"></span></h5>
 					</div>
 					<div class="modal-body">
 						<div id="track_list"></div>
-                        <div id="preview_music"></div>
+						<div id="preview_music"></div>
 					</div>
 					<div class="modal-footer">
 						<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -68,15 +63,10 @@
 				</div>
 			</div>
 		</div>
-
-
-
 	</section>
+
 	<script src="assets/js/index.js"></script>
-
 	<script src="assets/js/search_id.js"></script>
-	<script src="assets/js/alldata.js"></script>
-
 	<script src="assets/js/artistsearch.js"></script>
 
 	<script src="assets/js/search_album.js"></script>
@@ -87,12 +77,3 @@
 </body>
 
 </html>
-					<!--
-					<div class="col-sm-6 user-output">
-						
-						<p>preview: </p>
-						<audio controls volume=0.1 source id="preview" src="preview" class="preview_audio"
-							type="audio/mpeg">
-						</audio>
-					</div>
--->
