@@ -13,6 +13,23 @@ function search() {
         else {
             console.log("this stuff is not working");
         }
+
+        var artistList =[];
+
+        for (i = 0; i < music_search.data.length; i++){
+            var artistSearchNames = music_search.data[i].artist.name;
+            if(artistSearchNames.toLowerCase().includes(user_input.toLowerCase())){
+                if(artistList.includes(artistSearchNames) == false){
+                    artistList.push(artistSearchNames);
+                }
+            }
+        }
+
+        for (i =0; i <artistList.length; i++){
+            pickArtistSearch = `<p onclick="fillUserInput(${artistList[i]})">${artistList[i]}</p>`;
+            pick_name.innerHTML += pickArtistSearch;
+        }
+
     };
     api_request.open("GET", "https://deezerdevs-deezer.p.rapidapi.com/search?q=" + user_input);
     api_request.setRequestHeader("x-rapidapi-host", "deezerdevs-deezer.p.rapidapi.com");
@@ -20,6 +37,11 @@ function search() {
     api_request.send();
 
 }
+
+function fillUserInput(artistClickdOnName){
+     user_input.innerHTML = artistClickdOnName;
+}
+
 //===================================== Data to be displayed in the html ====================
 function displaydatainmypage(music_search) {
 
@@ -37,11 +59,11 @@ function displaydatainmypage(music_search) {
             albums.push(album);
         }
     }
-     console.log(music_search);
+    console.log(music_search);
     //console.log("Array 'albums_names:'");
     //console.log(albums_name);
     //console.log("Array 'albums:'");
-     console.log(albums);
+    console.log(albums);
 
     var album_list = document.getElementById("album_list");
     for (i = 0; i < albums.length; i++) {
@@ -55,28 +77,7 @@ function displaydatainmypage(music_search) {
 function clear_html_input() {
     document.getElementById("user_input").value = "";
     album_list.innerHTML = "<div></div>";
+    pick_name.innerHTML = "";
 }
 
 
-
-
-
-
-/*
-           if (album_list == innerHTML){
-               empty("album_list");
-           }
-           else{
-
-           };
-           */
-/*
- var track_list = document.getElementById("track_list");
- for (i = 0; i < albums.length; i++) {
-
-     album_track_listing = `<div><p>${albums.tracklist.data[i].title}<br><audio controls source id="preview" src="${albums.tracklist.data[i].preview}" class="preview_audio" type="audio/mpeg"></p></div>`;
-
-     track_list.innerHTML += album_track_listing;
-     console.log(album_track_listing);
- }
- */

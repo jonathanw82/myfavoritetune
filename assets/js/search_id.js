@@ -1,5 +1,12 @@
+/*
+function clearModal(){
+    track_list.innerHTML = <div></div>;
+    document.getElementById("track_total").innerHTML = <div></div>;
+    document.getElementById("album_title_modal").innerHTML = <div></div>;
 
-function displayalbumdatainmypage(album_id_search) {
+}
+*/
+function displayAlbumdatainmypage(album_id_search) {
 
 console.log(album_id_search)
     let albums_tracks = [];
@@ -23,8 +30,8 @@ console.log(album_id_search)
     }
 
     for (var i = 0; i < albums_tracks.length;  i++) {
-         album_track_disp =`<div class="col sm-12"><p> ${albums_tracks[i]}</p></div><audio controls source id="preview_music" src="${tracks_preview[i]}" class="preview_audio" type="audio/mpeg"></audio>`;   
-            track_list.innerHTML += album_track_disp; 
+        album_track_disp =`<div class="col sm-12"><p> ${albums_tracks[i]}</p></div><audio controls source id="preview_music" src="${tracks_preview[i]}" class="preview_audio" type="audio/mpeg"></audio>`;   
+        track_list.innerHTML += album_track_disp; 
     }
     
     document.getElementById("track_total").innerHTML = total_tracks;
@@ -40,7 +47,7 @@ function album_id(album_id_id) {
         if (this.readyState == 4 && this.status == 200) {
             var the_response = api_request.responseText;
             var album_id_search = JSON.parse(the_response);
-            displayalbumdatainmypage(album_id_search);
+            displayAlbumdatainmypage(album_id_search);
         }
         else {
             console.log("this stuff is not working");
@@ -51,17 +58,3 @@ function album_id(album_id_id) {
     api_request.setRequestHeader("x-rapidapi-key", "ef9686a9b9msh4dbce73327763a8p14d988jsn38434b35145a");
     api_request.send();
 }
-
-//   console.log(album_track_disp);
-
-  
-    //document.getElementById("track_list").innerHTML = album_track_disp + "<br>";
-   // document.getElementById("preview_track").innerHTML = track_preview + "<br>";
-   // document.getElementById("track_total").innerHTML = total_tracks;
-    // console.log(tracks_preview);
-/*
-    for (var j =0; j < track_preview.length; j++){
-        album_preview_list =
-        preview_music.innerHTML += album_preview_list; 
-    }
-*/

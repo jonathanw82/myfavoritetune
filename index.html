@@ -28,8 +28,13 @@
 				<div class="row">
 					<div class="col-sm-6 user-input-box bs-example">
 						<p>Type your search here</p>
+                        <div class="dropdown-menu">
+                        <input type="text"></input>
+                        <a class="dropdown-item" id="inputBox" >Action</a>
+                        </div>
 						<input type="text" id="user_input" onclick="clear_html_input()" value="Type Artist name"></input>
 						<button id="trigger_function"  onclick="artist_search();search()">Go!</button>
+                        <p>Pick your artist: <span id="pick_name"></span></p>
 						<p>Artist Name: <span id="artist_name_artistsearch" onclick=""></span></p>
 						<p>Number of Albums: <span id="number_of_albums_artistsearch"></span></p>
 					</div>
@@ -59,7 +64,7 @@
 						<div id="preview_music"></div>
 					</div>
 					<div class="modal-footer">
-						<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+						<button type="button" class="btn btn-secondary" onclick="clearModal()" data-dismiss="modal">Close</button>
 					</div>
 				</div>
 			</div>
