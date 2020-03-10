@@ -1,8 +1,6 @@
 
 function displayalbumdatainmypage(album_id_search) {
 
-    // console.log(album_id_search);
-
     let albums_tracks = [];
     let tracks_preview = [];
 
@@ -22,15 +20,11 @@ function displayalbumdatainmypage(album_id_search) {
     }
 
     for (var i = 0; i < albums_tracks.length;  i++) {
-         album_track_disp =`<div class="col sm-12"><p> ${albums_tracks[i]}</p></div><audio controls source id="preview_music" src="('${track_preview[i]}')" class="preview_audio" type="audio/mpeg"></audio>`;   
+         album_track_disp =`<div class="col sm-12"><p> ${albums_tracks[i]}</p></div><audio controls source id="preview_music" src="${tracks_preview[i]}" class="preview_audio" type="audio/mpeg"></audio>`;   
             track_list.innerHTML += album_track_disp; 
     }
-/*
-    for (var j =0; j < track_preview.length; j++){
-        album_preview_list =
-        preview_music.innerHTML += album_preview_list; 
-    }
-*/
+
+    document.getElementById("track_total").innerHTML = total_tracks;
 }
 
 function album_id() {
@@ -60,3 +54,9 @@ function album_id() {
    // document.getElementById("preview_track").innerHTML = track_preview + "<br>";
    // document.getElementById("track_total").innerHTML = total_tracks;
     // console.log(tracks_preview);
+/*
+    for (var j =0; j < track_preview.length; j++){
+        album_preview_list =
+        preview_music.innerHTML += album_preview_list; 
+    }
+*/

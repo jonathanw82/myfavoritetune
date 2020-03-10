@@ -1,17 +1,15 @@
 
-// how to clear the html not add to it 
-// how to create an onclick event that takes data with it.
-
-function clearHTML() {
-    $(album_list.innerHTML).empty();
-};
+function clear_html_input(){
+  document.getElementById("user_input").value="";
+  album_list.innerHTML = "<div></div>";
+}
 
 function displaydatainmypage(music_search) {
 
     let albums = [];
     let albums_name = [];
 
-    for (var i = 0; i < music_search.data.length; i++) {
+    //for (var i = 0; i < music_search.data.length; i++) {
 
         for (i = 0; i < music_search.data.length; i++) {
 
@@ -24,7 +22,7 @@ function displaydatainmypage(music_search) {
                 albums.push(album);
             }
         }
-    }
+  //  }
     //console.log("Array 'albums_names:'");
     //console.log(albums_name);
     //console.log("Array 'albums:'");
@@ -32,29 +30,10 @@ function displaydatainmypage(music_search) {
 
     var album_list = document.getElementById("album_list");
     for (i = 0; i < albums.length; i++) {
-        //this_album_string = `<div class="col-sm"><img src="${albums[i].cover_big}" class="card-img-top" alt="Album art" onclick="album_id()" ${albums[i].id}><div class="card-body"><p class="card-text">${albums[i].title}</p></div>`;  
         this_album_string = `<div class="col sm-4"><div class="card"><img src="${albums[i].cover_big}" class="card-img-top" alt="Album cover" onclick="album_id()" ${albums[i].id}"><div class="card-body"><p class="card-text">${albums[i].title}</p></div></div>`;
-
         album_list.innerHTML += this_album_string;
     }
-    /*
-           if (album_list == innerHTML){
-               empty("album_list");
-           }
-           else{
-                
-           };
-           */
-    /*
-     var track_list = document.getElementById("track_list");
-     for (i = 0; i < albums.length; i++) {
- 
-         album_track_listing = `<div><p>${albums.tracklist.data[i].title}<br><audio controls source id="preview" src="${albums.tracklist.data[i].preview}" class="preview_audio" type="audio/mpeg"></p></div>`;
- 
-         track_list.innerHTML += album_track_listing;
-         console.log(album_track_listing);
-     }
-     */
+    
 }
 
 function search() {
@@ -79,3 +58,21 @@ function search() {
 }
 
 
+/*
+           if (album_list == innerHTML){
+               empty("album_list");
+           }
+           else{
+                
+           };
+           */
+    /*
+     var track_list = document.getElementById("track_list");
+     for (i = 0; i < albums.length; i++) {
+ 
+         album_track_listing = `<div><p>${albums.tracklist.data[i].title}<br><audio controls source id="preview" src="${albums.tracklist.data[i].preview}" class="preview_audio" type="audio/mpeg"></p></div>`;
+ 
+         track_list.innerHTML += album_track_listing;
+         console.log(album_track_listing);
+     }
+     */

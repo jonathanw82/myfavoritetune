@@ -46,8 +46,10 @@ body{
     width: 80%;
 }
 
-.preview_audio{
+#preview_music{
     width: 50%;
+    height: 20px
+
 }
 
 #picture_artistsearch{
@@ -61,7 +63,7 @@ body{
 
 .modal-header, .modal-body, .modal-footer, .modal-content{
 background-color: orange;
-color: red;
+
 }
 
 .card{
