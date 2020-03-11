@@ -29,8 +29,8 @@
 					<div class="col-sm-6 user-input-box bs-example">
 						<p>Type your search here</p>
 						<input type="text" id="user_input" onclick="clear_html_input()" value="Type Artist name">
-						<button id="trigger_function"  onclick="InitalArtistsearch()">Go!</button>
-						<p> select your artist </p>
+						<button id="trigger_function"  onclick="InitalArtistsearch();insertStlectArtistHeading()">Go!</button>
+						<p><span id="select_your_artist_heading"></span></p>
 						<p><span id="pick_name"></span></p>
 						<p>Artist Name: <span id="artist_name_artistsearch" onclick=""></span></p>
 						<p>Number of Albums: <span id="number_of_albums_artistsearch"></span></p>

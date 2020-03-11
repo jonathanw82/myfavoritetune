@@ -22,7 +22,7 @@ function totalPopulationsearch() {
             }
 
             for (let i = 0; i < artistList.length; i++) {
-                pickArtistSearch = `</p><p onclick="fillUserInput('${artistList[i]}');artist_search();clearArtistSearchList();">${artistList[i]}</p>`;
+                pickArtistSearch = `</p><p onclick="fillUserInput('${artistList[i]}');artist_search();clearArtistSearchList()">${artistList[i]}</p>`;
                 pick_name.innerHTML += pickArtistSearch;
             }
         }

@@ -47,6 +47,11 @@ function insertSelectHeading() {
     click_on_album.innerHTML = click_on_album_heading;
 }
 
+function insertStlectArtistHeading() {
+    let select_your_artist_text = `<span>Select Your Artist</span>`;
+    select_your_artist_heading.innerHTML = select_your_artist_text;
+}
+
 //============= this function clears the input box and the main html page ==================
 
 // when the text input box is clicked it clears the previouse data
@@ -56,6 +61,7 @@ function clear_html_input() {
     document.getElementById("picture_artistsearch").src = "../assets/images/black-and-gray-vinyl-record-2746823.jpg";
     document.getElementById("picture_artistsearch").className = "artist_inital_image_spin";
     click_on_album.innerHTML = "<div></div>";
+    
 }
 
 // clears all modal data on close
@@ -66,4 +72,5 @@ function clearModal() {
 // clears the data populated in the pickname html
 function clearArtistSearchList() {
     pick_name.innerHTML = "";
+    select_your_artist_heading.innerHTML = " ";
 }
