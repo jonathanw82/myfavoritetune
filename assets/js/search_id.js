@@ -1,11 +1,26 @@
 
+function album_id(album_id_number) {
+   
+    var api_request = new XMLHttpRequest();
+
+    api_request.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+            var the_response = api_request.responseText;
+            var album_id_search = JSON.parse(the_response);
+            displayAlbumdatainmypage(album_id_search);
+        }
+    };
+    api_request.open("GET", "https://deezerdevs-deezer.p.rapidapi.com/album/" + album_id_number);
+    api_request.setRequestHeader("x-rapidapi-host", "deezerdevs-deezer.p.rapidapi.com");
+    api_request.setRequestHeader("x-rapidapi-key", "ef9686a9b9msh4dbce73327763a8p14d988jsn38434b35145a");
+    api_request.send();
+}
+
 function displayAlbumdatainmypage(album_id_search) {
 
-console.log(album_id_search)
     let albums_tracks = [];
     let tracks_preview = [];
    
-
     var total_tracks = album_id_search.nb_tracks;
     var album_title_modal = album_id_search.title;
     let album_art_modal = album_id_search.cover_medium;
@@ -33,23 +48,4 @@ console.log(album_id_search)
     document.getElementById("album_art_modal").src = album_art_modal;
 }
 
-function album_id(album_id_id) {
-    //console.log(album_id_id);
-   
-    var api_request = new XMLHttpRequest();
 
-    api_request.onreadystatechange = function () {
-        if (this.readyState == 4 && this.status == 200) {
-            var the_response = api_request.responseText;
-            var album_id_search = JSON.parse(the_response);
-            displayAlbumdatainmypage(album_id_search);
-        }
-        else {
-         //   console.log("this stuff is not working");
-        }
-    };
-    api_request.open("GET", "https://deezerdevs-deezer.p.rapidapi.com/album/" + album_id_id);
-    api_request.setRequestHeader("x-rapidapi-host", "deezerdevs-deezer.p.rapidapi.com");
-    api_request.setRequestHeader("x-rapidapi-key", "ef9686a9b9msh4dbce73327763a8p14d988jsn38434b35145a");
-    api_request.send();
-}

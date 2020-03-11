@@ -1,6 +1,7 @@
 
 //===================================== secondary artist search that populates the entire page ===============================
-function search1() {
+
+function totalPopulationsearch() {
     var user_input = document.getElementById("user_input").value;
     var api_request = new XMLHttpRequest();
 
@@ -9,14 +10,9 @@ function search1() {
             var the_response = api_request.responseText;
             var music_search = JSON.parse(the_response);
             displaydatainmypage1(music_search);
-        }
-        else {
-            //console.log("this stuff is not working");
-        }
+            var artistList = [];
 
-        var artistList = [];
-
-        for (i = 0; i < music_search.data.length; i++) {
+        for (let i = 0; i < music_search.data.length; i++) {
             var artistSearchNames = music_search.data[i].artist.name;
             if (artistSearchNames.toLowerCase().includes(user_input.toLowerCase())) {
                 if (artistList.includes(artistSearchNames) == false) {
@@ -25,10 +21,16 @@ function search1() {
             }
         }
 
-        for (i = 0; i < artistList.length; i++) {
+        for (let i = 0; i < artistList.length; i++) {
             pickArtistSearch = `</p><p onclick="fillUserInput('${artistList[i]}');artist_search();clearArtistSearchList()">${artistList[i]}</p>`;
             pick_name.innerHTML += pickArtistSearch;
         }
+        }
+        else {
+            //console.log("this stuff is not working");
+        }
+
+        
     };
     api_request.open("GET", "https://deezerdevs-deezer.p.rapidapi.com/search?q=" + user_input);
     api_request.setRequestHeader("x-rapidapi-host", "deezerdevs-deezer.p.rapidapi.com");
@@ -54,7 +56,7 @@ function displaydatainmypage1(music_search) {
     let albums = [];
     let albums_name = [];
 
-    for (i = 0; i < music_search.data.length; i++) {
+    for (let i = 0; i < music_search.data.length; i++) {
 
         var album = music_search.data[i].album;
         var album_name = music_search.data[i].album.title;
@@ -65,15 +67,10 @@ function displaydatainmypage1(music_search) {
             albums.push(album);
         }
     }
-    //console.log(music_search);
-    //console.log("Array 'albums_names:'");
-    //console.log(albums_name);
-    //console.log("Array 'albums:'");
-    //console.log(albums);
-
+    
     // Injects the album art and names into the html
     var album_list = document.getElementById("album_list");
-    for (i = 0; i < albums.length; i++) {
+    for (let i = 0; i < albums.length; i++) {
         this_album_string = `<div class="col sm-4"><div class="card"><img src="${albums[i].cover_big}" class="card-img-top" alt="Album cover" onclick="album_id(${albums[i].id})" ${albums[i].id}"><div class="card-body"><p class="card-text">${albums[i].title}</p></div></div>`;
         album_list.innerHTML += this_album_string;
     }

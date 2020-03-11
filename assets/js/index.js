@@ -1,32 +1,29 @@
 
 //===================================== Initial artist search ===============================
-function search() {
-    var user_input = document.getElementById("user_input").value;
-    var api_request = new XMLHttpRequest();
+function InitalArtistsearch() {
+    let user_input = document.getElementById("user_input").value;
+    user_input = user_input.replace(" ", "-");
+    let api_request = new XMLHttpRequest();
 
     api_request.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
             var the_response = api_request.responseText;
             var music_search = JSON.parse(the_response);
-        }
-        else {
-            //console.log("this stuff is not working");
-        }
 
-        var artistList = [];
+            var artistList = [];
 
-        for (i = 0; i < music_search.data.length; i++) {
-            var artistSearchNames = music_search.data[i].artist.name;
-            if (artistSearchNames.toLowerCase().includes(user_input.toLowerCase())) {
-                if (artistList.includes(artistSearchNames) == false) {
-                    artistList.push(artistSearchNames);
+            for (let i = 0; i < music_search.data.length; i++) {
+                var artistSearchNames = music_search.data[i].artist.name;
+                if (artistSearchNames.toLowerCase().includes(user_input.toLowerCase())) {
+                    if (artistList.includes(artistSearchNames) == false) {
+                        artistList.push(artistSearchNames);
+                    }
                 }
             }
-        }
-
-        for (i = 0; i < artistList.length; i++) {
-            pickArtistSearch = `</p><p onclick="fillUserInput('${artistList[i]}');artist_search();search1();clearArtistSearchList()">${artistList[i]}</p>`;
-            pick_name.innerHTML += pickArtistSearch;
+            for (let i = 0; i < artistList.length; i++) {
+                var pickArtistSearch = `<p onclick="fillUserInput('${artistList[i]}');artist_search();totalPopulationsearch();clearArtistSearchList()">${artistList[i]}</p>`;
+                pick_name.innerHTML += pickArtistSearch;
+            }
         }
     };
     api_request.open("GET", "https://deezerdevs-deezer.p.rapidapi.com/search?q=" + user_input);
@@ -40,14 +37,14 @@ function search() {
 
 function fillUserInput(artistClickdOnName) {
     let artistClickdOnNameNospace;
-    strLength = artistClickdOnName.length;
-    for (let i = 0; i < strLength; i++) {
+    for (let i = 0; i < artistClickdOnName.length; i++) {
         artistClickdOnNameNospace = artistClickdOnName.replace(" ", "-");
         user_input.value = artistClickdOnNameNospace;
     }
 };
 
 //============= this function clears the input box and the main html page ==================
+
 // when the text input box is clicked it clears the previouse data
 function clear_html_input() {
     document.getElementById("user_input").value = "";
@@ -56,10 +53,12 @@ function clear_html_input() {
     document.getElementById("picture_artistsearch").className = "artist_inital_image_spin";
 }
 
+// clears all modal data on close
 function clearModal() {
     track_list.innerHTML = " ";
 }
 
+// clears the data populated in the pickname html
 function clearArtistSearchList() {
     pick_name.innerHTML = "";
 }

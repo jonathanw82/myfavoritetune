@@ -1,21 +1,19 @@
 
-
 function displaydatainmyartistpage(music_search_artist) {
 
-    artist_name_artistsearch = music_search_artist.name;
-    picture_artistsearch = music_search_artist.picture_medium;
-    number_of_albums = music_search_artist.nb_album;
+    let artist_name_artistsearch = music_search_artist.name;
+    let picture_artistsearch = music_search_artist.picture_medium;
+    let number_of_albums = music_search_artist.nb_album;
 
     document.getElementById("artist_name_artistsearch").innerHTML = artist_name_artistsearch;
     document.getElementById("number_of_albums_artistsearch").innerHTML = number_of_albums;
     document.getElementById("picture_artistsearch").className = "artist_inital_image";
     document.getElementById("picture_artistsearch").src = picture_artistsearch;
-    console.log(artist_name_artistsearch)
 }
 
 function artist_search() {
-    var user_input = document.getElementById("user_input").value;
-    var api_request = new XMLHttpRequest();
+    let user_input = document.getElementById("user_input").value;
+    let api_request = new XMLHttpRequest();
 
     api_request.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {

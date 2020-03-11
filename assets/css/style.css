@@ -52,14 +52,7 @@ body{
     width: 50%;
     height: 20px
 }
-/*
-#picture_artistsearch{
-    border-radius: 50%;
-    box-shadow: 0 0 40px 10px #fff;    
-    height: 200px;
-    width: 200px; 
- }  
-*/
+
  .artist_inital_image{
     border-radius: 50%;
     box-shadow: 0 0 40px 10px #fff;    
@@ -96,7 +89,6 @@ body{
 
 .modal-header, .modal-body, .modal-footer, .modal-content{
 background-color: orange;
-
 }
 
 .card{
@@ -124,7 +116,6 @@ background-color: orange;
 #user_input{
     width: 90%;
 }
-
 }
 
 @media only screen and (max-width: 575px) {  
@@ -136,5 +127,4 @@ background-color: orange;
 .user-input-box{
    text-align: center;
 }
-
 }

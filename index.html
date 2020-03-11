@@ -17,7 +17,8 @@
 
 <body>
 
-	<!--================================================ contents =============================================================-->
+<!--===================================== contents =======================================-->
+
 	<section>
 		<div class="container-fluid hero-image">
 			<div class="container-md hero-text-box">
@@ -27,9 +28,9 @@
 				<div class="row">
 					<div class="col-sm-6 user-input-box bs-example">
 						<p>Type your search here</p>
-						<input type="text" id="user_input" onclick="clear_html_input()" value="Type Artist name"></input>
-						<button id="trigger_function"  onclick="search()">Go!</button>
-                        <p><span id="pick_name"></span></p>
+						<input type="text" id="user_input" onclick="clear_html_input()" value="Type Artist name">
+						<button id="trigger_function"  onclick="InitalArtistsearch()">Go!</button>
+						<p><span id="pick_name"></span></p>
 						<p>Artist Name: <span id="artist_name_artistsearch" onclick=""></span></p>
 						<p>Number of Albums: <span id="number_of_albums_artistsearch"></span></p>
 					</div>
@@ -42,36 +43,39 @@
 					</div>
 				</div>
 			</div>
-		</div>
 
-		<!-- Modal -->
-		<div class="modal fade" id="tracklistModal" tabindex="-1" role="dialog" aria-labelledby="tracklistModal"
-			aria-hidden="true">
-			<div class="modal-dialog" role="document">
-				<div class="modal-content">
-					<div class="modal-header">
-						<h5 class="modal-title" id="modal_title">Album Tracklist</h5>
-						<h5>Total Tracks: <span id="track_total"></span></h5>
-					</div>
-                    <div class="model_album_name"><h5 id="album_title_modal"></h5></div>
-					<div class="modal-body">
-                        <img  id="album_art_modal" src="album_art_modal" alt="album picture">
-						<div id="track_list"></div>
-						<div id="preview_music"></div>
-					</div>
-					<div class="modal-footer">
-						<button type="button" class="btn btn-secondary" onclick="clearModal()" data-dismiss="modal">Close</button>
+<!--===================================== Modal ===========================================-->
+
+			<div class="modal fade" id="tracklistModal" tabindex="-1" role="dialog" aria-labelledby="tracklistModal"
+				aria-hidden="true">
+				<div class="modal-dialog" role="document">
+					<div class="modal-content">
+						<div class="modal-header">
+							<h5 class="modal-title" id="modal_title">Album Tracklist</h5>
+							<h5>Total Tracks: <span id="track_total"></span></h5>
+						</div>
+						<div class="model_album_name">
+							<h5 id="album_title_modal"></h5>
+						</div>
+						<div class="modal-body">
+							<img  id="album_art_modal" src="album_art_modal" alt="album picture">
+							<div id="track_list"></div>
+							<div id="preview_music"></div>
+						</div>
+						<div class="modal-footer">
+							<button type="button" class="btn btn-secondary" onclick="clearModal()" data-dismiss="modal">Close</button>
+						</div>
 					</div>
 				</div>
 			</div>
-		</div>
 	</section>
+
+<!--======================================= script =========================================-->
 
 	<script src="assets/js/index.js"></script>
 	<script src="assets/js/search_id.js"></script>
 	<script src="assets/js/artistsearch.js"></script>
-	<script src="assets/js/search1.js"></script>
-	<script src="assets/js/search_album.js"></script>
+	<script src="assets/js/totalPopulationsearch.js"></script>
 	<script src="assets/js/initialpoulation.js"></script>
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
 		integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
