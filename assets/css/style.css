@@ -52,8 +52,32 @@ body{
     width: 50%;
     height: 20px
 }
-
+/*
 #picture_artistsearch{
+    border-radius: 50%;
+    box-shadow: 0 0 40px 10px #fff;    
+    height: 200px;
+    width: 200px; 
+ }  
+*/
+ .artist_inital_image{
+    border-radius: 50%;
+    box-shadow: 0 0 40px 10px #fff;    
+    height: 200px;
+    width: 200px; 
+ }  
+
+ .artist_inital_image_spin{
+    border-radius: 50%;
+    box-shadow: 0 0 40px 10px #fff;    
+    height: 200px;
+    width: 200px; 
+    -webkit-animation:spin 4s linear infinite;
+    -moz-animation:spin 4s linear infinite;
+    animation:spin 4s linear infinite;
+ }  
+
+#album_art_modal{ 
     border-radius: 50%;
     box-shadow: 0 0 40px 10px #fff;    
     height: 200px;
@@ -77,6 +101,10 @@ background-color: orange;
 
 .card{
    width: 18rem;
+}
+
+#pick_name p:hover{
+    cursor: pointer;
 }
 
 /*---------------------------------------- Model ----------------------------*/

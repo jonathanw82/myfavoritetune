@@ -8,7 +8,6 @@ function search() {
         if (this.readyState == 4 && this.status == 200) {
             var the_response = api_request.responseText;
             var music_search = JSON.parse(the_response);
-            displaydatainmypage(music_search);
         }
         else {
             //console.log("this stuff is not working");
@@ -48,49 +47,19 @@ function fillUserInput(artistClickdOnName) {
     }
 };
 
-//===================================== Data to be displayed in the html ====================
-function displaydatainmypage(music_search) {
-
-    let albums = [];
-    let albums_name = [];
-
-    for (i = 0; i < music_search.data.length; i++) {
-
-        var album = music_search.data[i].album;
-        var album_name = music_search.data[i].album.title;
-
-        if (!albums_name.includes(album_name)) {
-
-            albums_name.push(album_name);
-            albums.push(album);
-        }
-    }
-    //console.log(music_search);
-    //console.log("Array 'albums_names:'");
-    //console.log(albums_name);
-    //console.log("Array 'albums:'");
-    //console.log(albums);
-
-    // Injects the album art and names into the html
-    var album_list = document.getElementById("album_list");
-    for (i = 0; i < albums.length; i++) {
-        this_album_string = "";
-        album_list.innerHTML += this_album_string;
-    }
-
-}
-
 //============= this function clears the input box and the main html page ==================
 // when the text input box is clicked it clears the previouse data
 function clear_html_input() {
     document.getElementById("user_input").value = "";
     album_list.innerHTML = "<div></div>";
+    document.getElementById("picture_artistsearch").src = "../assets/images/black-and-gray-vinyl-record-2746823.jpg";
+    document.getElementById("picture_artistsearch").className = "artist_inital_image_spin";
 }
 
 function clearModal() {
     track_list.innerHTML = " ";
 }
 
-function clearArtistSearchList(){
-     pick_name.innerHTML = "";
+function clearArtistSearchList() {
+    pick_name.innerHTML = "";
 }

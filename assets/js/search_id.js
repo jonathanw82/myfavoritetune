@@ -1,11 +1,4 @@
-/*
-function clearModal(){
-    track_list.innerHTML = <div></div>;
-    document.getElementById("track_total").innerHTML = <div></div>;
-    document.getElementById("album_title_modal").innerHTML = <div></div>;
 
-}
-*/
 function displayAlbumdatainmypage(album_id_search) {
 
 console.log(album_id_search)
@@ -15,6 +8,7 @@ console.log(album_id_search)
 
     var total_tracks = album_id_search.nb_tracks;
     var album_title_modal = album_id_search.title;
+    let album_art_modal = album_id_search.cover_medium;
 
     for (var i = 0; i < album_id_search.tracks.data.length; i++) {
 
@@ -36,6 +30,7 @@ console.log(album_id_search)
     
     document.getElementById("track_total").innerHTML = total_tracks;
     document.getElementById("album_title_modal").innerHTML = album_title_modal;
+    document.getElementById("album_art_modal").src = album_art_modal;
 }
 
 function album_id(album_id_id) {

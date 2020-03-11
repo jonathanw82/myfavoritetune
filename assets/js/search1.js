@@ -1,5 +1,5 @@
 
-//===================================== Initial artist search ===============================
+//===================================== secondary artist search that populates the entire page ===============================
 function search1() {
     var user_input = document.getElementById("user_input").value;
     var api_request = new XMLHttpRequest();
