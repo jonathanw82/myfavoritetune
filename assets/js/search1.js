@@ -1,6 +1,6 @@
 
 //===================================== Initial artist search ===============================
-function search() {
+function search1() {
     var user_input = document.getElementById("user_input").value;
     var api_request = new XMLHttpRequest();
 
@@ -8,7 +8,7 @@ function search() {
         if (this.readyState == 4 && this.status == 200) {
             var the_response = api_request.responseText;
             var music_search = JSON.parse(the_response);
-            displaydatainmypage(music_search);
+            displaydatainmypage1(music_search);
         }
         else {
             //console.log("this stuff is not working");
@@ -26,7 +26,7 @@ function search() {
         }
 
         for (i = 0; i < artistList.length; i++) {
-            pickArtistSearch = `</p><p onclick="fillUserInput('${artistList[i]}');artist_search();search1();clearArtistSearchList()">${artistList[i]}</p>`;
+            pickArtistSearch = `</p><p onclick="fillUserInput('${artistList[i]}');artist_search();clearArtistSearchList()">${artistList[i]}</p>`;
             pick_name.innerHTML += pickArtistSearch;
         }
     };
@@ -49,7 +49,7 @@ function fillUserInput(artistClickdOnName) {
 };
 
 //===================================== Data to be displayed in the html ====================
-function displaydatainmypage(music_search) {
+function displaydatainmypage1(music_search) {
 
     let albums = [];
     let albums_name = [];
@@ -74,23 +74,9 @@ function displaydatainmypage(music_search) {
     // Injects the album art and names into the html
     var album_list = document.getElementById("album_list");
     for (i = 0; i < albums.length; i++) {
-        this_album_string = "";
+        this_album_string = `<div class="col sm-4"><div class="card"><img src="${albums[i].cover_big}" class="card-img-top" alt="Album cover" onclick="album_id(${albums[i].id})" ${albums[i].id}"><div class="card-body"><p class="card-text">${albums[i].title}</p></div></div>`;
         album_list.innerHTML += this_album_string;
     }
 
 }
 
-//============= this function clears the input box and the main html page ==================
-// when the text input box is clicked it clears the previouse data
-function clear_html_input() {
-    document.getElementById("user_input").value = "";
-    album_list.innerHTML = "<div></div>";
-}
-
-function clearModal() {
-    track_list.innerHTML = " ";
-}
-
-function clearArtistSearchList(){
-     pick_name.innerHTML = "";
-}
