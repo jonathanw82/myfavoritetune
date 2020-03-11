@@ -104,6 +104,11 @@ background-color: orange;
     cursor: pointer;
 }
 
+.album_select_heading{
+    color: white;
+    text-align: center;
+}
+
 /*---------------------------------------- Model ----------------------------*/
 
 .model_album_name{

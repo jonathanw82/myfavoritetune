@@ -43,7 +43,7 @@ function fillUserInput(artistClickdOnName) {
 };
 
 function insertSelectHeading() {
-    let click_on_album_heading = `<h4>Select Your Album BY Clicking On The Album Cover</h4>`;
+    let click_on_album_heading = `<h4 class="album_select_heading">Select Your Album By Clicking On The Album Cover</h4>`;
     click_on_album.innerHTML = click_on_album_heading;
 }
 
