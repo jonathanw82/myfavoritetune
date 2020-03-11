@@ -17,7 +17,7 @@
 
 <body>
 
-<!--===================================== contents =======================================-->
+	<!--===================================== contents =======================================-->
 
 	<section>
 		<div class="container-fluid hero-image">
@@ -30,21 +30,19 @@
 						<p>Type your search here</p>
 						<input type="text" id="user_input" onclick="clear_html_input()" value="Type Artist name">
 						<button id="trigger_function"  onclick="InitalArtistsearch()">Go!</button>
+						<p> select your artist </p>
 						<p><span id="pick_name"></span></p>
 						<p>Artist Name: <span id="artist_name_artistsearch" onclick=""></span></p>
 						<p>Number of Albums: <span id="number_of_albums_artistsearch"></span></p>
 					</div>
 					<div class="col-sm-6 artist_image">
-						<img  class="artist_inital_image" id="picture_artistsearch" src="picture_artistsearch" alt="artist picture">
+						<img  class="artist_inital_image" id="picture_artistsearch" alt="artist picture">
 						</div>
-					</div>
-					<div class="container">
-						<div id="album_list" data-toggle="modal" data-target="#tracklistModal"></div>
-					</div>
+                        <p><span id="click_on_album"></span></p>
+					<div class="row" id="album_list" data-toggle="modal" data-target="#tracklistModal"></div>
 				</div>
 			</div>
-
-<!--===================================== Modal ===========================================-->
+			<!--===================================== Modal ===========================================-->
 
 			<div class="modal fade" id="tracklistModal" tabindex="-1" role="dialog" aria-labelledby="tracklistModal"
 				aria-hidden="true">
@@ -58,7 +56,7 @@
 							<h5 id="album_title_modal"></h5>
 						</div>
 						<div class="modal-body">
-							<img  id="album_art_modal" src="album_art_modal" alt="album picture">
+							<img  id="album_art_modal" alt="album picture">
 							<div id="track_list"></div>
 							<div id="preview_music"></div>
 						</div>
@@ -68,9 +66,10 @@
 					</div>
 				</div>
 			</div>
+		</div>
 	</section>
 
-<!--======================================= script =========================================-->
+	<!--======================================= script =========================================-->
 
 	<script src="assets/js/index.js"></script>
 	<script src="assets/js/search_id.js"></script>

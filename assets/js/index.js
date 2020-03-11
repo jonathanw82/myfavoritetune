@@ -2,7 +2,6 @@
 //===================================== Initial artist search ===============================
 function InitalArtistsearch() {
     let user_input = document.getElementById("user_input").value;
-    user_input = user_input.replace(" ", "-");
     let api_request = new XMLHttpRequest();
 
     api_request.onreadystatechange = function () {
@@ -21,7 +20,7 @@ function InitalArtistsearch() {
                 }
             }
             for (let i = 0; i < artistList.length; i++) {
-                var pickArtistSearch = `<p onclick="fillUserInput('${artistList[i]}');artist_search();totalPopulationsearch();clearArtistSearchList()">${artistList[i]}</p>`;
+                var pickArtistSearch = `<p onclick="fillUserInput('${artistList[i]}');artist_search();totalPopulationsearch();clearArtistSearchList();insertSelectHeading()">${artistList[i]}</p>`;
                 pick_name.innerHTML += pickArtistSearch;
             }
         }
@@ -43,6 +42,11 @@ function fillUserInput(artistClickdOnName) {
     }
 };
 
+function insertSelectHeading() {
+    let click_on_album_heading = `<h4>Select Your Album BY Clicking On The Album Cover</h4>`;
+    click_on_album.innerHTML = click_on_album_heading;
+}
+
 //============= this function clears the input box and the main html page ==================
 
 // when the text input box is clicked it clears the previouse data
@@ -51,6 +55,7 @@ function clear_html_input() {
     album_list.innerHTML = "<div></div>";
     document.getElementById("picture_artistsearch").src = "../assets/images/black-and-gray-vinyl-record-2746823.jpg";
     document.getElementById("picture_artistsearch").className = "artist_inital_image_spin";
+    click_on_album.innerHTML = "<div></div>";
 }
 
 // clears all modal data on close

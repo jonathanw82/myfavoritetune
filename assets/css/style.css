@@ -92,7 +92,12 @@ background-color: orange;
 }
 
 .card{
-   width: 18rem;
+   width: 100%;
+   margin-top: 20px
+}
+
+.card-image{
+    justify-content: center;
 }
 
 #pick_name p:hover{

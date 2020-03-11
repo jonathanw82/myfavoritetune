@@ -12,25 +12,22 @@ function totalPopulationsearch() {
             displaydatainmypage1(music_search);
             var artistList = [];
 
-        for (let i = 0; i < music_search.data.length; i++) {
-            var artistSearchNames = music_search.data[i].artist.name;
-            if (artistSearchNames.toLowerCase().includes(user_input.toLowerCase())) {
-                if (artistList.includes(artistSearchNames) == false) {
-                    artistList.push(artistSearchNames);
+            for (let i = 0; i < music_search.data.length; i++) {
+                var artistSearchNames = music_search.data[i].artist.name;
+                if (artistSearchNames.toLowerCase().includes(user_input.toLowerCase())) {
+                    if (artistList.includes(artistSearchNames) == false) {
+                        artistList.push(artistSearchNames);
+                    }
                 }
+            }
+
+            for (let i = 0; i < artistList.length; i++) {
+                pickArtistSearch = `</p><p onclick="fillUserInput('${artistList[i]}');artist_search();clearArtistSearchList();">${artistList[i]}</p>`;
+                pick_name.innerHTML += pickArtistSearch;
             }
         }
 
-        for (let i = 0; i < artistList.length; i++) {
-            pickArtistSearch = `</p><p onclick="fillUserInput('${artistList[i]}');artist_search();clearArtistSearchList()">${artistList[i]}</p>`;
-            pick_name.innerHTML += pickArtistSearch;
-        }
-        }
-        else {
-            //console.log("this stuff is not working");
-        }
 
-        
     };
     api_request.open("GET", "https://deezerdevs-deezer.p.rapidapi.com/search?q=" + user_input);
     api_request.setRequestHeader("x-rapidapi-host", "deezerdevs-deezer.p.rapidapi.com");
@@ -67,13 +64,13 @@ function displaydatainmypage1(music_search) {
             albums.push(album);
         }
     }
-    
+
     // Injects the album art and names into the html
     var album_list = document.getElementById("album_list");
     for (let i = 0; i < albums.length; i++) {
-        this_album_string = `<div class="col sm-4"><div class="card"><img src="${albums[i].cover_big}" class="card-img-top" alt="Album cover" onclick="album_id(${albums[i].id})" ${albums[i].id}"><div class="card-body"><p class="card-text">${albums[i].title}</p></div></div>`;
+        this_album_string = `<div class="col-md-4 card_image"><div class="card"><img src="${albums[i].cover_big}" class="card-img-top" alt="Album cover" onclick="album_id(${albums[i].id})" ${albums[i].id}"></div>`;
         album_list.innerHTML += this_album_string;
     }
-
 }
 
+//  this_album_string = `<div class="col sm-4"><div class="card"><img src="${albums[i].cover_big}" class="card-img-top" alt="Album cover" onclick="album_id(${albums[i].id})" ${albums[i].id}"><div class="card-body"><p class="card-text">${albums[i].title}</p></div></div>`;
