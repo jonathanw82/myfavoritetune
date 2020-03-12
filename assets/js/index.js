@@ -23,7 +23,7 @@ function InitalArtistsearch() {
                     }
                 }
             }
-// The artist name are injected in to the html below the unserinput, when an artist name is clicked the name then populates the user input field and handleArtistClickEvent is activated.
+// The artist name are injected in to the html below the userinput, when an artist name is clicked the name then populates the user input field and handleArtistClickEvent is activated.
             for (let i = 0; i < artistList.length; i++) {
                 var pickArtistSearch = `<p onclick="handleArtistClickEvent('${artistList[i]}')">${artistList[i]}</p>`;
                 pick_name.innerHTML += pickArtistSearch;
@@ -35,17 +35,16 @@ function InitalArtistsearch() {
     api_request.setRequestHeader("x-rapidapi-key", "ef9686a9b9msh4dbce73327763a8p14d988jsn38434b35145a");
     api_request.send();
 }
-/* handleArtistClickEvent triggers filluser input that passes the clicked on artist to the inputbox, artist_search then sends the correctly hyphonated search to the api 
+/* artist_search then sends the correctly hyphonated search to the api 
    and data returned then populates the artist name and number of albums and the artist image. clearArtistSearchList then clears any other not clicked on 
-   data from the pick_name list, total population then 
+   data from the pick_name list, albumInfoSearch is then activated 
 */ 
 function handleArtistClickEvent(passArtistData) {
     fillUserInput(passArtistData);
     artist_search();
-    totalPopulationsearch();
+    albumInfoSearch();
     clearArtistSearchList();
-    insertSelectHeading();
-    
+    insertSelectHeading(); 
 }
 
 //===================================== passes the data to the user input ====================

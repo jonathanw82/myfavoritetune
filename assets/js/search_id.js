@@ -1,4 +1,4 @@
-// album id search take the album id collected from album search and collects the tracks and preview data.
+// album id search take the album id collected from album_id_search and collects the tracks and preview data.
 function album_id(album_id_number) {
    
     var api_request = new XMLHttpRequest();
@@ -15,7 +15,7 @@ function album_id(album_id_number) {
     api_request.setRequestHeader("x-rapidapi-key", "ef9686a9b9msh4dbce73327763a8p14d988jsn38434b35145a");
     api_request.send();
 }
-
+// displayAlbumdatainmypage uses a for loop to iterate through the tracks and preview array 
 function displayAlbumdatainmypage(album_id_search) {
 
     let albums_tracks = [];
@@ -30,6 +30,8 @@ function displayAlbumdatainmypage(album_id_search) {
         var album_track = album_id_search.tracks.data[i].title;         
         var track_preview = album_id_search.tracks.data[i].preview;
 
+// these if statments take the tracks and preview data and push them into the array and ignores duplicates.
+
         if (!albums_tracks.includes(album_track)) {
             albums_tracks.push(album_track);
         }
@@ -37,7 +39,7 @@ function displayAlbumdatainmypage(album_id_search) {
             tracks_preview.push(track_preview);
         }
     }
-        // when the specfic album art is clicked a modal pops up and is injected with the album data.
+// when the specfic album art is clicked a modal pops up and is injected with the acurate album data taken from the album id.
     for (var i = 0; i < albums_tracks.length;  i++) {
         album_track_disp =`<div class="col sm-12"><p> ${albums_tracks[i]}</p></div><audio controls source id="preview_music" src="${tracks_preview[i]}" class="preview_audio" type="audio/mpeg"></audio>`;   
         track_list.innerHTML += album_track_disp; 
