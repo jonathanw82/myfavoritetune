@@ -1,13 +1,13 @@
 //===================================== albumInfoSearch ===============================
 
 function albumInfoSearch() {
-    var user_input = document.getElementById("user_input").value;
-    var api_request = new XMLHttpRequest();
+    let user_input = document.getElementById("user_input").value;
+    let api_request = new XMLHttpRequest();
 
     api_request.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
-            var the_response = api_request.responseText;
-            var music_search = JSON.parse(the_response);
+            let the_response = api_request.responseText;
+            let music_search = JSON.parse(the_response);
             displayDataInTheLowerPage(music_search);
         }
     };
@@ -27,8 +27,8 @@ function displayDataInTheLowerPage(music_search) {
 
     for (let i = 0; i < music_search.data.length; i++) {
 
-        var album = music_search.data[i].album;
-        var album_name = music_search.data[i].album.title;
+        let album = music_search.data[i].album;
+        let album_name = music_search.data[i].album.title;
 
         if (!albums_name.includes(album_name)) {
 
@@ -37,7 +37,7 @@ function displayDataInTheLowerPage(music_search) {
         }
     }
 // This for loop interates throught the music search array and output the album images to the html all will have an onclick that triggers an album id_search and opens a modal in html.
-    var album_list = document.getElementById("album_list");
+    let album_list = document.getElementById("album_list");
     for (let i = 0; i < albums.length; i++) {
         this_album_string = `<div class="col-md-4 card_image"><div class="card"><img src="${albums[i].cover_big}" class="card-img-top" alt="Album cover" onclick="album_id(${albums[i].id})" ${albums[i].id}"></div>`;
         album_list.innerHTML += this_album_string;

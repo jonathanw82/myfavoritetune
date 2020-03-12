@@ -8,24 +8,38 @@ function InitalArtistsearch() {
 
     api_request.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
-            var the_response = api_request.responseText;
-            var music_search = JSON.parse(the_response);
+            let the_response = api_request.responseText;
+            let music_search = JSON.parse(the_response);
 
-// music search is then passed through a for loop that creates an array called artistList whitch is then when called by another for loop displayed on the html.
+            // music search is then passed through a for loop that creates an array called artistList whitch is then when called by another for loop displayed on the html.
+            console.log(music_search)
+            console.log(emptyArray)
+
+          //  for (let i = 0; i < music_search.data.length; i++) {
+                var emptyArray = music_search;
+                
+               // if (emptyArray == 0) {
+                  //  let noArtistFound = `<span>No Artist Found</span>`;
+                  //  no_artist_found.innerHTML = noArtistFound;
+                    //select_your_artist_heading.innerHTML = "";
+               // }
+          //  }
 
             var artistList = [];
 
             for (let i = 0; i < music_search.data.length; i++) {
-                var artistSearchNames = music_search.data[i].artist.name;
+                let artistSearchNames = music_search.data[i].artist.name;
                 if (artistSearchNames.toLowerCase().includes(user_input.toLowerCase())) {
                     if (artistList.includes(artistSearchNames) == false) {
                         artistList.push(artistSearchNames);
                     }
                 }
+
             }
-// The artist name are injected in to the html below the userinput, when an artist name is clicked the name then populates the user input field and handleArtistClickEvent is activated.
+            // The artist name are injected in to the html below the userinput, when an artist name is clicked the name then populates 
+            // the user input field and handleArtistClickEvent is activated.
             for (let i = 0; i < artistList.length; i++) {
-                var pickArtistSearch = `<p onclick="handleArtistClickEvent('${artistList[i]}')">${artistList[i]}</p>`;
+                let pickArtistSearch = `<p onclick="handleArtistClickEvent('${artistList[i]}')">${artistList[i]}</p>`;
                 pick_name.innerHTML += pickArtistSearch;
             }
         }
@@ -38,13 +52,13 @@ function InitalArtistsearch() {
 /* artist_search then sends the correctly hyphonated search to the api 
    and data returned then populates the artist name and number of albums and the artist image. clearArtistSearchList then clears any other not clicked on 
    data from the pick_name list, albumInfoSearch is then activated 
-*/ 
+*/
 function handleArtistClickEvent(passArtistData) {
     fillUserInput(passArtistData);
     artist_search();
     albumInfoSearch();
     clearArtistSearchList();
-    insertSelectHeading(); 
+    insertSelectHeading();
 }
 
 //===================================== passes the data to the user input ====================
@@ -77,6 +91,7 @@ function clear_html_input() {
     document.getElementById("picture_artistsearch").src = "../assets/images/black-and-gray-vinyl-record-2746823.jpg";
     document.getElementById("picture_artistsearch").className = "artist_inital_image_spin";
     click_on_album.innerHTML = "<div></div>";
+    select_your_artist_heading.innerHTML = "";
 }
 
 // clears all modal data on close

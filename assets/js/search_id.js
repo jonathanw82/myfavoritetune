@@ -1,12 +1,12 @@
 // album id search take the album id collected from album_id_search and collects the tracks and preview data.
 function album_id(album_id_number) {
    
-    var api_request = new XMLHttpRequest();
+    let api_request = new XMLHttpRequest();
 
     api_request.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
-            var the_response = api_request.responseText;
-            var album_id_search = JSON.parse(the_response);
+            let the_response = api_request.responseText;
+            let album_id_search = JSON.parse(the_response);
             displayAlbumdatainmypage(album_id_search);
         }
     };
@@ -21,14 +21,14 @@ function displayAlbumdatainmypage(album_id_search) {
     let albums_tracks = [];
     let tracks_preview = [];
    
-    var total_tracks = album_id_search.nb_tracks;
-    var album_title_modal = album_id_search.title;
+    let total_tracks = album_id_search.nb_tracks;
+    let album_title_modal = album_id_search.title;
     let album_art_modal = album_id_search.cover_medium;
 
-    for (var i = 0; i < album_id_search.tracks.data.length; i++) {
+    for (let i = 0; i < album_id_search.tracks.data.length; i++) {
 
-        var album_track = album_id_search.tracks.data[i].title;         
-        var track_preview = album_id_search.tracks.data[i].preview;
+        let album_track = album_id_search.tracks.data[i].title;         
+        let track_preview = album_id_search.tracks.data[i].preview;
 
 // these if statments take the tracks and preview data and push them into the array and ignores duplicates.
 
@@ -40,7 +40,7 @@ function displayAlbumdatainmypage(album_id_search) {
         }
     }
 // when the specfic album art is clicked a modal pops up and is injected with the acurate album data taken from the album id.
-    for (var i = 0; i < albums_tracks.length;  i++) {
+    for (let i = 0; i < albums_tracks.length;  i++) {
         album_track_disp =`<div class="col sm-12"><p> ${albums_tracks[i]}</p></div><audio controls source id="preview_music" src="${tracks_preview[i]}" class="preview_audio" type="audio/mpeg"></audio>`;   
         track_list.innerHTML += album_track_disp; 
     }

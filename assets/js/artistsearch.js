@@ -19,8 +19,8 @@ function artist_search() {
 
     api_request.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
-            var the_response = api_request.responseText;
-            var music_search_artist = JSON.parse(the_response);
+            let the_response = api_request.responseText;
+            let music_search_artist = JSON.parse(the_response);
             displaydatainmyartistpage(music_search_artist);
         }
         else {
