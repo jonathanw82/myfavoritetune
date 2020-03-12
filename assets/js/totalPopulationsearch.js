@@ -48,11 +48,13 @@ function fillUserInput(artistClickdOnName) {
 };
 
 //===================================== Data to be displayed in the html ====================
+// what the function does and a expalnation of music search
+// when the music search is called 
 function displaydatainmypage1(music_search) {
 
     let albums = [];
     let albums_name = [];
-
+// what the for loop does
     for (let i = 0; i < music_search.data.length; i++) {
 
         var album = music_search.data[i].album;

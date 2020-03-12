@@ -1,5 +1,7 @@
 
 //===================================== Initial artist search ===============================
+// inital artist search takes the user input calls the api with the search criteria, the results are then passed through JSON.parse and passed to music search variable.
+
 function InitalArtistsearch() {
     let user_input = document.getElementById("user_input").value;
     let api_request = new XMLHttpRequest();
@@ -8,6 +10,8 @@ function InitalArtistsearch() {
         if (this.readyState == 4 && this.status == 200) {
             var the_response = api_request.responseText;
             var music_search = JSON.parse(the_response);
+
+// music search is then passed through a for loop that creates an array called artistList whitch is then when called by another for loop displayed on the html.
 
             var artistList = [];
 
@@ -19,8 +23,9 @@ function InitalArtistsearch() {
                     }
                 }
             }
+// when an artist name is clicked the name is populated in the user input field and other functions are called.
             for (let i = 0; i < artistList.length; i++) {
-                var pickArtistSearch = `<p onclick="fillUserInput('${artistList[i]}');artist_search();totalPopulationsearch();clearArtistSearchList();insertSelectHeading()">${artistList[i]}</p>`;
+                var pickArtistSearch = `<p onclick="handleArtistClickEvent('${artistList[i]}')">${artistList[i]}</p>`;
                 pick_name.innerHTML += pickArtistSearch;
             }
         }
@@ -29,8 +34,16 @@ function InitalArtistsearch() {
     api_request.setRequestHeader("x-rapidapi-host", "deezerdevs-deezer.p.rapidapi.com");
     api_request.setRequestHeader("x-rapidapi-key", "ef9686a9b9msh4dbce73327763a8p14d988jsn38434b35145a");
     api_request.send();
-
 }
+// 
+function handleArtistClickEvent(passArtistData) {
+    fillUserInput(passArtistData);
+    totalPopulationsearch();
+    clearArtistSearchList();
+    insertSelectHeading();
+    artist_search();
+}
+
 //===================================== passes the data to the user input ====================
 // function will check to see if ther is any spaces and if ther is replace the space with a - https://www.developintelligence.com/blog/2016/02/replace-spaces-underscores-javascript/
 
@@ -61,7 +74,6 @@ function clear_html_input() {
     document.getElementById("picture_artistsearch").src = "../assets/images/black-and-gray-vinyl-record-2746823.jpg";
     document.getElementById("picture_artistsearch").className = "artist_inital_image_spin";
     click_on_album.innerHTML = "<div></div>";
-    
 }
 
 // clears all modal data on close
