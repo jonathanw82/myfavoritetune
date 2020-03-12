@@ -14,18 +14,18 @@ function InitalArtistsearch() {
             // music search is then passed through a for loop that creates an array called artistList whitch is then when called by another for loop displayed on the html.
             console.log(music_search)
             console.log(emptyArray)
-
-          //  for (let i = 0; i < music_search.data.length; i++) {
+/*
+            for (let i = 0; i < music_search.data.length; i++) {
                 var emptyArray = music_search;
-                
-               // if (emptyArray == 0) {
-                  //  let noArtistFound = `<span>No Artist Found</span>`;
-                  //  no_artist_found.innerHTML = noArtistFound;
-                    //select_your_artist_heading.innerHTML = "";
-               // }
-          //  }
 
-            var artistList = [];
+                if (emptyArray == 0) {
+                    let noArtistFound = `<span>No Artist Found</span>`;
+                    no_artist_found.innerHTML = noArtistFound;
+                    select_your_artist_heading.innerHTML = "";
+                }
+            }
+*/
+            let artistList = [];
 
             for (let i = 0; i < music_search.data.length; i++) {
                 let artistSearchNames = music_search.data[i].artist.name;
@@ -88,7 +88,7 @@ function insertStlectArtistHeading() {
 function clear_html_input() {
     document.getElementById("user_input").value = "";
     album_list.innerHTML = "<div></div>";
-    document.getElementById("picture_artistsearch").src = "../assets/images/black-and-gray-vinyl-record-2746823.jpg";
+    document.getElementById("picture_artistsearch").src = "./assets/images/black-and-gray-vinyl-record-2746823.jpg";
     document.getElementById("picture_artistsearch").className = "artist_inital_image_spin";
     click_on_album.innerHTML = "<div></div>";
     select_your_artist_heading.innerHTML = "";
