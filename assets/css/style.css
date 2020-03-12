@@ -1,5 +1,10 @@
 
+/* --------------------Image rotation specifics --------------------*/
+@-moz-keyframes spin { 100% { -moz-transform: rotate(360deg); } }
+@-webkit-keyframes spin { 100% { -webkit-transform: rotate(360deg); } }
+@keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }
 
+/* ------------------------- Contents  -----------------------------*/
 body{
     font-family: 'Open Sans', sans-serif;
 }
@@ -53,14 +58,14 @@ body{
     height: 20px
 }
 
- .artist_inital_image{
+.artist_inital_image{
     border-radius: 50%;
     box-shadow: 0 0 40px 10px #fff;    
     height: 200px;
     width: 200px; 
  }  
 
- .artist_inital_image_spin{
+.artist_inital_image_spin{
     border-radius: 50%;
     box-shadow: 0 0 40px 10px #fff;    
     height: 200px;
@@ -69,26 +74,9 @@ body{
     -moz-animation:spin 4s linear infinite;
     animation:spin 4s linear infinite;
  }  
-
-#album_art_modal{ 
-    border-radius: 50%;
-    box-shadow: 0 0 40px 10px #fff;    
-    height: 200px;
-    width: 200px; 
-    -webkit-animation:spin 4s linear infinite;
-    -moz-animation:spin 4s linear infinite;
-    animation:spin 4s linear infinite;
-}
-@-moz-keyframes spin { 100% { -moz-transform: rotate(360deg); } }
-@-webkit-keyframes spin { 100% { -webkit-transform: rotate(360deg); } }
-@keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }
 
 .artist_image{
     text-align: center;
-}
-
-.modal-header, .modal-body, .modal-footer, .modal-content{
-background-color: orange;
 }
 
 .card{
@@ -109,10 +97,24 @@ background-color: orange;
     text-align: center;
 }
 
-/*---------------------------------------- Model ----------------------------*/
+/*--------------------------------------- Model ----------------------------*/
+
+.modal-header, .modal-body, .modal-footer, .modal-content{
+background-color: orange;
+}
 
 .model_album_name{
     text-align: center;
+}
+
+#album_art_modal{ 
+    border-radius: 50%;
+    box-shadow: 0 0 40px 10px #fff;    
+    height: 200px;
+    width: 200px; 
+    -webkit-animation:spin 4s linear infinite;
+    -moz-animation:spin 4s linear infinite;
+    animation:spin 4s linear infinite;
 }
 
 /*----------------------------------- Media queries -------------------------*/

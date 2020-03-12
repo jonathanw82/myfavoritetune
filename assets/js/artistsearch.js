@@ -1,4 +1,6 @@
 
+// Artist search takes the corrently hyphontaed name from the user input to get the correct artist image, number of albums and picture.
+
 function displaydatainmyartistpage(music_search_artist) {
 
     let artist_name_artistsearch = music_search_artist.name;
@@ -7,7 +9,7 @@ function displaydatainmyartistpage(music_search_artist) {
 
     document.getElementById("artist_name_artistsearch").innerHTML = artist_name_artistsearch;
     document.getElementById("number_of_albums_artistsearch").innerHTML = number_of_albums;
-    document.getElementById("picture_artistsearch").className = "artist_inital_image";
+    document.getElementById("picture_artistsearch").className = "artist_inital_image";  // changes the css class for the picture_artistsearch from spin to static.
     document.getElementById("picture_artistsearch").src = picture_artistsearch;
 }
 
