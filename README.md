@@ -71,6 +71,9 @@ Search or finding irrelevant artist names, the result was to hyphenate the names
 
 * Select the artist by clicking on there name and it populates the input box hyphenated where necessary Works as intended.
 
+Bug found if the artist name is longer than 2 words the select you artist will be displayed with an empty pic selction list also if the name is random the same thing happens
+and does not display no artist found I have not yet fixed this bug but it will be in future releases of the application.
+
 * Select the artist by clicking on there name dropdown clears when clicked works as intended.
 
 * Search starts automatically works as intended.
