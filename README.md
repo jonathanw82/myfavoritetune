@@ -41,6 +41,8 @@ A single page application.
 #### Home
 The home page is made up of a hero image with branding logo, a search box and a call to action button.
 
+#### Album track box
+The album track box consists of total track and the number displayed to the top right the album title below centre, the album image rotating centre followed by the track listings with sound sample with play/pause volume controls in-between each, with a call to action button bottom right to close the box. 
 
 ### Technology’s used will include:
 HTML5, CSS3, Bootstrap, Javascripy, Gitpod, Sublime text and Balsamiq Mockup 3.
@@ -49,19 +51,20 @@ HTML5, CSS3, Bootstrap, Javascripy, Gitpod, Sublime text and Balsamiq Mockup 3.
 
 
 #### Nice to have 
+These features may be included in future releases of this application.
 
-Type ahead.
-I found they type a head function was not the best away to archive what i wanted my app to maybe in the future it would be a great addition.
+* Type ahead.
+I found the type a head function was not the best away to archive what I wanted this version of the app but maybe in the future it would be a great addition.
 
-Image carousel. 
-I wanted to incorporate an image carousel, as at this stage I felt it did not give the flexibility I required however this carousel created by, Basic 3D Carousel In Pure JavaScript author [loveneet4](https://github.com/internwt/3d-slider) would be a great addition to my future projects.
+* Image carousel. 
+I wanted to incorporate an image carousel, as at this stage I felt it did not give the flexibility I required however this carousel created by, Basic 3D Carousel In Pure JavaScript author [loveneet4](https://github.com/internwt/3d-slider) would be a great addition to my future project.
 
 ## Testing:
 
 Landing page
 * Test user text input box, insert name and press go search gets the relevant artist names and displays them to be selected this feature works as intended. 
 
-*Select your artist text appears and then the artist names dropdown below, works as intended.
+* Select your artist text appears and then the artist names dropdown below, works as intended.
 
 Bug found depending on the artist name and whether it’s a single name or double the search was erratic either not finding the name at all, or even after the initial 
 Search or finding irrelevant artist names, the result was to hyphenate the names before the second search doing this help the search function find and displays the relevant data.
