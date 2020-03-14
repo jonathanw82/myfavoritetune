@@ -48,7 +48,15 @@ HTML5, CSS3, Bootstrap, Javascripy, Gitpod, Sublime text and Balsamiq Mockup 3.
 ## WireFrame Mockups & Screenshots:
 
 
-### Testing:
+#### Nice to have 
+
+Type ahead.
+I found they type a head function was not the best away to archive what i wanted my app to maybe in the future it would be a great addition.
+
+Image carousel. 
+I wanted to incorporate an image carousel, as at this stage I felt it did not give the flexibility I required however this carousel created by, Basic 3D Carousel In Pure JavaScript author [loveneet4](https://github.com/internwt/3d-slider) would be a great addition to my future projects.
+
+## Testing:
 
 Landing page
 test user text input box, insert name and press go search gets the relvent artist names and displays them to be selected this featcher works as intended. 
@@ -93,7 +101,8 @@ Modal diaplays album tracks works as intended.
 Modal diaplays samples of tracks to play works as intended.
 
 Bug found the tracks are only 30 seconds long this is due to either Deezer the api in use only allows users with free accounts to listen to 30 seconds maximum.
-Or because of the limited online music licence more info can be found here: https://github.com/jonathanw82/myfavoritetune/blob/863d06046bad818efb900028930052330916c5e1/assets/documents/loml%20terms%20and%20conditions.pdf
+Or because of the limited online music licence more info can be found here: 
+[Click me](https://github.com/jonathanw82/myfavoritetune/blob/assets/documents/loml%20terms%20and%20conditions.pdf)
 
 Sample tracks play works as intended.
 
@@ -105,15 +114,6 @@ Close button on modal closes the modal clearing it data and stopping any preview
 Bug if the user clicks off the modal without pressing the close button the modal will disapear and the music will continue to play, if the same or another albuym was selected 
 the model would add the track to the list having both albums track listings in one and the prviouse music playing. this was over come by clearing the modal not only on pressing 
 the close button but also by clicking the album art the data within is cleard first then repopulated after.
-
-
-#### Nice to have 
-
-Type ahead.
-I found they type a head function was not the best away to archive what i wanted my app to maybe in the future it would be a great addition.
-
-Image carousel. 
-I wanted to incorporate an image carousel, as at this stage I felt it did not give the flexibility I required however this carousel created by, Basic 3D Carousel In Pure JavaScript author loveneet4 https://github.com/internwt/3d-slider would be a great addition to my future projects.
 
 
 ### Deployment:
