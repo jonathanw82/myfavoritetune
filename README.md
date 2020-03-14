@@ -59,61 +59,62 @@ I wanted to incorporate an image carousel, as at this stage I felt it did not gi
 ## Testing:
 
 Landing page
-test user text input box, insert name and press go search gets the relvent artist names and displays them to be selected this featcher works as intended. 
+* Test user text input box, insert name and press go search gets the relevant artist names and displays them to be selected this feature works as intended. 
 
-Select your artist text appears and then the artist names dropdown below, works as intended.
+*Select your artist text appears and then the artist names dropdown below, works as intended.
 
-Bug found depending on the artist name and wether its a single name or double the search was eratic either not finding the name at all, or even after the initial 
-search or finding irrelvent artist names, the result was to hyphenate the names before the second search doing this help the seach function find and displasy the relevant data.
+Bug found depending on the artist name and whether it’s a single name or double the search was erratic either not finding the name at all, or even after the initial 
+Search or finding irrelevant artist names, the result was to hyphenate the names before the second search doing this help the search function find and displays the relevant data.
 
-Select the artist by clicking on there name and it populates the inputbox hyphonatyed where nessasary Works as intended.
+* Select the artist by clicking on there name and it populates the input box hyphenated where necessary Works as intended.
 
-Select the artist by clicking on there name dropdown clears when clicked works as intended.
+* Select the artist by clicking on there name dropdown clears when clicked works as intended.
 
-Search starts automaticaly works as intended.
+* Search starts automatically works as intended.
 
-Artist name is displayed next to artist name works as intended.
+* Artist name is displayed next to artist name works as intended.
 
-Number of albums is displayed next to number of albums works as intended.
+* Number of albums is displayed next to number of albums works as intended.
 
-Bug found the search results bring back that an artist has 25 albums but then only displays 5 i have yet to find a solution to this problem however im shure in the evolution of 
-application later on a solution will be found.
+Bug found the search results bring back that an artist has 25 albums but then only displays 5 i have yet to find a solution to this problem however I’m sure in the evolution of 
+Application later on a solution will be found.
 
-After the second seach the select you album heading appears works as intended.
+* After the second search the select you album heading appears works as intended.
 
-Relevent album art is displayed in the page works as intended.
+* Relevant album art is displayed in the page works as intended.
 
-Bug found sometimes the album search would bring back albums not nessasarly relevent to the artist, for instance if another artist had a sond called the artist name that album 
-would be included even thow having no relevance also if an artist had a featuring this would also be displayed this was confusing to the user as people would look at it thinking why is that album there.
-The solution was during the album search remove the hyphon and include a space then compare if the album artist matched the user input and only find albums relavent to the name, this 
-did exclude what was mentioned before but i felt it made for a batter user experiance.
+Bug found sometimes the album search would bring back albums not necessary relevant to the artist, for instance if another artist had a song called the artist name that album 
+would be included even though having no relevance also if an artist had a featuring this would also be displayed this was confusing to the user as people would look at it thinking why is that album there.
+The solution was during the album search remove the hyphen and include a space then compare if the album artist matched the user input and only find albums relevant to the name, this 
+did exclude what was mentioned before but I felt it made for a batter user experience.
 
-Click on the album art and a modal appears works as intended.
+* Click on the album art and a modal appears works as intended.
 
-Modal displays album name works as intended.
+* Modal displays album name works as intended.
 
-Modal dispalys number of tracks works as intended.
+* Modal displays number of tracks works as intended.
 
-Modal dispalys album art that spinns works as intended.
+* Modal displays album art that spins works as intended.
 
-Modal diaplays album tracks works as intended.
+* Modal displays album tracks works as intended.
 
-Modal diaplays samples of tracks to play works as intended.
+* Modal displays samples of tracks to play works as intended.
 
 Bug found the tracks are only 30 seconds long this is due to either Deezer the api in use only allows users with free accounts to listen to 30 seconds maximum.
+
 Or because of the limited online music licence more info can be found here: 
 [Click me](https://www.prsformusic.com/-/media/files/prs-for-music/licensing/terms-and-conditions/loml-terms-and-conditions.ashx)
 
-Sample tracks play works as intended.
+* Sample tracks play works as intended.
 
-Bug if ther are more than 50 tracks in an ablum the console will display ERR_INSUFFICIENT_RESOURCES i am yet to find a solution to the problem but it unlikley the user will 
-experiance this problem as most albums excluding compilations have less than 50 track anyway.
+Bug if there are more than 50 tracks in an album the console will display ERR_INSUFFICIENT_RESOURCES i am yet to find a solution to the problem but it unlikely the user will 
+experience this problem as most albums excluding compilations have less than 50 track anyway.
 
-Close button on modal closes the modal clearing it data and stopping any preview track being played works as intended.
+* Close button on modal closes the modal clearing it data and stopping any preview track being played works as intended.
 
-Bug if the user clicks off the modal without pressing the close button the modal will disapear and the music will continue to play, if the same or another albuym was selected 
-the model would add the track to the list having both albums track listings in one and the prviouse music playing. this was over come by clearing the modal not only on pressing 
-the close button but also by clicking the album art the data within is cleard first then repopulated after.
+Bug if the user clicks off the modal without pressing the close button the modal will disappear and the music will continue to play, if the same or another album was selected 
+the model would add the track to the list having both albums track listings in one and the previous music playing. this was overcome by clearing the modal not only on pressing 
+the close button but also by clicking the album art the data within is cleared first then repopulated after.
 
 
 ### Deployment:
@@ -147,6 +148,7 @@ From the menu items near the top of the page, select Fork.
 On doing so the repository will added to your own gitHub account from there you can follow the deployment 
 details as stated above. You will also be able to make any changes you require that will not affect the 
 original master from the original repository.
+
 
 Deployment: The site will be deployed by 
 https://pages.github.com/
