@@ -12,7 +12,6 @@ function InitalArtistsearch() {
             let music_search = JSON.parse(the_response);
 
             // music search is then passed through a for loop that creates an array called artistList whitch is then when called by another for loop displayed on the html.
-            console.log(music_search)
      
             if (music_search.data.length == 0) {
                 //select_your_artist_heading.innerHTML = "";
@@ -21,7 +20,6 @@ function InitalArtistsearch() {
                 
             }
             else {
-                
                 let artistList = [];
                 insertStlectArtistHeading();
 
@@ -32,7 +30,6 @@ function InitalArtistsearch() {
                             artistList.push(artistSearchNames);
                         }
                     }
-
                 }
                 // The artist name are injected in to the html below the userinput, when an artist name is clicked the name then populates 
                 // the user input field and handleArtistClickEvent is activated.

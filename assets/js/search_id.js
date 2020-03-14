@@ -40,11 +40,13 @@ function displayAlbumdatainmypage(album_id_search) {
         }
     }
 // when the specfic album art is clicked a modal pops up and is injected with the acurate album data taken from the album id.
+    track_list.innerHTML += ""; 
     for (let i = 0; i < albums_tracks.length;  i++) {
-        album_track_disp =`<div class="col sm-12"><p> ${albums_tracks[i]}</p></div><audio controls source id="preview_music" src="${tracks_preview[i]}" class="preview_audio" type="audio/mpeg"></audio>`;   
+        album_track_disp =`<div class="col sm-12"><p> ${albums_tracks[i]}</p></div><audio controls source id="preview_music" src="${tracks_preview[i]}
+        " class="preview_audio" type="audio/mpeg"></audio>`;   
         track_list.innerHTML += album_track_disp; 
     }
-    
+   
     document.getElementById("track_total").innerHTML = total_tracks;
     document.getElementById("album_title_modal").innerHTML = album_title_modal;
     document.getElementById("album_art_modal").src = album_art_modal;
