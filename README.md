@@ -50,7 +50,7 @@ HTML5, CSS3, Bootstrap, Javascripy, Gitpod, Sublime text and Balsamiq Mockup 3.
 ## WireFrame Mockups & Screenshots:
 
 
-#### Nice to have 
+### Nice to have 
 These features may be included in future releases of this application.
 
 * Type ahead.
