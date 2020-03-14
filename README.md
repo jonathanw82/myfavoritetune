@@ -30,17 +30,22 @@ The sight is directed at music lovers and hobbyist’s rather than business.
 
 ## Features:
 A single page application.
-* The branding logo top centre, and a search box with go button to the left.
+* The branding logo top centre.
+* A search box with a call to action button to the left.
 * Below the artist name is displayed and the number of albums that specific artist has.
 * To the right the artist image first will be a spinning vinyl then changes to the artist image during searching.
-* On selection of the artist, there album art is displayed in a section below.
+* When the initial search is complete a dropdown of artist names will appear.
+* On selection of the artist name, the seach box will be populated and there album art is displayed in a section below.
 * Clicking on the album art a box the tracks and sound samples are displayed. 
 
-
+#### Home
+The home page is made up of a hero image with branding logo, a search box and a call to action button.
 
 
 ### Technology’s used will include:
 HTML5, CSS3, Bootstrap, Javascripy, Gitpod, Sublime text and Balsamiq Mockup 3.
+
+## WireFrame Mockups & Screenshots:
 
 
 ### Testing:
@@ -102,24 +107,14 @@ the model would add the track to the list having both albums track listings in o
 the close button but also by clicking the album art the data within is cleard first then repopulated after.
 
 
+#### Nice to have 
 
+Type ahead.
+I found they type a head function was not the best away to archive what i wanted my app to maybe in the future it would be a great addition.
 
+Image carousel. 
+I wanted to incorporate an image carousel, as at this stage I felt it did not give the flexibility I required however this carousel created by, Basic 3D Carousel In Pure JavaScript author loveneet4 https://github.com/internwt/3d-slider would be a great addition to my future projects.
 
-
-
- 
-
-
-nice to have 
-type ahead.
-I found they type a head function was not the best away to archede what i wanted my app to maybe in the future i would be a ghreat addion.
-Image acrousel 
-I wanted to incorporate an image carousel, as at this stage in my coding career i have not learnt enough to create one myself i felt the 
-caroucel created by, Basic 3D Carousel In Pure JavaScript author loveneet4 https://github.com/internwt/3d-slider would be a great adition to my future projects.
-
-
-typeahaed 0.11.1
-this file is an example taken from https://github.com/twitter/typeahead.js
 
 ### Deployment:
 To deploy this page to GitHub Pages from its GitHub repository, the following steps were taken:
