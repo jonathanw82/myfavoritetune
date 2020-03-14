@@ -30,7 +30,7 @@ function displayDataInTheLowerPage(music_search) {
         let album = music_search.data[i].album;
         let album_name = music_search.data[i].album.title;
         let artist_name = music_search.data[i].artist.name;
-        let temp_artist_name = user_input.value.replace("-", " ");
+        let temp_artist_name = user_input.value.replace("-", " ");    // take the user input and takes out the - that was needed for other type searches.
 
         if(artist_name != temp_artist_name){
         }
@@ -44,7 +44,7 @@ function displayDataInTheLowerPage(music_search) {
     // an album id_search and opens a modal in html.
 
     let album_list = document.getElementById("album_list");
-    album_list.innerHTML += "";                     // clears the html befote adding more infomation
+    album_list.innerHTML += "";                     // clears the html before adding more infomation
     for (let i = 0; i < albums.length; i++) {
         this_album_string = `<div class="col-md-4 card_image"><div class="card"><img src="${albums[i].cover_big}" class="card-img-top" alt="Album cover" 
         onclick="album_id(${albums[i].id})" ${albums[i].id}"></div>`;
