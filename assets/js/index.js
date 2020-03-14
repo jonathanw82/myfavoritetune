@@ -13,34 +13,33 @@ function InitalArtistsearch() {
 
             // music search is then passed through a for loop that creates an array called artistList whitch is then when called by another for loop displayed on the html.
             console.log(music_search)
-            console.log(emptyArray)
-/*
-            for (let i = 0; i < music_search.data.length; i++) {
-                var emptyArray = music_search;
-
-                if (emptyArray == 0) {
-                    let noArtistFound = `<span>No Artist Found</span>`;
-                    no_artist_found.innerHTML = noArtistFound;
-                    select_your_artist_heading.innerHTML = "";
-                }
+     
+            if (music_search.data.length == 0) {
+                //select_your_artist_heading.innerHTML = "";
+                let noArtistFound = `<span>No Artist Found</span>`;
+                no_artist_found.innerHTML = noArtistFound;
+                
             }
-*/
-            let artistList = [];
+            else {
+                
+                let artistList = [];
+                insertStlectArtistHeading();
 
-            for (let i = 0; i < music_search.data.length; i++) {
-                let artistSearchNames = music_search.data[i].artist.name;
-                if (artistSearchNames.toLowerCase().includes(user_input.toLowerCase())) {
-                    if (artistList.includes(artistSearchNames) == false) {
-                        artistList.push(artistSearchNames);
+                for (let i = 0; i < music_search.data.length; i++) {
+                    let artistSearchNames = music_search.data[i].artist.name;
+                    if (artistSearchNames.toLowerCase().includes(user_input.toLowerCase())) {
+                        if (artistList.includes(artistSearchNames) == false) {
+                            artistList.push(artistSearchNames);
+                        }
                     }
-                }
 
-            }
-            // The artist name are injected in to the html below the userinput, when an artist name is clicked the name then populates 
-            // the user input field and handleArtistClickEvent is activated.
-            for (let i = 0; i < artistList.length; i++) {
-                let pickArtistSearch = `<p onclick="handleArtistClickEvent('${artistList[i]}')">${artistList[i]}</p>`;
-                pick_name.innerHTML += pickArtistSearch;
+                }
+                // The artist name are injected in to the html below the userinput, when an artist name is clicked the name then populates 
+                // the user input field and handleArtistClickEvent is activated.
+                for (let i = 0; i < artistList.length; i++) {
+                    let pickArtistSearch = `<p onclick="handleArtistClickEvent('${artistList[i]}')">${artistList[i]}</p>`;
+                    pick_name.innerHTML += pickArtistSearch;
+                }
             }
         }
     };
@@ -77,10 +76,12 @@ function insertSelectHeading() {
     click_on_album.innerHTML = click_on_album_heading;
 }
 
+
 function insertStlectArtistHeading() {
-    let select_your_artist_text = `<span>Select Your Artist</span>`;
+    let select_your_artist_text = `<span>Select Your Artist</span>`;            // Select your artist is displayed before you pic an srtist from the list.
     select_your_artist_heading.innerHTML = select_your_artist_text;
 }
+
 
 //============= this function clears the input box and the main html page ==================
 
@@ -92,6 +93,7 @@ function clear_html_input() {
     document.getElementById("picture_artistsearch").className = "artist_inital_image_spin";
     click_on_album.innerHTML = "<div></div>";
     select_your_artist_heading.innerHTML = "";
+     no_artist_found.innerHTML = "";
 }
 
 // clears all modal data on close
