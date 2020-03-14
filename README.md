@@ -102,7 +102,7 @@ Modal diaplays samples of tracks to play works as intended.
 
 Bug found the tracks are only 30 seconds long this is due to either Deezer the api in use only allows users with free accounts to listen to 30 seconds maximum.
 Or because of the limited online music licence more info can be found here: 
-[Click me](https://github.com/jonathanw82/myfavoritetune/blob/assets/documents/loml%20terms%20and%20conditions.pdf)
+[Click me](https://www.prsformusic.com/-/media/files/prs-for-music/licensing/terms-and-conditions/loml-terms-and-conditions.ashx)
 
 Sample tracks play works as intended.
 
