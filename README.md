@@ -1,11 +1,43 @@
 # Code Institute
 <div align="center">
     
-[View Bristol Central Gym in GitHub Pages](https://github.com/jonathanw82/bristol-central-gym)
+[View  in GitHub Pages](https://github.com/jonathanw82/)
 </div>
 
+A music lovers paradise, where the user can search and find there favoured artist and easily navigate to their favourite album or find an album they never knew existed, all the while being able to see the track listing and hear the samples.
+
+The sight is directed at music lovers and hobbyist’s rather than business.
+
+#### The users goals of this website are:
+* Searching for artist of choice.
+* Clearly displayed album art and traclistings.
+* Easy to navigate. 
+
+#### The Business potentials of this website are:
+* Potential advertisers of music related products.
+
+#### Visitors to this website are searching for:
+* There favorite music artists.
+* Albums and tracklisting.
+
+#### This Website is the best way to help them achieve these things because:
+* Other websites are too cluttered and hard to navigate.
+* Other websites fail to have sound clips to listen to.
+
+#### This website is:
+* Uncluttered and has an intuitive search process.
+* Providing clear artwork and tracklistings for the selected artist.
 
 ## Features:
+A single page application.
+* The branding logo top centre, and a search box with go button to the left.
+* Below the artist name is displayed and the number of albums that specific artist has.
+* To the right the artist image first will be a spinning vinyl then changes to the artist image during searching.
+* On selection of the artist, there album art is displayed in a section below.
+* Clicking on the album art a box the tracks and sound samples are displayed. 
+
+
+
 
 ### Technology’s used will include:
 HTML5, CSS3, Bootstrap, Javascripy, Gitpod, Sublime text and Balsamiq Mockup 3.
