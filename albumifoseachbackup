@@ -1,7 +1,7 @@
 //====================================== albumInfoSearch ===============================
 
 function albumInfoSearch() {
-    var user_input = document.getElementById("user_input").value;
+    let user_input = document.getElementById("user_input").value;
     let api_request = new XMLHttpRequest();
 
     api_request.onreadystatechange = function () {
@@ -24,17 +24,15 @@ function displayDataInTheLowerPage(music_search) {
 
     let albums = [];
     let albums_name = [];
-
+    console.log(music_search)
+    console.log(albums)
+    console.log(albums_name)
     for (let i = 0; i < music_search.data.length; i++) {
 
         let album = music_search.data[i].album;
         let album_name = music_search.data[i].album.title;
-        let artist_name = music_search.data[i].artist.name;
-        let temp_artist_name = user_input.value.replace("-", " ");
 
-        if(artist_name != temp_artist_name){
-        }
-        else if (!albums_name.includes(album_name)) {
+        if (!albums_name.includes(album_name)) {
 
             albums_name.push(album_name);
             albums.push(album);

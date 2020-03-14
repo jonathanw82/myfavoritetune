@@ -8,6 +8,9 @@ to uor own gitHub account from there you can follow the deployment detals as as 
 Spinning artist image code https://stackoverflow.com/questions/16771225/css3-rotate-animation
 
 
+Testing
+on test i found bus that 
+
 nice to have 
 type ahead.
 I found they type a head function was not the best away to archede what i wanted my app to maybe in the future i would be a ghreat addion.
