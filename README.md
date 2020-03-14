@@ -1,14 +1,12 @@
 # Code Institute
-Forking the repository 
-If you would like to take a copy of this repository in its current state this can be done by forking, 
-follow stepa as abouve to open github etc, log in to git hub follow the instuctions abouve to the intended repository
-instead of cloning the repository simply click the fork button top right hand side of the page this will copy the repository 
-to uor own gitHub account from there you can follow the deployment detals as as stated avouve.
-
-Spinning artist image code https://stackoverflow.com/questions/16771225/css3-rotate-animation
 
 
-Testing
+### Technology’s used will include:
+HTML5, CSS3, Bootstrap, Javascripy, Gitpod, Sublime text and Balsamiq Mockup 3.
+
+
+### Testing:
+
 Landing page
 test user text input box, insert name and press go search gets the relvent artist names and displays them to be selected this featcher works as intended. 
 
@@ -85,17 +83,67 @@ caroucel created by, Basic 3D Carousel In Pure JavaScript author loveneet4 https
 typeahaed 0.11.1
 this file is an example taken from https://github.com/twitter/typeahead.js
 
+### Deployment:
+To deploy this page to GitHub Pages from its GitHub repository, the following steps were taken:
+
+Log into GitHub.
+From the list of repositories on the screen, select mtfavoritetune.
+From the menu items near the top of the page, select Settings.
+Scroll down to the GitHub Pages section.
+Under Source click the drop-down menu labelled None and select Master Branch
+On selecting Master Branch the page is automatically refreshed, the website is now deployed.
+Scroll back down to the GitHub Pages section to retrieve the link to the deployed website.
+
+How to run this project locally
+to clone this project from GitHub:
+
+Follow this link to the Project GitHub repository.
+Under the repository name, click "Clone or download".
+In the Clone with HTTPs section, copy the clone URL for the repository.
+In your local IDE open Git Bash.
+Change the current working directory to the location where you want the cloned directory to be made.
+Type git clone, and then paste the URL you copied in Step 3.
+git clone https://github.com/USERNAME/REPOSITORY
+Press Enter. Your local clone will be created.
+Further reading and troubleshooting on cloning a repository from GitHub here.
+
+Forking the repository.
+If you would like to take a copy of this repository in its current state this can be done by forking,
+From the list of repositories on the screen, select mtfavoritetune.
+From the menu items near the top of the page, select Fork.
+On doing so the repository will added to your own gitHub account from there you can follow the deployment 
+details as stated above. You will also be able to make any changes you require that will not affect the 
+original master from the original repository.
+
+Deployment: The site will be deployed by 
+https://pages.github.com/
+
+
+### Credits:
+
+##### Media:
+The Photos used in this site were obtained from
+
 favicon.ioc
 Photo by Anton Hooijdonk from Pexels
 
-background image
+Background image
 concert-inside-concert-hall-2728557.jpg
 Photo by Ronê Ferreira from Pexels
 
-initial filler image,
-unknonwn lens 
-music-light-plant-white-photography-play-858499-pxhere.com.jpg
-
-vinyl recored
+vinyl record
 Brett Jordan from Pexels
 
+https://www.pexels.com/
+
+Initial filler image,
+unknown lens 
+music-light-plant-white-photography-play-858499-pxhere.com.jpg
+
+https://pxhere.com/
+
+Spinning artist image code https://stackoverflow.com/questions/16771225/css3-rotate-animation
+
+Parts of the Deployment Section Written by myself and,  
+AJGreaves
+https://ajgreaves.github.io/portrait-artist/
