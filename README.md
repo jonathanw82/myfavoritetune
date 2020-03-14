@@ -1,5 +1,11 @@
 # Code Institute
+<div align="center">
+    
+[View Bristol Central Gym in GitHub Pages](https://github.com/jonathanw82/bristol-central-gym)
+</div>
 
+
+## Features:
 
 ### Technology’s used will include:
 HTML5, CSS3, Bootstrap, Javascripy, Gitpod, Sublime text and Balsamiq Mockup 3.
