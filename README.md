@@ -61,7 +61,11 @@ experiance this problem as most albums excluding compilations have less than 50 
 
 Close button on modal closes the modal clearing it data and stopping any preview track being played works as intended.
 
-Bug if the user clicks off the modal without pressing the close button the modal will disapear bu the music will contimue to play 
+Bug if the user clicks off the modal without pressing the close button the modal will disapear and the music will continue to play, if the same or another albuym was selected 
+the model would add the track to the list having both albums track listings in one and the prviouse music playing. this was over come by clearing the modal not only on pressing 
+the close button but also by clicking the album art the data within is cleard first then repopulated after.
+
+
 
 
 

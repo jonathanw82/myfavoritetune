@@ -94,7 +94,7 @@ function clear_html_input() {
      clearArtistSearchList();
 }
 
-// clears all modal data on close
+// clears all modal data on close or if the album has been selected without closing the first modal
 function clearModal() {
     track_list.innerHTML = " ";
 }
