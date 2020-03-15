@@ -185,19 +185,17 @@ favicon.ioc
 Photo by Anton Hooijdonk from Pexels
 
 Background image
-concert-inside-concert-hall-2728557.jpg
-Photo by Ronê Ferreira from Pexels
+unknown lens 
+music-light-plant-white-photography-play-858499-pxhere.com.jpg
+
+https://pxhere.com/
 
 vinyl record
 Brett Jordan from Pexels
 
 https://www.pexels.com/
 
-Initial filler image,
-unknown lens 
-music-light-plant-white-photography-play-858499-pxhere.com.jpg
 
-https://pxhere.com/
 
 Spinning artist image code https://stackoverflow.com/questions/16771225/css3-rotate-animation
 
