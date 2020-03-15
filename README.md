@@ -1,5 +1,5 @@
 <h1 align="center">
-   <a href="https://jonathanw82.github.io/bristol-central-gym" target="_blank"><img src="https://github.com/jonathanw82/bristol-central-gym/blob/master/assets/images/matReadme.jpg" alt="logo image"/></a>
+   <a href="https://jonathanw82.github.io/myfavoritetune/" target="_blank"><img src="https://github.com/jonathanw82/myfavoritetune/blob/a956383ee2fb09cbf721db47a6e9d60fac5f6852/assets/images/readmeimage.jpg" alt="logo image"/></a>
  </h1>
  
 <div align="center">
