@@ -4,7 +4,7 @@
  
 <div align="center">
     
-[View  in GitHub Pages](https://github.com/jonathanw82/)
+[View  in GitHub Pages](https://github.com/jonathanw82/myfavoritetune)
 </div>
 
 A music lovers paradise, where the user can search and find there favoured artist and easily navigate to their favourite album or find an album they never knew existed, all the while being able to see the track listing and hear the samples.
@@ -51,6 +51,17 @@ The album track box consists of total track and the number displayed to the top 
 HTML5, CSS3, Bootstrap, Javascripy, Gitpod, Sublime text and Balsamiq Mockup 3.
 
 ## WireFrame Mockups & Screenshots:
+#### Desktop View:
+- [Home](https://imgur.com/IIsGZdU).
+- [Album View](https://imgur.com/1526eBx).
+- [Tracks & Samples](https://imgur.com/RoPBZbA).
+
+#### Mobile & Tablet View:
+- [Mobile](https://imgur.com/TEbPE00).
+- [Tablet](https://imgur.com/GvqQ1et).
+
+#### WireFrames:
+- [Home](https://github.com/jo).
 
 
 ### Nice to have 
