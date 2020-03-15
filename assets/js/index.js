@@ -1,4 +1,13 @@
 
+// On page start the artist picture is populated with a record.jpg and class name artist_inital_image_spin is initalty set to spin the image.
+
+$(document).ready(function () {
+
+ document.getElementById("picture_artistsearch").src = "./assets/images/black-and-gray-vinyl-record-2746823.jpg";
+ document.getElementById("picture_artistsearch").className = "artist_inital_image_spin";
+    
+});
+
 //===================================== Initial artist search ===============================
 // inital artist search takes the user input calls the api with the search criteria, the results are then passed through JSON.parse and passed to music search variable.
 
@@ -105,3 +114,39 @@ function clearArtistSearchList() {
     pick_name.innerHTML = "";
     select_your_artist_heading.innerHTML = " ";
 }
+
+
+// Artist search takes the corrently hyphontaed name from the user input to get the correct artist image, number of albums and picture.
+function artist_search() {
+    let user_input = document.getElementById("user_input").value;
+    let api_request = new XMLHttpRequest();
+
+    api_request.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+            let the_response = api_request.responseText;
+            let music_search_artist = JSON.parse(the_response);
+            displaydatainmyartistpage(music_search_artist);
+        }
+        else {
+           // console.log("this stuff is not working");
+        }
+    };
+    api_request.open("GET", "https://deezerdevs-deezer.p.rapidapi.com/artist/" + user_input);
+    api_request.setRequestHeader("x-rapidapi-host", "deezerdevs-deezer.p.rapidapi.com");
+    api_request.setRequestHeader("x-rapidapi-key", "ef9686a9b9msh4dbce73327763a8p14d988jsn38434b35145a");
+    api_request.send();
+}
+
+
+function displaydatainmyartistpage(music_search_artist) {
+
+    let artist_name_artistsearch = music_search_artist.name;
+    let picture_artistsearch = music_search_artist.picture_medium;
+    let number_of_albums = music_search_artist.nb_album;
+
+    document.getElementById("artist_name_artistsearch").innerHTML = artist_name_artistsearch;
+    document.getElementById("number_of_albums_artistsearch").innerHTML = number_of_albums;
+    document.getElementById("picture_artistsearch").className = "artist_inital_image";  // changes the css class for the picture_artistsearch from spin to static.
+    document.getElementById("picture_artistsearch").src = picture_artistsearch;
+}
+
