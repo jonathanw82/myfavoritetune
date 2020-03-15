@@ -64,6 +64,8 @@ I wanted to incorporate an image carousel, as at this stage I felt it did not gi
 Landing page
 * Test user text input box, insert name and press go search gets the relevant artist names and displays them to be selected this feature works as intended. 
 
+Bug found if the user input is left empty and go is pressed an error will apear in the console, cannot read length of undefined this bug will be removed at a later date.
+
 * Select your artist text appears and then the artist names dropdown below, works as intended.
 
 Bug found depending on the artist name and whether it’s a single name or double the search was erratic either not finding the name at all, or even after the initial 

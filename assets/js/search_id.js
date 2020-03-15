@@ -29,7 +29,7 @@ function displayAlbumdatainmypage(album_id_search) {
 
         let album_track = album_id_search.tracks.data[i].title;         
         let track_preview = album_id_search.tracks.data[i].preview;
-
+console.log(tracks_preview)
 // these if statments take the tracks and preview data and push them into the array and ignores duplicates.
 
         if (!albums_tracks.includes(album_track)) {
@@ -42,7 +42,7 @@ function displayAlbumdatainmypage(album_id_search) {
 // when the specfic album art is clicked a modal pops up and is injected with the acurate album data taken from the album id.
     track_list.innerHTML += ""; 
     for (let i = 0; i < albums_tracks.length;  i++) {
-        album_track_disp =`<div class="col sm-12"><p> ${albums_tracks[i]}</p></div><audio controls source id="preview_music" src="${tracks_preview[i]}
+        album_track_disp =`<div class="col track_name sm-12"><p> ${albums_tracks[i]}</p></div><audio controls source id="preview_music" src="${tracks_preview[i]}
         " class="preview_audio" type="audio/mpeg"></audio>`;   
         track_list.innerHTML += album_track_disp; 
     }

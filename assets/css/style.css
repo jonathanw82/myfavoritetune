@@ -25,20 +25,30 @@ body{
 }
 
 .heading-text{
-    font-family: Mr Dafoe, sans-serif ;
-    color:#F297FF;
+    font-family: 'Roboto', sans-serif;
+    color:#fff;
     font-size: 5rem;
     text-align: center;
-    -webkit-text-stroke-width: 1px;
-    -webkit-text-stroke-color: black;
+  
 }
 
-.hero-text-box p{
-    text-align: center;
+.hero_title_image{
+    width: 100%;
+    max-width: 800px;
+    height: auto;
+}
+/*
+
+  -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: #fff;
     color:aliceblue;
     font-size: 2rem;
     -webkit-text-stroke-width: 1px;
     -webkit-text-stroke-color: black;
+*/
+.hero-text-box {
+    text-align: center;
+    
 }
 
 .user-input-box{
@@ -51,6 +61,16 @@ body{
 
 #user_input{
     width: 80%;
+}
+
+#user_input:hover{
+    border: 2px solid #F25C05;
+}
+
+.html_buttons:hover{
+    border: 2px solid #F25C05;
+    background-color: yellow;
+    color: #000000;
 }
 
 #preview_music{
@@ -88,6 +108,10 @@ body{
     justify-content: center;
 }
 
+.card-img-top:hover{
+    border: 2px solid #F25C05;
+}
+
 #pick_name p:hover{
     cursor: pointer;
 }
@@ -97,25 +121,55 @@ body{
     text-align: center;
 }
 
+#click_on_album h4{
+    margin-top: 4px;
+    padding-top: 8px;
+}
+
 /*--------------------------------------- Model ----------------------------*/
 
 .modal-header, .modal-body, .modal-footer, .modal-content{
-background-color: orange;
+    background-color: rgba(60,60,60);
+    color: white;
+}
+
+.modal-content{
+    border: 2px solid yellow;
+}
+
+.modal-body{ 
+    text-align: center;
+}
+
+.track_name p{
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
 }
 
 .model_album_name{
     text-align: center;
 }
 
+.modal-title h5{
+    margin-bottom: 0px;
+    padding-top: 4px;
+}
+
+#album_title_modal{
+    padding-top: 4px;
+}
+
 #album_art_modal{ 
     border-radius: 50%;
     box-shadow: 0 0 40px 10px #fff;    
+    margin-bottom: 4px;
     height: 200px;
     width: 200px; 
     -webkit-animation:spin 4s linear infinite;
     -moz-animation:spin 4s linear infinite;
     animation:spin 4s linear infinite;
 }
+
 
 /*----------------------------------- Media queries -------------------------*/
 
@@ -139,4 +193,8 @@ background-color: orange;
 .user-input-box{
    text-align: center;
 }
+
+.modal-header{
+        text-align: center;
+    }
 }
