@@ -1,4 +1,7 @@
-# Code Institute
+<h1 align="center">
+   <a href="https://jonathanw82.github.io/bristol-central-gym" target="_blank"><img src="https://github.com/jonathanw82/bristol-central-gym/blob/master/assets/images/matReadme.jpg" alt="logo image"/></a>
+ </h1>
+ 
 <div align="center">
     
 [View  in GitHub Pages](https://github.com/jonathanw82/)
