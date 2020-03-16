@@ -1,6 +1,6 @@
 // album id search take the album id collected from album_id_search and collects the tracks and preview data.
 function album_id(album_id_number) {
-   
+
     let api_request = new XMLHttpRequest();
 
     api_request.onreadystatechange = function () {
@@ -20,17 +20,21 @@ function displayAlbumdatainmypage(album_id_search) {
 
     let albums_tracks = [];
     let tracks_preview = [];
-   
+
     let total_tracks = album_id_search.nb_tracks;
     let album_title_modal = album_id_search.title;
     let album_art_modal = album_id_search.cover_medium;
 
+    document.getElementById("track_total").innerHTML = total_tracks;
+    document.getElementById("album_title_modal").innerHTML = album_title_modal;
+    document.getElementById("album_art_modal").innerHTML = `<img  id="album_art_modal" src ="${album_art_modal}" alt="album picture">`;
+
     for (let i = 0; i < album_id_search.tracks.data.length; i++) {
 
-        let album_track = album_id_search.tracks.data[i].title;         
+        let album_track = album_id_search.tracks.data[i].title;
         let track_preview = album_id_search.tracks.data[i].preview;
 
-// these if statments take the tracks and preview data and push them into the array and ignores duplicates.
+        // these if statments take the tracks and preview data and push them into the array and ignores duplicates.
 
         if (!albums_tracks.includes(album_track)) {
             albums_tracks.push(album_track);
@@ -39,17 +43,14 @@ function displayAlbumdatainmypage(album_id_search) {
             tracks_preview.push(track_preview);
         }
     }
-// when the specfic album art is clicked a modal pops up and is injected with the acurate album data taken from the album id.
-    track_list.innerHTML += ""; 
-    for (let i = 0; i < albums_tracks.length;  i++) {
-        album_track_disp =`<div class="col track_name sm-12"><p> ${albums_tracks[i]}</p></div><audio controls source id="preview_music" src="${tracks_preview[i]}
-        " class="preview_audio" type="audio/mpeg"></audio>`;   
-        track_list.innerHTML += album_track_disp; 
+    // when the specfic album art is clicked a modal pops up and is injected with the acurate album data taken from the album id.
+    track_list.innerHTML += "";
+    for (let i = 0; i < albums_tracks.length; i++) {
+        album_track_disp = `<div class="col track_name sm-12"><p> ${albums_tracks[i]}</p></div><audio controls source id="preview_music" src="${tracks_preview[i]}
+        " class="preview_audio" type="audio/mpeg"></audio>`;
+        track_list.innerHTML += album_track_disp;
     }
-   
-    document.getElementById("track_total").innerHTML = total_tracks;
-    document.getElementById("album_title_modal").innerHTML = album_title_modal;
-    document.getElementById("album_art_modal").innerHTML = `<img  id="album_art_modal" src ="${album_art_modal}" alt="album picture">`;
+
 }
 
 
@@ -87,7 +88,7 @@ function displayDataInTheLowerPage(music_search) {
         let artist_name = music_search.data[i].artist.name;
         let temp_artist_name = user_input.value.replace("-", " ");    // take the user input and takes out the - that was needed for other type searches.
 
-        if(artist_name != temp_artist_name){
+        if (artist_name != temp_artist_name) {
         }
         else if (!albums_name.includes(album_name)) {
 
