@@ -52,16 +52,21 @@ HTML5, CSS3, Bootstrap, Javascripy, Gitpod, Sublime text and Balsamiq Mockup 3.
 
 ## WireFrame Mockups & Screenshots:
 #### Desktop View:
-- [Home](https://imgur.com/IIsGZdU).
-- [Album View](https://imgur.com/1526eBx).
-- [Tracks & Samples](https://imgur.com/RoPBZbA).
+- [Home](https://i.imgur.com/IIsGZdU.jpg).
+- [Album View](https://i.imgur.com/1526eBx.jpg).
+- [Tracks & Samples](https://i.imgur.com/RoPBZbA.jpg).
 
 #### Mobile & Tablet View:
-- [Mobile](https://imgur.com/TEbPE00).
-- [Tablet](https://imgur.com/GvqQ1et).
+- [Mobile](https://i.imgur.com/TEbPE00.jpg).
+- [Tablet](https://i.imgur.com/GvqQ1et.jpg).
 
 #### WireFrames:
-- [Home](https://github.com/jo).
+- [DeskTop Landing page](https://i.imgur.com/mRo7iCg.png).
+- [DeskTop Album select](https://i.imgur.com/gXnc2bl.png).
+- [DeskTop Tracks View](https://i.imgur.com/3jdNq41.png).
+- [Mobile View](https://i.imgur.com/jvDD9qW.png).
+- [Tablet View](https://i.imgur.com/ANvexHS.png).
+
 
 
 ### Nice to have 
@@ -187,19 +192,17 @@ favicon.ioc
 Photo by Anton Hooijdonk from Pexels
 
 Background image
-concert-inside-concert-hall-2728557.jpg
-Photo by Ronê Ferreira from Pexels
+unknown lens 
+music-light-plant-white-photography-play-858499-pxhere.com.jpg
+
+https://pxhere.com/
 
 vinyl record
 Brett Jordan from Pexels
 
 https://www.pexels.com/
 
-Initial filler image,
-unknown lens 
-music-light-plant-white-photography-play-858499-pxhere.com.jpg
 
-https://pxhere.com/
 
 Spinning artist image code https://stackoverflow.com/questions/16771225/css3-rotate-animation
 
