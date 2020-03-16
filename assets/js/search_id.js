@@ -29,7 +29,7 @@ function displayAlbumdatainmypage(album_id_search) {
 
         let album_track = album_id_search.tracks.data[i].title;         
         let track_preview = album_id_search.tracks.data[i].preview;
-console.log(tracks_preview)
+
 // these if statments take the tracks and preview data and push them into the array and ignores duplicates.
 
         if (!albums_tracks.includes(album_track)) {
@@ -49,7 +49,7 @@ console.log(tracks_preview)
    
     document.getElementById("track_total").innerHTML = total_tracks;
     document.getElementById("album_title_modal").innerHTML = album_title_modal;
-    document.getElementById("album_art_modal").innerHTML = `<img  id="album_art_modal" src ="album_art_modal" alt="album picture">`;
+    document.getElementById("album_art_modal").innerHTML = `<img  id="album_art_modal" src ="${album_art_modal}" alt="album picture">`;
 }
 
 
