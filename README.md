@@ -130,6 +130,8 @@ The solution was, during the album search to remove the hyphen and include a spa
 
 * Sample tracks play - works as intended.
 
+Bug found. If the user selects a sample to listen to the sample, then selects another before pressing pause on the first both tracks play simultaneously more of an annoyance than a bug, however with future releases this can easily be fixed. 
+
 * Close button on modal closes the modal clearing the data and stopping any preview track being played - works as intended.
 
 Bug if the user clicks off the modal without pressing the close button, the modal will disappear and the music will continue to play. If the same or another album was selected, the modal would add the track to the list having both albums' track listings in one and the previous music playing. This was overcome by clearing the modal not only on pressing the close button but also by clicking the album art the data within is cleared first then repopulated after.
