@@ -52,16 +52,21 @@ HTML5, CSS3, Bootstrap, Javascripy, Gitpod, Sublime text and Balsamiq Mockup 3.
 
 ## WireFrame Mockups & Screenshots:
 #### Desktop View:
-- [Home](https://imgur.com/IIsGZdU).
-- [Album View](https://imgur.com/1526eBx).
-- [Tracks & Samples](https://imgur.com/RoPBZbA).
+- [Home](https://i.imgur.com/IIsGZdU.jpg).
+- [Album View](https://i.imgur.com/1526eBx.jpg).
+- [Tracks & Samples](https://i.imgur.com/RoPBZbA.jpg).
 
 #### Mobile & Tablet View:
-- [Mobile](https://imgur.com/TEbPE00).
-- [Tablet](https://imgur.com/GvqQ1et).
+- [Mobile](https://i.imgur.com/TEbPE00.jpg).
+- [Tablet](https://i.imgur.com/GvqQ1et.jpg).
 
 #### WireFrames:
 - [DeskTop Landing page](https://i.imgur.com/mRo7iCg.png).
+- [DeskTop Album select](https://i.imgur.com/gXnc2bl.png).
+- [DeskTop Tracks View](https://i.imgur.com/3jdNq41.png).
+- [Mobile View](https://i.imgur.com/jvDD9qW.png).
+- [Tablet View](https://i.imgur.com/ANvexHS.png).
+
 
 
 ### Nice to have 
