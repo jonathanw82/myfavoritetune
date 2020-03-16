@@ -49,7 +49,7 @@ console.log(tracks_preview)
    
     document.getElementById("track_total").innerHTML = total_tracks;
     document.getElementById("album_title_modal").innerHTML = album_title_modal;
-    document.getElementById("album_art_modal").src = album_art_modal;
+    document.getElementById("album_art_modal").innerHTML = `<img  id="album_art_modal" src ="album_art_modal" alt="album picture">`;
 }
 
 

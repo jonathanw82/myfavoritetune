@@ -8,7 +8,7 @@
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
 		integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 	<link href="https://fonts.googleapis.com/css?family=Mr+Dafoe|Open+Sans&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
 	<script src="https://code.jquery.com/jquery-3.4.1.js"
 		integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -24,24 +24,24 @@
 	<section>
 		<div class="container-fluid hero-image">
 			<div class="container-md hero-text-box">
-                <img  class="hero_title_image" src="./assets/images/trackslogo1.png" alt="Hero Logo">
+				<img  class="hero_title_image" src="./assets/images/trackslogo1.png" alt="Hero Logo">
 			</div>
-			<div class="container ">
-				<div class="row">
-					<div class="col-sm-6 user-input-box bs-example">
-						<p>Type your search here</p>
-						<input type="text" id="user_input" onclick="clear_html_input()" value="Type Artist name">
-						<button id="trigger_function" class="html_buttons" onclick="InitalArtistsearch()">Go!</button>
-						<p><span id="select_your_artist_heading"></span></p>
-						<p><span id="no_artist_found"></span></p>
-						<p><span id="pick_name"></span></p>
-						<p>Artist Name: <span id="artist_name_artistsearch"></span></p>
-						<!--artist name from the artist search-->
-						<p>Number of Albums: <span id="number_of_albums_artistsearch"></span></p>
-						<!--number of albums from the artist search-->
-					</div>
-					<div class="col-sm-6 artist_image">
-						<img  class="artist_inital_image" id="picture_artistsearch" alt="artist picture">
+				<div class="container ">
+					<div class="row">
+						<div class="col-sm-6 user-input-box bs-example">
+							<p>Type your search here</p>
+							<input type="text" id="user_input" onclick="clear_html_input()" value="Type Artist name">
+							<button id="trigger_function" class="html_buttons" onclick="InitalArtistsearch()">Go!</button>
+							<p><span id="select_your_artist_heading"></span></p>
+							<p><span id="no_artist_found"></span></p>
+							<p><span id="pick_name"></span></p>
+							<p>Artist Name: <span id="artist_name_artistsearch"></span></p>
+							<!--artist name from the artist search-->
+							<p>Number of Albums: <span id="number_of_albums_artistsearch"></span></p>
+							<!--number of albums from the artist search-->
+						</div>
+						<div class="col-sm-6 artist_image">
+							<span id="picture_artistsearch" ></span>
 						</div>
 						<div class="col-sm-12">
 							<p><span id="click_on_album"></span></p>
@@ -61,10 +61,10 @@
 								<h5 class="modal-title">Total Tracks: <span id="track_total"></span></h5>
 							</div>
 							<div class="model_album_name">
-								<h5 id="album_title_modal"></h5>
+								<span id="album_title_modal"></span>
 							</div>
 							<div class="modal-body">
-								<img  id="album_art_modal" alt="album picture">
+								<span  id="album_art_modal"></span>
 								<div id="track_list"></div>
 								<div id="preview_music"></div>
 							</div>

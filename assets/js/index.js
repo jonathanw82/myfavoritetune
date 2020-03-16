@@ -3,9 +3,10 @@
 
 $(document).ready(function () {
 
- document.getElementById("picture_artistsearch").src = "./assets/images/black-and-gray-vinyl-record-2746823.jpg";
- document.getElementById("picture_artistsearch").className = "artist_inital_image_spin";
-    
+    document.getElementById("picture_artistsearch").innerHTML = `<img  class="artist_inital_image_spin" id="picture_artistsearch" 
+ src="./assets/images/black-and-gray-vinyl-record-2746823.jpg" alt="artist picture"></img>`;
+
+
 });
 
 //===================================== Initial artist search ===============================
@@ -42,7 +43,7 @@ function InitalArtistsearch() {
                 // The artist name are injected in to the html below the userinput, when an artist name is clicked the name then populates 
                 // the user input field and handleArtistClickEvent is activated.
                 for (let i = 0; i < artistList.length; i++) {
-                    let cleanArtistName =  artistList[i].replace("'", " ");
+                    let cleanArtistName = artistList[i].replace("'", " ");
                     let pickArtistSearch = `<p onclick="handleArtistClickEvent(\'${cleanArtistName}\')">${artistList[i]}</p>`;
                     pick_name.innerHTML += pickArtistSearch;
                 }
@@ -97,8 +98,8 @@ function insertStlectArtistHeading() {
 function clear_html_input() {
     document.getElementById("user_input").value = "";
     album_list.innerHTML = "<div></div>";
-    document.getElementById("picture_artistsearch").src = "./assets/images/black-and-gray-vinyl-record-2746823.jpg";
-    document.getElementById("picture_artistsearch").className = "artist_inital_image_spin";
+    document.getElementById("picture_artistsearch").innerHTML = `<img  class="artist_inital_image_spin" id="picture_artistsearch" 
+    src="./assets/images/black-and-gray-vinyl-record-2746823.jpg" alt="artist picture"></img>`;
     click_on_album.innerHTML = "<div></div>";
     select_your_artist_heading.innerHTML = "";
     no_artist_found.innerHTML = "";
@@ -129,7 +130,7 @@ function artist_search() {
             displaydatainmyartistpage(music_search_artist);
         }
         else {
-           // console.log("this stuff is not working");
+            // console.log("this stuff is not working");
         }
     };
     api_request.open("GET", "https://deezerdevs-deezer.p.rapidapi.com/artist/" + user_input);
@@ -147,7 +148,7 @@ function displaydatainmyartistpage(music_search_artist) {
 
     document.getElementById("artist_name_artistsearch").innerHTML = artist_name_artistsearch;
     document.getElementById("number_of_albums_artistsearch").innerHTML = number_of_albums;
-    document.getElementById("picture_artistsearch").className = "artist_inital_image";  // changes the css class for the picture_artistsearch from spin to static.
-    document.getElementById("picture_artistsearch").src = picture_artistsearch;
+    document.getElementById("picture_artistsearch").innerHTML = `<img  class="artist_inital_image" id="picture_artistsearch" 
+    src="${picture_artistsearch}" alt="artist picture"></img>`;
 }
 
