@@ -207,7 +207,9 @@ Brett Jordan from Pexels
 
 https://www.pexels.com/
 
-
+Logo Font
+Punk Kid font by Chris Hansen.
+urban_ninja4real@hotmail.com
 
 Spinning artist image code https://stackoverflow.com/questions/16771225/css3-rotate-animation
 
