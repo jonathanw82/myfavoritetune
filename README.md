@@ -61,7 +61,7 @@ HTML5, CSS3, Bootstrap, Javascripy, Gitpod, Sublime text and Balsamiq Mockup 3.
 - [Tablet](https://imgur.com/GvqQ1et).
 
 #### WireFrames:
-- [Home](https://github.com/jo).
+- [DeskTop Landing page](https://i.imgur.com/mRo7iCg.png).
 
 
 ### Nice to have 
