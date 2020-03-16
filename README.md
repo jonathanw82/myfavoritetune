@@ -73,6 +73,8 @@ I found the type a head function was not the best away to archive what I wanted 
 * Image carousel. 
 I wanted to incorporate an image carousel, as at this stage I felt it did not give the flexibility I required however this carousel created by, Basic 3D Carousel In Pure JavaScript author [loveneet4](https://github.com/internwt/3d-slider) would be a great addition to my future project.
 
+* I felt it was a nice user experiance to leave previously searched for artist and nuber of albums on the page after the inital seach had been cleared.
+
 ## Testing:
 
 Landing page
