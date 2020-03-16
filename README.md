@@ -69,7 +69,7 @@ HTML5, CSS3, Bootstrap, Javascripy, Gitpod, Sublime text and Balsamiq Mockup 3.
 
 
 
-### Nice to have 
+### Nice to have: 
 These features may be included in future releases of this application.
 
 * Type ahead.
@@ -79,6 +79,7 @@ I found the type a head function was not the best away to archive what I wanted 
 I wanted to incorporate an image carousel, as at this stage I felt it did not give the flexibility I required however this carousel created by, Basic 3D Carousel In Pure JavaScript author [loveneet4](https://github.com/internwt/3d-slider) would be a great addition to my future project.
 
 * I felt it was a nice user experiance to leave previously searched for artist and nuber of albums on the page after the inital seach had been cleared.
+
 
 ## Testing:
 
@@ -105,7 +106,7 @@ and does not display no artist found I have not yet fixed this bug but it will b
 
 * Number of albums is displayed next to number of albums works as intended.
 
-Bug found the search results bring back that an artist has 25 albums but then only displays 5 i have yet to find a solution to this problem however I’m sure in the evolution of 
+Bug found the search results bring back that an artist has 25 albums but then only displays 5 I have yet to find a solution to this problem however I’m sure in the evolution of 
 Application later on a solution will be found.
 
 * After the second search the select you album heading appears works as intended.
@@ -136,14 +137,18 @@ Or because of the limited online music licence more info can be found here:
 
 * Sample tracks play works as intended.
 
-Bug if there are more than 50 tracks in an album the console will display ERR_INSUFFICIENT_RESOURCES i am yet to find a solution to the problem but it unlikely the user will 
-experience this problem as most albums excluding compilations have less than 50 track anyway.
-
 * Close button on modal closes the modal clearing it data and stopping any preview track being played works as intended.
 
 Bug if the user clicks off the modal without pressing the close button the modal will disappear and the music will continue to play, if the same or another album was selected 
 the model would add the track to the list having both albums track listings in one and the previous music playing. this was overcome by clearing the modal not only on pressing 
 the close button but also by clicking the album art the data within is cleared first then repopulated after.
+
+### Limitations & on going fixes:
+* Some names that are searched for are either not found or do not populate the picartist list this is a ongoing bug that is taking a fair bit of time to solve however I am confident this will be resoleved in future releases.
+* Some labums displayed are not always directly related to selected artist.
+* Atitist with more than 3 words in there names can cause errors in the console.
+* If there are more than 50 tracks in an album the console will display ERR_INSUFFICIENT_RESOURCES or net::ERR_HTTP2_PROTOCOL_ERROR this is caused so we think, by the free api limiting calls for mp3 sample urs I am yet to find a solution to the problem but it's unlikely the user will 
+experience this problem as most albums excluding compilations have less than 50 track anyway.
 
 
 ### Deployment:

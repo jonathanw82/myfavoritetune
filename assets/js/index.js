@@ -42,7 +42,8 @@ function InitalArtistsearch() {
                 // The artist name are injected in to the html below the userinput, when an artist name is clicked the name then populates 
                 // the user input field and handleArtistClickEvent is activated.
                 for (let i = 0; i < artistList.length; i++) {
-                    let pickArtistSearch = `<p onclick="handleArtistClickEvent('${artistList[i]}')">${artistList[i]}</p>`;
+                    let cleanArtistName =  artistList[i].replace("'", " ");
+                    let pickArtistSearch = `<p onclick="handleArtistClickEvent(\'${cleanArtistName}\')">${artistList[i]}</p>`;
                     pick_name.innerHTML += pickArtistSearch;
                 }
             }
