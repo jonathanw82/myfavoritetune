@@ -10,7 +10,8 @@ $(document).ready(function () {
 });
 
 //===================================== Initial artist search ===============================
-// inital artist search takes the user input calls the api with the search criteria, the results are then passed through JSON.parse and passed to music search variable.
+// inital artist search takes the user input calls the api with the search criteria, the results are then passed 
+// through JSON.parse and passed to music search variable.
 
 function InitalArtistsearch() {
     let user_input = document.getElementById("user_input").value;
@@ -21,7 +22,8 @@ function InitalArtistsearch() {
             let the_response = api_request.responseText;
             let music_search = JSON.parse(the_response);
 
-            // music search is then passed through a for loop that creates an array called artistList whitch is then when called by another for loop displayed on the html.
+            // music search is then passed through a for loop that creates an array called artistList whitch is then 
+            //when called by another for loop displayed on the html.
 
             if (music_search.data.length == 0) {
                 no_artist_found.innerHTML = `<span>No Artist Found</span>`;
@@ -104,12 +106,11 @@ function clear_html_input() {
     select_your_artist_heading.innerHTML = "";
     no_artist_found.innerHTML = "";
     clearArtistSearchList();
+    artist_name_artistsearch.innerHTML = "";
+    number_of_albums_artistsearch.innerHTML = "";
 }
 
-// clears all modal data on close or if the album has been selected without closing the first modal
-function clearModal() {
-    track_list.innerHTML = " ";
-}
+
 
 // clears the data populated in the pickname html
 function clearArtistSearchList() {
@@ -142,11 +143,10 @@ function artist_search() {
 
 function displaydatainmyartistpage(music_search_artist) {
 
-    let artist_name_artistsearch = music_search_artist.name;
     let picture_artistsearch = music_search_artist.picture_medium;
     let number_of_albums = music_search_artist.nb_album;
 
-    document.getElementById("artist_name_artistsearch").innerHTML = artist_name_artistsearch;
+    document.getElementById("artist_name_artistsearch").innerHTML = music_search_artist.name;
     document.getElementById("number_of_albums_artistsearch").innerHTML = number_of_albums;
     document.getElementById("picture_artistsearch").innerHTML = `<img  class="artist_inital_image" id="picture_artistsearch" 
     src="${picture_artistsearch}" alt="artist picture"></img>`;

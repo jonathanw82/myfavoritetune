@@ -118,6 +118,10 @@ body{
     padding-top: 8px;
 }
 
+#no_artist_found{
+    font-weight: bold;
+}
+
 /*--------------------------------------- Model ----------------------------*/
 
 .modal-header, .modal-body, .modal-footer, .modal-content{

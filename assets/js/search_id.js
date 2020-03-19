@@ -16,10 +16,11 @@ function album_id(album_id_number) {
     api_request.send();
 }
 // displayAlbumdatainmypage uses a for loop to iterate through the tracks and preview array 
+var tracks_preview = [];
 function displayAlbumdatainmypage(album_id_search) {
 
     let albums_tracks = [];
-    let tracks_preview = [];
+    
 
     let total_tracks = album_id_search.nb_tracks;
     let album_title_modal = album_id_search.title;
@@ -35,7 +36,9 @@ function displayAlbumdatainmypage(album_id_search) {
         let track_preview = album_id_search.tracks.data[i].preview;
 
         // these if statments take the tracks and preview data and push them into the array and ignores duplicates.
-
+        
+        console.log(tracks_preview)
+        
         if (!albums_tracks.includes(album_track)) {
             albums_tracks.push(album_track);
         }
@@ -52,7 +55,10 @@ function displayAlbumdatainmypage(album_id_search) {
     }
 
 }
-
+// clears all modal data on close or if the album has been selected without closing the first modal
+function clearModal() {
+    track_list.innerHTML = " ";
+}
 
 //====================================== albumInfoSearch ===============================
 
