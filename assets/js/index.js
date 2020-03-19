@@ -24,8 +24,7 @@ function InitalArtistsearch() {
             // music search is then passed through a for loop that creates an array called artistList whitch is then when called by another for loop displayed on the html.
 
             if (music_search.data.length == 0) {
-                let noArtistFound = `<span>No Artist Found</span>`;
-                no_artist_found.innerHTML = noArtistFound;
+                no_artist_found.innerHTML = `<span>No Artist Found</span>`;
             }
             else {
                 let artistList = [];
@@ -57,7 +56,8 @@ function InitalArtistsearch() {
     api_request.send();
 }
 /* artist_search then sends the correctly hyphonated search to the api 
-   and data returned then populates the artist name and number of albums and the artist image. clearArtistSearchList then clears any other not clicked on 
+   and data returned then populates the artist name and number of albums and the artist image. 
+   clearArtistSearchList then clears any other not clicked on 
    data from the pick_name list, albumInfoSearch is then activated 
 */
 function handleArtistClickEvent(passArtistData) {

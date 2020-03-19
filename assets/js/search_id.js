@@ -57,7 +57,7 @@ function displayAlbumdatainmypage(album_id_search) {
 //====================================== albumInfoSearch ===============================
 
 function albumInfoSearch() {
-    var user_input = document.getElementById("user_input").value;
+    let user_input = document.getElementById("user_input").value;
     let api_request = new XMLHttpRequest();
 
     api_request.onreadystatechange = function () {
