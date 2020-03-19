@@ -16,12 +16,11 @@ function album_id(album_id_number) {
     api_request.send();
 }
 // displayAlbumdatainmypage uses a for loop to iterate through the tracks and preview array 
-var tracks_preview = [];
-function displayAlbumdatainmypage(album_id_search) {
 
+function displayAlbumdatainmypage(album_id_search) {
+    let tracks_preview = [];
     let albums_tracks = [];
     
-
     let total_tracks = album_id_search.nb_tracks;
     let album_title_modal = album_id_search.title;
     let album_art_modal = album_id_search.cover_medium;
@@ -57,6 +56,11 @@ function displayAlbumdatainmypage(album_id_search) {
 }
 // clears all modal data on close or if the album has been selected without closing the first modal
 function clearModal() {
+    let audios = document.getElementsByTagName('audio');
+    console.log("AM I HERE?" + audios);
+    for (var i=0; i < audios.length; i++) {
+        audios[i].remove();
+    }
     track_list.innerHTML = " ";
 }
 
