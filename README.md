@@ -134,6 +134,7 @@ Bug found. If the user selects a sample to listen to the sample, then selects an
 * Close button on modal closes the modal clearing the data and stopping any preview track being played - works as intended.
 
 Bug if the user clicks off the modal without pressing the close button, the modal will disappear and the music will continue to play. If the same or another album was selected, the modal would add the track to the list having both albums' track listings in one and the previous music playing. This was overcome by clearing the modal not only on pressing the close button but also by clicking the album art the data within is cleared first then repopulated after.
+Also adding a on.hidden event helped if the modal was exited anyother way other then the button.
 
 ### Limitations & on going fixes:
 * Some names that are searched for are either not found or do not populate the picartist list. This is a ongoing bug that is taking a fair bit of time to solve however I am confident this will be resoleved in future releases.
