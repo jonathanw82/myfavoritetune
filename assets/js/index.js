@@ -23,7 +23,7 @@ function InitalArtistsearch() {
             let music_search = JSON.parse(the_response);
 
             // music search is then passed through a for loop that creates an array called artistList whitch is then 
-            //when called by another for loop displayed on the html.
+            // when called by another for loop displayed on the html.
 
             if (music_search.data.length == 0) {
                 no_artist_found.innerHTML = `<span>No Artist Found</span>`;
@@ -71,7 +71,8 @@ function handleArtistClickEvent(passArtistData) {
 }
 
 //===================================== passes the data to the user input ====================
-// function will check to see if ther is any spaces and if ther is replace the space with a - https://www.developintelligence.com/blog/2016/02/replace-spaces-underscores-javascript/
+// function will check to see if ther is any spaces and if ther is replace the space with a 
+//- https://www.developintelligence.com/blog/2016/02/replace-spaces-underscores-javascript/
 
 function fillUserInput(artistClickdOnName) {
     let artistClickdOnNameNospace;
@@ -79,17 +80,16 @@ function fillUserInput(artistClickdOnName) {
         artistClickdOnNameNospace = artistClickdOnName.replace(" ", "-");
         user_input.value = artistClickdOnNameNospace;
     }
-};
+}
 
 function insertSelectHeading() {
     let click_on_album_heading = `<h4 class="album_select_heading">Select Your Album By Clicking On The Album Cover</h4>`;
     click_on_album.innerHTML = click_on_album_heading;
-    // Wrap every letter in a span
 }
 
 
 function insertStlectArtistHeading() {
-    let select_your_artist_text = `<span>Select Your Artist</span>`;            // Select your artist is displayed before you pic an srtist from the list.
+    let select_your_artist_text = `<span>Select Your Artist</span>`;   // Select your artist is displayed before you pic an srtist from the list.
     select_your_artist_heading.innerHTML = select_your_artist_text;
 }
 
@@ -130,9 +130,7 @@ function artist_search() {
             let music_search_artist = JSON.parse(the_response);
             displaydatainmyartistpage(music_search_artist);
         }
-        else {
-            // console.log("this stuff is not working");
-        }
+       
     };
     api_request.open("GET", "https://deezerdevs-deezer.p.rapidapi.com/artist/" + user_input);
     api_request.setRequestHeader("x-rapidapi-host", "deezerdevs-deezer.p.rapidapi.com");
@@ -149,6 +147,6 @@ function displaydatainmyartistpage(music_search_artist) {
     document.getElementById("artist_name_artistsearch").innerHTML = music_search_artist.name;
     document.getElementById("number_of_albums_artistsearch").innerHTML = number_of_albums;
     document.getElementById("picture_artistsearch").innerHTML = `<img  class="artist_inital_image" id="picture_artistsearch" 
-    src="${picture_artistsearch}" alt="artist picture"></img>`;
+    src="${picture_artistsearch}" onerror="if (this.src != 'error.jpg') this.src = './assets/images/trackslogo.png';" alt="artist picture">`;
 }
 

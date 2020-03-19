@@ -81,7 +81,6 @@ I found the type ahead function was not the best away to archive what I wanted i
 * Image carousel. 
 I wanted to incorporate an image carousel, but at this stage I felt it did not give the flexibility I required. However, this carousel created by, Basic 3D Carousel In Pure JavaScript author [loveneet4](https://github.com/internwt/3d-slider) would be a great addition to my future project.
 
-* I felt it was a nice user experiance to leave previously searched for artist and number of albums on the page after the initial search had been cleared.
 
 
 ## Testing:
@@ -97,7 +96,7 @@ Bug found depending on the artist name and whether it’s a single name or doubl
 
 * Select the artist by clicking on their name and it populates the input box, hyphenated where necessary. Works as intended.
 
-Bug found if the artist name is longer than 2 words. The "select your artist" option will be displayed with an empty pic selction list. Also, if the name is random, the same thing happens and does not display "no artist found." I have not yet fixed this bug but it will be in future releases of the application.
+Bug found if the artist name is longer than 2 words. The "select your artist" option will be displayed with an empty pic selection list. Also, if the name is random, the same thing happens and does not display "no artist found." I have not yet fixed this bug but it will be in future releases of the application.
 
 * Select the artist by clicking on their name. The dropdown clears when clicked. Works as intended.
 
@@ -140,7 +139,7 @@ Bug if the user clicks off the modal without pressing the close button, the moda
 * Some names that are searched for are either not found or do not populate the picartist list. This is a ongoing bug that is taking a fair bit of time to solve however I am confident this will be resoleved in future releases.
 * Some albums displayed are not always directly related to selected artist.
 * Atitist with more than 3 words in their names can cause errors in the console.
-* If there are more than 50 tracks in an album the console will display ERR_INSUFFICIENT_RESOURCES or net::ERR_HTTP2_PROTOCOL_ERROR this is caused so we think, by the free API limiting calls for mp3 sample URLs. I am yet to find a solution to the problem but it's unlikely the user will experience this problem as most albums, excluding compilations, have less than 50 track anyway.
+* If there are more than 50 tracks in an album the console will display ERR_INSUFFICIENT_RESOURCES or net::ERR_HTTP2_PROTOCOL_ERROR sometimes a 502 Error(https://httpstatuses.com/504) and a 206 Error(https://httpstatuses.com/206) this is caused by the free API limiting calls for mp3 sample URLs 50 calls in 5 seconds.  It's unlikely the user will experience this problem as most albums, excluding compilations, have less than 50 track anyway.
 
 
 ### Deployment:

@@ -27,7 +27,8 @@ function displayAlbumdatainmypage(album_id_search) {
 
     document.getElementById("track_total").innerHTML = total_tracks;
     document.getElementById("album_title_modal").innerHTML = album_title_modal;
-    document.getElementById("album_art_modal").innerHTML = `<img  id="album_art_modal" src ="${album_art_modal}" alt="album picture">`;
+    document.getElementById("album_art_modal").innerHTML = `<img  id="album_art_modal" src ="${album_art_modal}" 
+    onerror="if (this.src != 'error.jpg') this.src = './assets/images/trackslogo.png';" alt="album picture">`;
 
     for (let i = 0; i < album_id_search.tracks.data.length; i++) {
 
@@ -36,7 +37,6 @@ function displayAlbumdatainmypage(album_id_search) {
 
         // these if statments take the tracks and preview data and push them into the array and ignores duplicates.
         
-        console.log(tracks_preview)
         
         if (!albums_tracks.includes(album_track)) {
             albums_tracks.push(album_track);
@@ -48,8 +48,8 @@ function displayAlbumdatainmypage(album_id_search) {
     // when the specfic album art is clicked a modal pops up and is injected with the acurate album data taken from the album id.
     track_list.innerHTML += "";
     for (let i = 0; i < albums_tracks.length; i++) {
-        album_track_disp = `<div class="col track_name sm-12"><p> ${albums_tracks[i]}</p></div><audio controls source id="preview_music" src="${tracks_preview[i]}
-        " class="preview_audio" type="audio/mpeg"></audio>`;
+        album_track_disp = `<div class="col track_name sm-12"><p> ${albums_tracks[i]}</p></div><audio controls source 
+        id="preview_music" src="${tracks_preview[i]}" class="preview_audio" type="audio/mpeg"></audio>`;
         track_list.innerHTML += album_track_disp;
     }
 
@@ -57,12 +57,13 @@ function displayAlbumdatainmypage(album_id_search) {
 // clears all modal data on close or if the album has been selected without closing the first modal
 function clearModal() {
     let audios = document.getElementsByTagName('audio');
-    console.log("AM I HERE?" + audios);
     for (var i=0; i < audios.length; i++) {
         audios[i].remove();
     }
     track_list.innerHTML = " ";
 }
+
+$('#tracklistModal').on('hidden', clearModal);
 
 //====================================== albumInfoSearch ===============================
 
@@ -112,7 +113,7 @@ function displayDataInTheLowerPage(music_search) {
     let album_list = document.getElementById("album_list");
     album_list.innerHTML += "";                     // clears the html before adding more infomation
     for (let i = 0; i < albums.length; i++) {
-        this_album_string = `<div class="col-md-4 card_image"><div class="card"><img src="${albums[i].cover_big}" class="card-img-top" alt="Album cover" 
+        this_album_string = `<div class="col-md-4 card_image"><div class="card"><img src="${albums[i].cover_big}" onerror="if (this.src != 'error.jpg') this.src = './assets/images/trackslogo.png';" class="card-img-top" alt="Album cover" 
         onclick="album_id(${albums[i].id})" ${albums[i].id}"></div>`;
         album_list.innerHTML += this_album_string;
     }
