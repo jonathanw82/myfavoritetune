@@ -7,7 +7,7 @@
 [View  in GitHub Pages](https://github.com/jonathanw82/myfavoritetune)
 </div>
 
-A music lovers paradise, where the user can search and find their favoured artist and easily navigate to their favourite album or find an album they never knew existed, all the while being able to see the track listing and hear the samples.
+A music lovers paradise, where the user can search and find their favoured artist and easily navigate to their desired album or find an album they never knew existed, all the while being able to see the track listing and hear samples.
 
 The site is directed at music lovers and hobbyists rather than businesses.
 
@@ -112,7 +112,7 @@ Bug found when the search results bring back an artist that has 25 albums it onl
 
 * Relevant album art is displayed in the page. Works as intended.
 
-Bug found. Sometimes the album search would bring back albums not necessary relevant to the artist, for instance if another artist had a song called the artist name, then that album would be included even though it has no relevance. Also if an artist had a feature on a track, this would also be displayed. This could be confusing for a user as it could lead them to wrongly believe that a track was attributed to an incorrect artist.
+Bug found. Sometimes the album search would bring back albums not necessarily relevant to the artist, for instance if another artist had a song called the artist name, then that album would be included even though it has no relevance. Also if an artist had a feature on a track, this would also be displayed. This could be confusing for a user as it could lead them to wrongly believe that a track was attributed to an incorrect artist.
 The solution was, during the album search to remove the hyphen and include a space then compare if the album artist matched the user input and only find albums relevant to the name. This did exclude what was mentioned before but I felt it made for a better user experience.
 
 * Click on the album art and a modal appears - works as intended.
@@ -137,7 +137,7 @@ Bug if the user clicks off the modal without pressing the close button, the moda
 Also adding a on.hidden event helped if the modal was exited anyother way other then the button.
 
 ### Limitations & on going fixes:
-* Some names that are searched for are either not found or do not populate the picartist list. This is a ongoing bug that is taking a fair bit of time to solve however I am confident this will be resoleved in future releases.
+* Some names that are searched for are either not found or do not populate the picartist list. This is a ongoing bug that is taking a fair bit of time to solve however I am confident this will be resolved in future releases.
 * Some albums displayed are not always directly related to selected artist.
 * Atitist with more than 3 words in their names can cause errors in the console.
 * If there are more than 50 tracks in an album the console will display ERR_INSUFFICIENT_RESOURCES or net::ERR_HTTP2_PROTOCOL_ERROR sometimes a 502 [Error](https://httpstatuses.com/504) and a 206 [Error](https://httpstatuses.com/206) this is caused by the free API limiting calls for mp3 sample URLs 50 calls in 5 seconds.  It's unlikely the user will experience this problem as most albums, excluding compilations, have less than 50 track anyway.
