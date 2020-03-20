@@ -163,7 +163,7 @@ In the Clone with HTTPs section, copy the clone URL for the repository.
 In your local IDE open Git Bash.
 Change the current working directory to the location where you want the cloned directory to be made.
 Type git clone, and then paste the URL you copied in Step 3.
-git clone https://github.com/USERNAME/REPOSITORY
+git clone "https://github.com/USERNAME/REPOSITORY"
 Press Enter. Your local clone will be created.
 Further reading and troubleshooting on cloning a repository from GitHub here.
 
