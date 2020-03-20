@@ -140,7 +140,7 @@ Also adding a on.hidden event helped if the modal was exited anyother way other 
 * Some names that are searched for are either not found or do not populate the picartist list. This is a ongoing bug that is taking a fair bit of time to solve however I am confident this will be resoleved in future releases.
 * Some albums displayed are not always directly related to selected artist.
 * Atitist with more than 3 words in their names can cause errors in the console.
-* If there are more than 50 tracks in an album the console will display ERR_INSUFFICIENT_RESOURCES or net::ERR_HTTP2_PROTOCOL_ERROR sometimes a 502 Error(https://httpstatuses.com/504) and a 206 Error(https://httpstatuses.com/206) this is caused by the free API limiting calls for mp3 sample URLs 50 calls in 5 seconds.  It's unlikely the user will experience this problem as most albums, excluding compilations, have less than 50 track anyway.
+* If there are more than 50 tracks in an album the console will display ERR_INSUFFICIENT_RESOURCES or net::ERR_HTTP2_PROTOCOL_ERROR sometimes a 502 [Error](https://httpstatuses.com/504) and a 206 [Error](https://httpstatuses.com/206) this is caused by the free API limiting calls for mp3 sample URLs 50 calls in 5 seconds.  It's unlikely the user will experience this problem as most albums, excluding compilations, have less than 50 track anyway.
 
 
 ### Deployment:
