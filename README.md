@@ -186,10 +186,12 @@ https://pages.github.com/
 The Photos used in this site were obtained from
 
 favicon.ioc
+
 Photo by Anton Hooijdonk from Pexels
 
 Background image
 unknown lens 
+
 music-light-plant-white-photography-play-858499-pxhere.com.jpg
 
 https://pxhere.com/
@@ -201,9 +203,12 @@ https://www.pexels.com/
 
 Logo Font
 Punk Kid font by Chris Hansen.
+
 urban_ninja4real@hotmail.com
 
-Spinning artist image code https://stackoverflow.com/questions/16771225/css3-rotate-animation
+Spinning artist image code 
+
+https://stackoverflow.com/questions/16771225/css3-rotate-animation
 
 Parts of the Deployment Section Written by myself and,  
 AJGreaves
