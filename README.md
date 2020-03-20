@@ -51,7 +51,7 @@ The home page is made up of a hero image with branding logo, a search box and a 
 The album trackbox consists of the header "album tracklist" in the top left corner, the total number of tracks listed as a number in the top right corner, the title of the album below this followed by a spinning image of the album cover art and then each track on the album with a thirty second sample.
 
 ### Technology’s used will include:
-HTML5, CSS3, Bootstrap, Javascripy, Gitpod, Sublime text and Balsamiq Mockup 3.
+[HTML5](https://en.wikipedia.org/wiki/HTML5), [CSS3](https://en.wikipedia.org/wiki/Cascading_Style_Sheets), [Bootstrap](https://getbootstrap.com/), [Javascript](https://en.wikipedia.org/wiki/JavaScript), [Gitpod](https://www.gitpod.io/), [Sublime text](https://www.sublimetext.com/), [Balsamiq Mockup 3](https://balsamiq.com/wireframes/desktop/) and [Adobe Photoshop](https://www.adobe.com/uk/products/photoshop.html?gclid=EAIaIQobChMIzNru2Myo6AIVF-DtCh28Fgn0EAAYASAAEgKkdvD_BwE&sdid=88X75SKR&mv=search&ef_id=EAIaIQobChMIzNru2Myo6AIVF-DtCh28Fgn0EAAYASAAEgKkdvD_BwE:G:s&s_kwcid=AL!3085!3!394411736356!e!!g!!photoshop).
 
 ## WireFrame Mockups & Screenshots:
 #### Desktop View:
