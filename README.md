@@ -4,7 +4,7 @@
  
 <div align="center">
     
-[View  in GitHub Pages](https://github.com/jonathanw82/myfavoritetune)
+Click on image for live version
 </div>
 
 A music lovers paradise, where the user can search and find their favoured artist and easily navigate to their desired album or find an album they never knew existed, all the while being able to see the track listing and hear samples.
