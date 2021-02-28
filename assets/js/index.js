@@ -1,6 +1,6 @@
 
 // On page start the artist picture is populated with a record.jpg and class name artist_inital_image_spin is initalty set to spin the image.
-
+"user strict"
 $(document).ready(function () {
 
     document.getElementById("picture_artistsearch").innerHTML = `<img  class="artist_inital_image_spin" id="picture_artistsearch" 
@@ -24,14 +24,15 @@ function InitalArtistsearch() {
 
             // music search is then passed through a for loop that creates an array called artistList whitch is then 
             // when called by another for loop displayed on the html.
-
-            if (music_search.data.length == 0) {
+            if (music_search.error){
+                no_artist_found.innerHTML = `<span>Looks like we have hit the Api limit please call back later.</span>`;
+            }
+            else if (music_search.data.length == 0) {
                 no_artist_found.innerHTML = `<span>No Artist Found</span>`;
             }
             else {
                 let artistList = [];
-                insertStlectArtistHeading();
-
+               
                 for (let i = 0; i < music_search.data.length; i++) {
                     let artistSearchNames = music_search.data[i].artist.name;
                     if (artistSearchNames.toLowerCase().includes(user_input.toLowerCase())) {
@@ -39,6 +40,12 @@ function InitalArtistsearch() {
                             artistList.push(artistSearchNames);
                         }
                     }
+                }
+
+                if(artistList.length === 0 ){
+                    no_artist_found.innerHTML = `<span>Oops No Artist Found Try Another!</span>`;
+                }else{
+                    insertStlectArtistHeading();
                 }
 
                 // The artist name are injected in to the html below the userinput, when an artist name is clicked the name then populates 
@@ -89,7 +96,7 @@ function insertSelectHeading() {
 
 
 function insertStlectArtistHeading() {
-    let select_your_artist_text = `<span>Select Your Artist</span>`;   // Select your artist is displayed before you pic an srtist from the list.
+    let select_your_artist_text = `<span>Select Your Artist</span>`;   // Select your artist is displayed before you pic an artist from the list.
     select_your_artist_heading.innerHTML = select_your_artist_text;
 }
 
