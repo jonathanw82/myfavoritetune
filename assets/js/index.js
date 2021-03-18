@@ -25,7 +25,8 @@ function InitalArtistsearch() {
             // music search is then passed through a for loop that creates an array called artistList whitch is then 
             // when called by another for loop displayed on the html.
             if (music_search.error){
-                no_artist_found.innerHTML = `<span>Looks like we have hit the Api limit please call back later.</span>`;
+                // no_artist_found.innerHTML = `<span>Looks like we have hit the Api limit please call back later.</span>`;
+                InitalArtistsearch();
             }
             else if (music_search.data.length == 0) {
                 no_artist_found.innerHTML = `<span>No Artist Found</span>`;
@@ -61,8 +62,9 @@ function InitalArtistsearch() {
     };
     api_request.open("GET", "https://deezerdevs-deezer.p.rapidapi.com/search?q=" + user_input);
     api_request.setRequestHeader("x-rapidapi-host", "deezerdevs-deezer.p.rapidapi.com");
-    api_request.setRequestHeader("x-rapidapi-key", "ef9686a9b9msh4dbce73327763a8p14d988jsn38434b35145a");
+    api_request.setRequestHeader("x-rapidapi-key", "80a2fdf7a8msh83117c8d4aa46b6p192044jsneb60242d11c1");
     api_request.send();
+
 }
 /* artist_search then sends the correctly hyphonated search to the api 
    and data returned then populates the artist name and number of albums and the artist image. 
@@ -141,7 +143,7 @@ function artist_search() {
     };
     api_request.open("GET", "https://deezerdevs-deezer.p.rapidapi.com/artist/" + user_input);
     api_request.setRequestHeader("x-rapidapi-host", "deezerdevs-deezer.p.rapidapi.com");
-    api_request.setRequestHeader("x-rapidapi-key", "ef9686a9b9msh4dbce73327763a8p14d988jsn38434b35145a");
+    api_request.setRequestHeader("x-rapidapi-key", "80a2fdf7a8msh83117c8d4aa46b6p192044jsneb60242d11c1");
     api_request.send();
 }
 

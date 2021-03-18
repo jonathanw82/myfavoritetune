@@ -31,14 +31,14 @@
 					<div class="row">
 						<div class="col-sm-6 user-input-box bs-example">
 							<p>Type your search here</p>
-							<input type="text" id="user_input" onclick="clearHtmlInput()" value="Type Artist name">
-							<button id="trigger_function" class="html_buttons" onclick="callDeezerApi('search', 'initial')">Go!</button>
+							<input type="text" id="user_input" onclick="clear_html_input()" value="Type Artist name">
+							<button id="trigger_function" class="html_buttons" onclick="InitalArtistsearch()">Go!</button>
 							<p><span id="select_your_artist_heading"></span></p>
 							<p><span id="no_artist_found"></span></p>
 							<p><span id="pick_name"></span></p>
 							<p><b>Artist Name: </b><span id="artist_name_artistsearch"></span></p>
 							<!--artist name from the artist search-->
-							<p><b>Number of Albums: </b><span id="number_of_albums"></span></p>
+							<p><b>Number of Albums: </b><span id="number_of_albums_artistsearch"></span></p>
 							<!--number of albums from the artist search-->
 						</div>
 						<div class="col-sm-6 artist_image">
@@ -70,7 +70,7 @@
 								<div id="preview_music"></div>
 							</div>
 							<div class="modal-footer">
-								<button type="button" id="closeBut" class="btn html_buttons btn-secondary" onclick="clearModal()" data-dismiss="modal">Close</button>
+								<button type="button" class="btn html_buttons btn-secondary" onclick="clearModal()" data-dismiss="modal">Close</button>
 							</div>
 						</div>
 					</div>
@@ -80,9 +80,8 @@
 
 	<!--======================================= script =========================================-->
 
-	<!-- <script src="assets/js/index.js"></script> -->
-	<!-- <script src="assets/js/search_id.js"></script> -->
-	<script src="assets/js/new.js"></script>
+	<script src="assets/js/index.js"></script>
+	<script src="assets/js/search_id.js"></script>
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
 		integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
 	</script>

@@ -8,11 +8,12 @@ function album_id(album_id_number) {
             let the_response = api_request.responseText;
             let album_id_search = JSON.parse(the_response);
             displayAlbumdatainmypage(album_id_search);
+            console.log(album_id_search);
         }
     };
     api_request.open("GET", "https://deezerdevs-deezer.p.rapidapi.com/album/" + album_id_number);
     api_request.setRequestHeader("x-rapidapi-host", "deezerdevs-deezer.p.rapidapi.com");
-    api_request.setRequestHeader("x-rapidapi-key", "ef9686a9b9msh4dbce73327763a8p14d988jsn38434b35145a");
+    api_request.setRequestHeader("x-rapidapi-key", "80a2fdf7a8msh83117c8d4aa46b6p192044jsneb60242d11c1");
     api_request.send();
 }
 // displayAlbumdatainmypage uses a for loop to iterate through the tracks and preview array 
@@ -76,11 +77,12 @@ function albumInfoSearch() {
             let the_response = api_request.responseText;
             let music_search = JSON.parse(the_response);
             displayDataInTheLowerPage(music_search);
+            console.log(music_search);
         }
     };
     api_request.open("GET", "https://deezerdevs-deezer.p.rapidapi.com/search?q=" + user_input);
     api_request.setRequestHeader("x-rapidapi-host", "deezerdevs-deezer.p.rapidapi.com");
-    api_request.setRequestHeader("x-rapidapi-key", "ef9686a9b9msh4dbce73327763a8p14d988jsn38434b35145a");
+    api_request.setRequestHeader("x-rapidapi-key", "80a2fdf7a8msh83117c8d4aa46b6p192044jsneb60242d11c1");
     api_request.send();
 }
 
