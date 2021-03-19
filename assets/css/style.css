@@ -184,7 +184,7 @@ body{
 .preloader1 
 .loader{
     display:flex;
-    align-content:center
+    align-content:center;
 }
 
 .preloader1{
@@ -206,7 +206,7 @@ body{
     justify-content:center;
     align-items:center;
     transform-style:preserve-3d;
-    position:relative
+    position:relative;
 }
 
 .preloader1 .preloader1 .loader-inner-1{

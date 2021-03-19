@@ -1,25 +1,28 @@
 "use strict";
 
+
 $(document).ready(function () {
 
     document.getElementById("picture_artistsearch").innerHTML = `<img  class="artist_inital_image_spin" id="picture_artistsearch" 
  src="./assets/images/black-and-gray-vinyl-record-2746823.jpg" alt="artist picture"></img>`;
-
-
 });
 
-let API_KEY = "4nn4q8p71138ufz8n7sqs2n081p11q24206orafw440291c6o6".keyHelper();
+
 
 // BUG
 let overlay = document.getElementById("overlayBox"); // check this
+let lastArtist;
+let cleanArtistName;
+
 
 // call the Api
 function callDeezerApi(searchType, enq, album_id){
+    let API_KEY = "4nn4q8p71138ufz8n7sqs2n081p11q24206orafw440291c6o6".keyHelper();
     const user_input = document.getElementById("user_input").value;
     const api_request = new XMLHttpRequest();
     let apiResults;
     const recall = searchType;
-    const enqType = enq; 
+    const enqType = enq;
     const album_ID = album_id;
 
     
@@ -38,7 +41,6 @@ function callDeezerApi(searchType, enq, album_id){
             let the_response = api_request.responseText;
             apiResults = JSON.parse(the_response);
            
-
             if(apiResults.error){
                 callDeezerApi(recall, enqType, album_ID);
             }
@@ -50,18 +52,15 @@ function callDeezerApi(searchType, enq, album_id){
             }
             else if(enqType === 'albumData'){
                 albumData(apiResults);
-                console.log(apiResults);
             }
             else if(enqType === 'albumTracksEnq'){
                 displayAlbumTracks(apiResults);
             }
         }
     }
-
     api_request.setRequestHeader("x-rapidapi-host", "deezerdevs-deezer.p.rapidapi.com");
     api_request.setRequestHeader("x-rapidapi-key", API_KEY);
     api_request.send();
-    
 }
 
 // BUG
@@ -69,6 +68,10 @@ function over(){
     overlay.innerHTML = `<div id="overlay"><div class="spinner" id="spinner"><div class="preloader1">
     <div class="loader loader-inner-1"><div class="loader loader-inner-2"><div class="loader loader-inner-3">
     </div></div></div></div></div>`;
+}
+
+function removeOverlay(){
+    overlay.innerHTML = '';
 }
 
 
@@ -83,14 +86,18 @@ function handleArtistClickEvent(passArtistData) {
     callDeezerApi("albumSearch", "albumData");
     clearArtistSearchList();
     insertSelectHeading();
+    over();
+    lastArtist = passArtistData;
+    let lastAtistDisp = document.getElementById("last_artist");
+    lastAtistDisp.innerHTML = lastArtist;
 }
 
 // allows the enter button to be pressed when entering an artist
 document.addEventListener('keydown', function(e){
+    const goButton = document.getElementById('trigger_function');
     if (e.key === 'Enter'){
-        console.log('Enter pressed');
-        let goButton = document.getElementById('trigger_function');
         goButton.click();
+        over();
     } 
 });
 
@@ -98,7 +105,8 @@ document.addEventListener('keydown', function(e){
 function firstSearch(dataFromApi, user_input){
     
     if (dataFromApi.data.length == 0) {
-        no_artist_found.innerHTML = `<span>No Artist Found</span>`;
+        no_artist_found.innerHTML = `<span>Oops No Artist Found Try Another!</span>`;
+        removeOverlay();
     }
     else {
         let artistList = [];
@@ -116,11 +124,13 @@ function firstSearch(dataFromApi, user_input){
 
         if(artistList.length === 0 ){
             no_artist_found.innerHTML = `<span>Oops No Artist Found Try Another!</span>`;
+            removeOverlay();
         }else{
             insertStlectArtistHeading();
+            removeOverlay();
         }
         for (let i = 0; i < artistList.length; i++) {
-            let cleanArtistName = artistList[i].replace("'", " ");
+            cleanArtistName = artistList[i].replace("'", " ");
             let pickArtistSearch = `<p onclick="handleArtistClickEvent('${cleanArtistName}')">${artistList[i]}</p>`;
             pick_name.innerHTML += pickArtistSearch;
         }
@@ -129,15 +139,16 @@ function firstSearch(dataFromApi, user_input){
 
 // get the artist info
 function artistDataSearch(dataFromApi){
-    callDeezerApi("search", "albumData");
-    if(!dataFromApi.error){
-    const picture_artistsearch = dataFromApi.picture_medium;
 
-    document.getElementById("artist_name_artistsearch").innerHTML = dataFromApi.name;
-    document.getElementById("picture_artistsearch").innerHTML = `<img  class="artist_inital_image" id="picture_artistsearch" 
-    src="${picture_artistsearch}" onerror="if (this.src != 'error.jpg') this.src = './assets/images/trackslogo.png';" alt="artist picture">`;
+    if(!dataFromApi.error){
+        const picture_artistsearch = dataFromApi.picture_medium;
+        document.getElementById("artist_name_artistsearch").innerHTML = dataFromApi.name;
+        document.getElementById("picture_artistsearch").innerHTML = `<img  class="artist_inital_image" id="picture_artistsearch" 
+        src="${picture_artistsearch}" onerror="if (this.src != 'error.jpg') this.src = './assets/images/trackslogo.png';" alt="artist picture">`;
+        callDeezerApi("search", "albumData");
+        runOnce = false;
     }
- }
+}
 
 
 let runOnce = false; // only allow the albums to be itterated once or album art gets doubled up.
@@ -146,7 +157,7 @@ function albumData(dataFromApi){
         runOnce = true;
         let albums = [];
         let albums_name = [];
-        
+
         for (let i = 0; i < dataFromApi.data.length; i++) {
 
             let album = dataFromApi.data[i].album;
@@ -165,6 +176,9 @@ function albumData(dataFromApi){
     
         const number_of_albums = document.getElementById("number_of_albums");
         number_of_albums.innerHTML = albums.length;
+
+
+        if(albums.length > 0) removeOverlay();
         // This for loop interates throught the music search array and output the album images to the html all will have an onclick that triggers 
         // an album id_search and opens a modal in html.
 
@@ -187,42 +201,39 @@ function getAlbumTracks(album_id){
 // displays thealbum tacks on the modal
 function displayAlbumTracks(dataFromApi){
 
-    
     if(!dataFromApi.error){
-    let tracks_preview = [];
-    let albums_tracks = [];
-    
-    let total_tracks = dataFromApi.nb_tracks;
-    let album_title_modal = dataFromApi.title;
-    let album_art_modal = dataFromApi.cover_medium;
-
-    document.getElementById("track_total").innerHTML = total_tracks;
-    document.getElementById("album_title_modal").innerHTML = album_title_modal;
-    document.getElementById("album_art_modal").innerHTML = `<img  id="album_art_modal" src ="${album_art_modal}" 
-    onerror="if (this.src != 'error.jpg') this.src = './assets/images/trackslogo.png';" alt="album picture">`;
-
-    for (let i = 0; i < dataFromApi.tracks.data.length; i++) {
-
-        let album_track = dataFromApi.tracks.data[i].title;
-        let track_preview = dataFromApi.tracks.data[i].preview;
-
-        // these if statments take the tracks and preview data and push them into the array and ignores duplicates.
+        let tracks_preview = [];
+        let albums_tracks = [];
         
-        
-        if (!albums_tracks.includes(album_track)) {
-            albums_tracks.push(album_track);
+        let total_tracks = dataFromApi.nb_tracks;
+        let album_title_modal = dataFromApi.title;
+        let album_art_modal = dataFromApi.cover_medium;
+
+        document.getElementById("track_total").innerHTML = total_tracks;
+        document.getElementById("album_title_modal").innerHTML = album_title_modal;
+        document.getElementById("album_art_modal").innerHTML = `<img  id="album_art_modal" src ="${album_art_modal}" 
+        onerror="if (this.src != 'error.jpg') this.src = './assets/images/trackslogo.png';" alt="album picture">`;
+
+        for (let i = 0; i < dataFromApi.tracks.data.length; i++) {
+
+            let album_track = dataFromApi.tracks.data[i].title;
+            let track_preview = dataFromApi.tracks.data[i].preview;
+
+            // these if statments take the tracks and preview data and push them into the array and ignores duplicates
+            if (!albums_tracks.includes(album_track)) {
+                albums_tracks.push(album_track);
+            }
+            if (!tracks_preview.includes(track_preview)) {
+                tracks_preview.push(track_preview);
+            }
         }
-        if (!tracks_preview.includes(track_preview)) {
-            tracks_preview.push(track_preview);
+        // when the specfic album art is clicked a modal pops up and is injected with the acurate album data taken from the album id.
+        track_list.innerHTML += "";
+        for (let i = 0; i < albums_tracks.length; i++) {
+            let album_track_disp = `<div class="col track_name sm-12"><p> ${albums_tracks[i]}</p></div><audio source controls
+            id="preview_music" src="${tracks_preview[i]}" onclick="togglePlay" class="preview_audio" type="audio/mpeg"></audio>`;
+            track_list.innerHTML += album_track_disp;
         }
-    }
-    // when the specfic album art is clicked a modal pops up and is injected with the acurate album data taken from the album id.
-    track_list.innerHTML += "";
-    for (let i = 0; i < albums_tracks.length; i++) {
-        let album_track_disp = `<div class="col track_name sm-12"><p> ${albums_tracks[i]}</p></div><audio source controls
-        id="preview_music" src="${tracks_preview[i]}" onclick="togglePlay" class="preview_audio" type="audio/mpeg"></audio>`;
-        track_list.innerHTML += album_track_disp;
-    }
     }
 }
 
@@ -257,7 +268,6 @@ function insertStlectArtistHeading() {
     let select_your_artist_text = `<span>Select Your Artist</span>`;   // Select your artist is displayed before you pic an artist from the list.
     select_your_artist_heading.innerHTML = select_your_artist_text;
 }
-
 
 
 //===================================== passes the data to the user input ====================
