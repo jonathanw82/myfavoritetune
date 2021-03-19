@@ -8,11 +8,15 @@ $(document).ready(function () {
 
 });
 
+let API_KEY = "4nn4q8p71138ufz8n7sqs2n081p11q24206orafw440291c6o6".keyHelper();
+console.log(API_KEY.keyHelper());
 
+
+// BUG
+let overlay = document.getElementById("overlayBox"); // check this
 
 // call the Api
 function callDeezerApi(searchType, enq, album_id){
-    console.log('API Running');
     const user_input = document.getElementById("user_input").value;
     const api_request = new XMLHttpRequest();
     let apiResults;
@@ -36,6 +40,7 @@ function callDeezerApi(searchType, enq, album_id){
             let the_response = api_request.responseText;
             apiResults = JSON.parse(the_response);
            
+
             if(apiResults.error){
                 callDeezerApi(recall, enqType, album_ID);
             }
@@ -56,8 +61,16 @@ function callDeezerApi(searchType, enq, album_id){
     }
 
     api_request.setRequestHeader("x-rapidapi-host", "deezerdevs-deezer.p.rapidapi.com");
-    api_request.setRequestHeader("x-rapidapi-key", "80a2fdf7a8msh83117c8d4aa46b6p192044jsneb60242d11c1");
+    api_request.setRequestHeader("x-rapidapi-key", API_KEY);
     api_request.send();
+    
+}
+
+// BUG
+function over(){
+    overlay.innerHTML = `<div id="overlay"><div class="spinner" id="spinner"><div class="preloader1">
+    <div class="loader loader-inner-1"><div class="loader loader-inner-2"><div class="loader loader-inner-3">
+    </div></div></div></div></div>`;
 }
 
 
@@ -116,6 +129,7 @@ function firstSearch(dataFromApi, user_input){
     }
 }
 
+// get the artist info
 function artistDataSearch(dataFromApi){
     callDeezerApi("search", "albumData");
     if(!dataFromApi.error){
@@ -127,7 +141,8 @@ function artistDataSearch(dataFromApi){
     }
  }
 
-let runOnce = false; // only allow the albums to be itterated once
+
+let runOnce = false; // only allow the albums to be itterated once or album art gets doubled up.
 function albumData(dataFromApi){
     if(!runOnce){
         runOnce = true;
@@ -166,15 +181,15 @@ function albumData(dataFromApi){
     }
 }
 
+// getts the album tracks from the album ID
 function getAlbumTracks(album_id){
     callDeezerApi('albumTracks', 'albumTracksEnq', album_id);
-    console.log('in get album tracks');
-    console.log('album ID', album_id);
 }
 
+// displays thealbum tacks on the modal
 function displayAlbumTracks(dataFromApi){
-    console.log("inb display album tracks");
-    console.log(dataFromApi);
+
+    
     if(!dataFromApi.error){
     let tracks_preview = [];
     let albums_tracks = [];
