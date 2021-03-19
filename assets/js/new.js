@@ -9,8 +9,6 @@ $(document).ready(function () {
 });
 
 let API_KEY = "4nn4q8p71138ufz8n7sqs2n081p11q24206orafw440291c6o6".keyHelper();
-console.log(API_KEY.keyHelper());
-
 
 // BUG
 let overlay = document.getElementById("overlayBox"); // check this
