@@ -210,6 +210,7 @@ function getAlbumTracks(album_id){
 
 // displays thealbum tacks on the modal
 function displayAlbumTracks(dataFromApi){
+    document.getElementById('scrollToTop').className = 'hideScrollToTop';
 
     if(!dataFromApi.error){
         let tracks_preview = [];
@@ -273,6 +274,7 @@ function clearModal() {
     document.getElementById("track_total").innerHTML = "";
     document.getElementById("album_title_modal").innerHTML = "";
     document.getElementById("album_art_modal").innerHTML = "";
+    document.getElementById('scrollToTop').className = 'scrollToTop';
 }
 
 $('#tracklistModal').on('click', clearModal);
