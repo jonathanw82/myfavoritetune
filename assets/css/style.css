@@ -131,6 +131,10 @@ body{
     font-weight: bold;
 }
 
+.user_history:hover{
+    cursor: pointer; 
+}
+
 /*--------------------------------------- Model ----------------------------*/
 
 .modal-header, .modal-body, .modal-footer, .modal-content{
