@@ -8,12 +8,11 @@ $(document).ready(function () {
 });
 
 
-
-// BUG
 let overlay = document.getElementById("overlayBox"); // check this
 let lastArtist;
 let cleanArtistName;
-
+let artistImageHistory;
+let runOnce = false; // only allow the albums to be itterated once or album art gets doubled up
 
 // call the Api
 function callDeezerApi(searchType, enq, album_id){
@@ -63,13 +62,15 @@ function callDeezerApi(searchType, enq, album_id){
     api_request.send();
 }
 
-// BUG
+
+// Add spinner overlay
 function over(){
     overlay.innerHTML = `<div id="overlay"><div class="spinner" id="spinner"><div class="preloader1">
     <div class="loader loader-inner-1"><div class="loader loader-inner-2"><div class="loader loader-inner-3">
     </div></div></div></div></div>`;
 }
 
+// remove overlay
 function removeOverlay(){
     overlay.innerHTML = '';
 }
@@ -87,10 +88,8 @@ function handleArtistClickEvent(passArtistData) {
     clearArtistSearchList();
     insertSelectHeading();
     over();
-    lastArtist = passArtistData;
-    let lastAtistDisp = document.getElementById("last_artist");
-    lastAtistDisp.innerHTML = lastArtist;
 }
+
 
 // allows the enter button to be pressed when entering an artist
 document.addEventListener('keydown', function(e){
@@ -101,7 +100,7 @@ document.addEventListener('keydown', function(e){
     } 
 });
 
-
+// initial search to get all artists within the parameters of the user input
 function firstSearch(dataFromApi, user_input){
     
     if (dataFromApi.data.length == 0) {
@@ -139,19 +138,29 @@ function firstSearch(dataFromApi, user_input){
 
 // get the artist info
 function artistDataSearch(dataFromApi){
-
     if(!dataFromApi.error){
-        const picture_artistsearch = dataFromApi.picture_medium;
+        let picture_artistsearch = dataFromApi.picture_medium;
         document.getElementById("artist_name_artistsearch").innerHTML = dataFromApi.name;
         document.getElementById("picture_artistsearch").innerHTML = `<img  class="artist_inital_image" id="picture_artistsearch" 
         src="${picture_artistsearch}" onerror="if (this.src != 'error.jpg') this.src = './assets/images/trackslogo.png';" alt="artist picture">`;
         callDeezerApi("search", "albumData");
         runOnce = false;
+        artistImageHistory = picture_artistsearch; // add the artist image to history
+        history(picture_artistsearch, dataFromApi.name);
     }
 }
 
+// display last seach artist
+function history(picture, name){
+    lastArtist = name;
+    const lastAtistDisp = document.getElementById("last_artist");
+    const historyArtistImage = document.getElementById('artistPicture');
+    lastAtistDisp.innerHTML = lastArtist;
+    historyArtistImage.innerHTML = `<img  class="artist_history_image"
+    src="${picture}" onerror="if (this.src != 'error.jpg') this.src = './assets/images/trackslogo.png';" alt="artist picture">`;
+}
 
-let runOnce = false; // only allow the albums to be itterated once or album art gets doubled up.
+// show the album data 
 function albumData(dataFromApi){
     if(!runOnce){
         runOnce = true;
@@ -230,7 +239,7 @@ function displayAlbumTracks(dataFromApi){
         // when the specfic album art is clicked a modal pops up and is injected with the acurate album data taken from the album id.
         track_list.innerHTML += "";
         for (let i = 0; i < albums_tracks.length; i++) {
-            let album_track_disp = `<div class="col track_name sm-12"><p> ${albums_tracks[i]}</p></div><audio source controls
+            let album_track_disp = `<div class="col track_name sm-12"><p> ${albums_tracks[i]}</p></div><audio source controls preload="none"
             id="preview_music" src="${tracks_preview[i]}" onclick="togglePlay" class="preview_audio" type="audio/mpeg"></audio>`;
             track_list.innerHTML += album_track_disp;
         }
