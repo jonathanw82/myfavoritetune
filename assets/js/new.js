@@ -205,6 +205,7 @@ function albumData(dataFromApi){
 // getts the album tracks from the album ID
 function getAlbumTracks(album_id){
     callDeezerApi('albumTracks', 'albumTracksEnq', album_id);
+    over();
 }
 
 // displays thealbum tacks on the modal
@@ -243,6 +244,7 @@ function displayAlbumTracks(dataFromApi){
             id="preview_music" src="${tracks_preview[i]}" onclick="togglePlay" class="preview_audio" type="audio/mpeg"></audio>`;
             track_list.innerHTML += album_track_disp;
         }
+        removeOverlay();
     }
 }
 
@@ -268,6 +270,9 @@ function clearModal() {
     track_list.innerHTML = " ";
     let closeButton = document.getElementById("closeBut");
     closeButton.click();
+    document.getElementById("track_total").innerHTML = "";
+    document.getElementById("album_title_modal").innerHTML = "";
+    document.getElementById("album_art_modal").innerHTML = "";
 }
 
 $('#tracklistModal').on('click', clearModal);
