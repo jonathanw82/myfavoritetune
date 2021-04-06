@@ -40,6 +40,7 @@ A single page application.
 * A search box with a call to action button to the left.
 * Below which, the artists' name is displayed and the number of albums that specific artist has.
 * To the right, the artist image first will be a spinning vinyl then changes to the artist image during searching.
+* Below that again, the last artist that was searched for is displayed and can be clicked to take the user back to that artist. 
 * When the initial search is complete a dropdown of artist names will appear.
 * On selection of the artist name, the seach box will be populated and their album art is displayed in a section below.
 * Clicking on the album art, a box, the tracks and sound samples are displayed. 
@@ -96,8 +97,6 @@ Bug found depending on the artist name and whether it’s a single name or doubl
 
 * Select the artist by clicking on their name and it populates the input box, hyphenated where necessary. Works as intended.
 
-Bug found if the artist name is longer than 2 words. The "select your artist" option will be displayed with an empty pic selection list. Also, if the name is random, the same thing happens and does not display "no artist found." I have not yet fixed this bug but it will be in future releases of the application.
-
 * Select the artist by clicking on their name. The dropdown clears when clicked. Works as intended.
 
 * Search starts automatically works as intended.
@@ -106,7 +105,7 @@ Bug found if the artist name is longer than 2 words. The "select your artist" op
 
 * Number of albums is displayed next to number of albums. Works as intended.
 
-Bug found when the search results bring back an artist that has 25 albums it only displays 5 or 6 of them. I have yet to find a solution to this problem however I’m sure in the evolution of the application one will be found.
+* After artist name is clicked the history is populated and researches when clicked. works as intended.
 
 * After the second search, the select your album heading appears and works as intended.
 
@@ -129,15 +128,13 @@ The solution was, during the album search to remove the hyphen and include a spa
 
 * Sample tracks play - works as intended.
 
-Bug found. If the user selects a sample to listen to the sample, then selects another before pressing pause on the first both tracks play simultaneously more of an annoyance than a bug, however with future releases this can easily be fixed. 
+* If a track is playing and another is selected the previous track stops and the new track starts - works as intended.
 
 * Close button on modal closes the modal clearing the data and stopping any preview track being played - works as intended.
+* Clicking on the background outside the modal closes and clears the data stopping any preview track being played - works as intended.
 
-Bug if the user clicks off the modal without pressing the close button, the modal will disappear and the music will continue to play. If the same or another album was selected, the modal would add the track to the list having both albums' track listings in one and the previous music playing. This was overcome by clearing the modal not only on pressing the close button but also by clicking the album art the data within is cleared first then repopulated after.
-Also adding a on.hidden event helped if the modal was exited anyother way other then the button.
 
 ### Limitations & on going fixes:
-* Some names that are searched for are either not found or do not populate the picartist list. This is a ongoing bug that is taking a fair bit of time to solve however I am confident this will be resolved in future releases.
 * Some albums displayed are not always directly related to selected artist.
 * Atitist with more than 3 words in their names can cause errors in the console.
 * If there are more than 50 tracks in an album the console will display ERR_INSUFFICIENT_RESOURCES or net::ERR_HTTP2_PROTOCOL_ERROR sometimes a 502 [Error](https://httpstatuses.com/504) and a 206 [Error](https://httpstatuses.com/206) this is caused by the free API limiting calls for mp3 sample URLs 50 calls in 5 seconds.  It's unlikely the user will experience this problem as most albums, excluding compilations, have less than 50 track anyway.
@@ -209,6 +206,10 @@ urban_ninja4real@hotmail.com
 Spinning artist image code 
 
 https://stackoverflow.com/questions/16771225/css3-rotate-animation
+
+Preloader 
+
+https://bootsnipp.com/snippets/GaeVl
 
 Parts of the Deployment Section Written by myself and,  
 AJGreaves
