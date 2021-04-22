@@ -1,30 +1,27 @@
 "use strict";
 
-
 $(document).ready(function () {
 
     document.getElementById("picture_artistsearch").innerHTML = `<img  class="artist_inital_image_spin" id="picture_artistsearch" 
  src="./assets/images/black-and-gray-vinyl-record-2746823.jpg" alt="artist picture"></img>`;
 });
 
-
 let overlay = document.getElementById("overlayBox"); // check this
 let lastArtist;
 let cleanArtistName;
 let artistImageHistory;
-let runOnce = false; // only allow the albums to be itterated once or album art gets doubled up
+let runOnce = false; // only allow the albums to be iterated once or album art gets doubled up
 
 // call the Api
 function callDeezerApi(searchType, enq, album_id){
-    let API_KEY = "4nn4q8p71138ufz8n7sqs2n081p11q24206orafw440291c6o6".keyHelper();
-    const user_input = document.getElementById("user_input").value;
+    const API_KEY = "4nn4q8p71138ufz8n7sqs2n081p11q24206orafw440291c6o6".keyHelper();
+    const user_input = document.getElementById("user_input").value.toLowerCase();
     const api_request = new XMLHttpRequest();
     let apiResults;
     const recall = searchType;
     const enqType = enq;
     const album_ID = album_id;
 
-    
     if(searchType === "albumTracks"){
         api_request.open("GET", "https://deezerdevs-deezer.p.rapidapi.com/album/" + album_ID);
     }
@@ -32,7 +29,7 @@ function callDeezerApi(searchType, enq, album_id){
         api_request.open("GET", "https://deezerdevs-deezer.p.rapidapi.com/artist/" + user_input);
     }
     else{
-        api_request.open("GET", "https://deezerdevs-deezer.p.rapidapi.com/search?q=" + user_input);
+        api_request.open("GET", "https://deezerdevs-deezer.p.rapidapi.com/search?limit=500&q=" + user_input);
     }
 
     api_request.onreadystatechange = function () {
@@ -70,11 +67,11 @@ function over(){
     </div></div></div></div></div>`;
 }
 
+
 // remove overlay
 function removeOverlay(){
     overlay.innerHTML = '';
 }
-
 
 /* artist_search then sends the correctly hyphonated search to the api 
    and data returned then populates the artist name and number of albums and the artist image. 
@@ -102,7 +99,7 @@ document.addEventListener('keydown', function(e){
 
 // initial search to get all artists within the parameters of the user input
 function firstSearch(dataFromApi, user_input){
-    
+    console.log(dataFromApi);
     if (dataFromApi.data.length == 0) {
         no_artist_found.innerHTML = `<span>Oops No Artist Found Try Another!</span>`;
         removeOverlay();
@@ -112,7 +109,7 @@ function firstSearch(dataFromApi, user_input){
        
         for (let i = 0; i < dataFromApi.data.length; i++) {
             let artistSearchNames = dataFromApi.data[i].artist.name;
-            if (artistSearchNames.toLowerCase().includes(user_input.toLowerCase())) {
+            if (artistSearchNames.toLowerCase().includes(user_input)) {
                 if (artistList.includes(artistSearchNames) == false) {
                     artistList.push(artistSearchNames);
                 }
@@ -330,4 +327,3 @@ function clearHtmlInput() {
     artist_name_artistsearch.innerHTML = "";
     number_of_albums.innerHTML = "";
 }
-
