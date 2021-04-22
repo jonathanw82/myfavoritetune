@@ -248,6 +248,21 @@ body{
     50%{transform:rotateX(360deg) scale(.8)}
 }
 
+.reset-warning{
+    color: #fff;
+}
+
+.reset-warning{
+    text-align: center;
+}
+
+.warning-box{
+    padding: 10px;
+    border: solid 2px #fff;
+    border-radius: 20px;
+    background-color: #000000;
+    margin-bottom: 5px;
+}
 
 /*----------------------------------- Media queries -------------------------*/
 

@@ -63,14 +63,22 @@ function callDeezerApi(searchType, enq, album_id){
 // Add spinner overlay
 function over(){
     overlay.innerHTML = `<div id="overlay"><div class="spinner" id="spinner"><div class="preloader1">
-    <div class="loader loader-inner-1"><div class="loader loader-inner-2"><div class="loader loader-inner-3">
-    </div></div></div></div></div>`;
+                         <div class="loader loader-inner-1"><div class="loader loader-inner-2"><div class="loader loader-inner-3">
+                         </div></div></div><span id="warning"></span><div id="resetButton"></div></div></div>`;
+    const resetButton = document.getElementById('resetButton');    
+    const warning = document.getElementById('warning');             
+    setTimeout(function(){
+        warning.innerHTML = `<div class="warning-box"><h3 class="reset-warning">Oops! shouldn't take this long <br> I must have skipped a beat <br> Hit Reset!</h3></div>`
+        resetButton.innerHTML = `<a class="btn btn-danger"><b>RESET</b></a>`
+        resetButton.addEventListener('click', function(){
+            window.location.reload();
+        });
+    },9000); 
 }
-
 
 // remove overlay
 function removeOverlay(){
-    overlay.innerHTML = '';
+    overlay.innerHTML = ''
 }
 
 /* artist_search then sends the correctly hyphonated search to the api 
@@ -135,10 +143,12 @@ function firstSearch(dataFromApi, user_input){
 
 // get the artist info
 function artistDataSearch(dataFromApi){
+    const artistName = document.getElementById("artist_name_artistsearch");
+    const artistPicture = document.getElementById("picture_artistsearch");
     if(!dataFromApi.error){
         let picture_artistsearch = dataFromApi.picture_medium;
-        document.getElementById("artist_name_artistsearch").innerHTML = dataFromApi.name;
-        document.getElementById("picture_artistsearch").innerHTML = `<img  class="artist_inital_image" id="picture_artistsearch" 
+        artistName.innerHTML = dataFromApi.name;
+        artistPicture.innerHTML = `<img  class="artist_inital_image" id="picture_artistsearch" 
         src="${picture_artistsearch}" onerror="if (this.src != 'error.jpg') this.src = './assets/images/trackslogo.png';" alt="artist picture">`;
         callDeezerApi("search", "albumData");
         runOnce = false;
