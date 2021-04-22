@@ -99,7 +99,7 @@ document.addEventListener('keydown', function(e){
 
 // initial search to get all artists within the parameters of the user input
 function firstSearch(dataFromApi, user_input){
-    console.log(dataFromApi);
+
     if (dataFromApi.data.length == 0) {
         no_artist_found.innerHTML = `<span>Oops No Artist Found Try Another!</span>`;
         removeOverlay();
