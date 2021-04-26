@@ -275,7 +275,7 @@ function displayAlbumTracks(dataFromApi){
         document.getElementById("album_title_modal").innerHTML = `<h4>${album_title_modal}</h4><h5>Click play for 30 second sample <br>
         Or select artist to go to their albums</h5>`;
         document.getElementById("album_art_modal").innerHTML = `<img  id="album_art_modal" src ="${album_art_modal}" 
-        onerror="if (this.src != 'error.jpg') this.src = './assets/images/trackslogo.png';" alt="album picture"><>`;
+        onerror="if (this.src != 'error.jpg') this.src = './assets/images/trackslogo.png';" alt="album picture">`;
 
         for (let i = 0; i < dataFromApi.tracks.data.length; i++) {
 
