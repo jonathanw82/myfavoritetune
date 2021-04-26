@@ -6,17 +6,17 @@ $(document).ready(function () {
  src="./assets/images/black-and-gray-vinyl-record-2746823.jpg" alt="artist picture"></img>`;
 });
 
-let overlay = document.getElementById("overlayBox"); // check this
+const overlay = document.getElementById("overlayBox");
 let lastArtist;
 let cleanArtistName;
-let artistImageHistory;
 let runOnce = false; // only allow the albums to be iterated once or album art gets doubled up
+
 
 // call the Api
 function callDeezerApi(searchType, enq, album_id){
     const API_KEY = "4nn4q8p71138ufz8n7sqs2n081p11q24206orafw440291c6o6".keyHelper();
-    const user_input = document.getElementById("user_input").value.toLowerCase();
     const api_request = new XMLHttpRequest();
+    let user_input = document.getElementById("user_input").value.toLowerCase();
     let apiResults;
     const recall = searchType;
     const enqType = enq;
@@ -59,6 +59,17 @@ function callDeezerApi(searchType, enq, album_id){
     api_request.send();
 }
 
+// Check if user input is populated is so calls the api
+function isInputFull(){
+    no_artist_found.innerHTML = ''; // clear any warnings
+    let user_input = document.getElementById("user_input").value;
+    if(user_input.length <1){
+        console.log('Input empty');
+        no_artist_found.innerHTML = `<span>Oops Please Enter An Artist!</span>`;
+    }else{
+    callDeezerApi('search', 'initial', over());
+    }
+}
 
 // Add spinner overlay
 function over(){
@@ -68,17 +79,20 @@ function over(){
     const resetButton = document.getElementById('resetButton');    
     const warning = document.getElementById('warning');             
     setTimeout(function(){
-        warning.innerHTML = `<div class="warning-box"><h3 class="reset-warning">Oops! shouldn't take this long <br> I must have skipped a beat <br> Hit Reset!</h3></div>`
-        resetButton.innerHTML = `<a class="btn btn-danger"><b>RESET</b></a>`
+        warning.innerHTML = `<div class="warning-box"><h3 class="reset-warning">Oops! shouldn't take this long <br>
+                                I must have skipped a beat <br>
+                                Hit back & Try Again!</h3></div>`
+        resetButton.innerHTML = `<a class="btn btn-danger"><b>BACK</b></a>`
         resetButton.addEventListener('click', function(){
-            window.location.reload();
+            removeOverlay();
         });
     },9000); 
 }
 
+
 // remove overlay
 function removeOverlay(){
-    overlay.innerHTML = ''
+    overlay.innerHTML = '';
 }
 
 /* artist_search then sends the correctly hyphonated search to the api 
@@ -95,13 +109,26 @@ function handleArtistClickEvent(passArtistData) {
     over();
 }
 
+// this function takes the user to the new artist that has been selected of an album track listing
+function goto(artist){
+    album_list.innerHTML = "";
+    document.getElementById("picture_artistsearch").innerHTML = `<img  class="artist_inital_image_spin" id="picture_artistsearch" 
+    src="./assets/images/black-and-gray-vinyl-record-2746823.jpg" alt="artist picture"></img>`;
+    click_on_album.innerHTML = "";
+    select_your_artist_heading.innerHTML = "";
+    no_artist_found.innerHTML = "";
+    clearArtistSearchList();
+    artist_name_artistsearch.innerHTML = "";
+    number_of_albums.innerHTML = "";
+    handleArtistClickEvent(artist)
+}
+
 
 // allows the enter button to be pressed when entering an artist
 document.addEventListener('keydown', function(e){
     const goButton = document.getElementById('trigger_function');
     if (e.key === 'Enter'){
         goButton.click();
-        over();
     } 
 });
 
@@ -152,26 +179,39 @@ function artistDataSearch(dataFromApi){
         src="${picture_artistsearch}" onerror="if (this.src != 'error.jpg') this.src = './assets/images/trackslogo.png';" alt="artist picture">`;
         callDeezerApi("search", "albumData");
         runOnce = false;
-        artistImageHistory = picture_artistsearch; // add the artist image to history
-        history(picture_artistsearch, dataFromApi.name);
+        history(dataFromApi.name);
     }
 }
 
 // display last seach artist
-function history(picture, name){
-    lastArtist = name;
+
+const lastN = [];
+function history(name){
     const lastAtistDisp = document.getElementById("last_artist");
-    const historyArtistImage = document.getElementById('artistPicture');
-    lastAtistDisp.innerHTML = `<span class="user_history" onClick="historyReplay('${lastArtist}')">${lastArtist}</span>`;
-    historyArtistImage.innerHTML = `<img  onClick="historyReplay('${lastArtist}')" class="artist_history_image user_history"
-    src="${picture}" onerror="if (this.src != 'error.jpg') this.src = './assets/images/trackslogo.png';" alt="artist picture">`;
+    let historySpan = lastAtistDisp.getElementsByTagName("span");
+
+    if(!lastN.includes(name)){
+        lastN.push(name);
+        lastAtistDisp.innerHTML += `<span class="user_history" onClick="historyReplay('${name}')">${name}<br></span>`;
+    }
+
+    for(let i = 0; i < historySpan.length; i ++){
+        if(historySpan.length >=5){
+            lastN.shift();
+            console.log('shifted first name');
+            historySpan[0].parentNode.removeChild(historySpan[0]);
+        }
+    }
+    console.log(lastN);
 }
 
 // resuses the artist history to seach again
 function historyReplay(historyName){
     fillUserInput(historyName);
+    album_list.innerHTML = "";
     callDeezerApi('artist', 'artistData', over());
 }
+
 
 // show the album data 
 function albumData(dataFromApi){
@@ -181,7 +221,6 @@ function albumData(dataFromApi){
         let albums_name = [];
 
         for (let i = 0; i < dataFromApi.data.length; i++) {
-
             let album = dataFromApi.data[i].album;
             let album_name = dataFromApi.data[i].album.title;
             let artist_name = dataFromApi.data[i].artist.name;
@@ -195,10 +234,8 @@ function albumData(dataFromApi){
                 albums.push(album);
             }
         }
-    
         const number_of_albums = document.getElementById("number_of_albums");
         number_of_albums.innerHTML = albums.length;
-
 
         if(albums.length > 0) removeOverlay();
         // This for loop interates throught the music search array and output the album images to the html all will have an onclick that triggers 
@@ -221,13 +258,14 @@ function getAlbumTracks(album_id){
     over();
 }
 
-// displays thealbum tacks on the modal
+// displays the album tacks on the modal
 function displayAlbumTracks(dataFromApi){
     document.getElementById('scrollToTop').className = 'hideScrollToTop';
 
     if(!dataFromApi.error){
-        let tracks_preview = [];
-        let albums_tracks = [];
+        const tracks_preview = [];
+        const albums_tracks = [];
+        const artistName = [];
         
         let total_tracks = dataFromApi.nb_tracks;
         let album_title_modal = dataFromApi.title;
@@ -242,6 +280,9 @@ function displayAlbumTracks(dataFromApi){
 
             let album_track = dataFromApi.tracks.data[i].title;
             let track_preview = dataFromApi.tracks.data[i].preview;
+            let artist_name = dataFromApi.tracks.data[i].artist.name;
+
+            artistName.push(artist_name); // push the artist names into the array regarless of duplicates
 
             // these if statments take the tracks and preview data and push them into the array and ignores duplicates
             if (!albums_tracks.includes(album_track)) {
@@ -254,7 +295,7 @@ function displayAlbumTracks(dataFromApi){
         // when the specfic album art is clicked a modal pops up and is injected with the acurate album data taken from the album id.
         track_list.innerHTML += "";
         for (let i = 0; i < albums_tracks.length; i++) {
-            let album_track_disp = `<div class="col track_name sm-12"><p> ${albums_tracks[i]}</p></div><audio source controls preload="none"
+            let album_track_disp = `<div class="col track_name sm-12"><p><a onclick="goto('${artistName[i]}')">${artistName[i]}</a><br>${albums_tracks[i]}</p></div><audio source controls preload="none"
             id="preview_music" src="${tracks_preview[i]}" onclick="togglePlay" class="preview_audio" type="audio/mpeg"></audio>`;
             track_list.innerHTML += album_track_disp;
         }

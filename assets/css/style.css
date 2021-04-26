@@ -178,6 +178,11 @@ body{
     -moz-animation:spin 4s linear infinite;
     animation:spin 4s linear infinite;
 }
+
+#album_list{
+    margin-bottom: 30px;
+}
+
 /*-------------- add event spinner -------------- */
 #overlay {
     position: fixed;
