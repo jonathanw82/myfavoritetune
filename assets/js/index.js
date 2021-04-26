@@ -272,9 +272,10 @@ function displayAlbumTracks(dataFromApi){
         let album_art_modal = dataFromApi.cover_medium;
 
         document.getElementById("track_total").innerHTML = total_tracks;
-        document.getElementById("album_title_modal").innerHTML = album_title_modal;
+        document.getElementById("album_title_modal").innerHTML = `<h4>${album_title_modal}</h4><h5>Click play for 30 second sample <br>
+        Or select artist to go to their albums</h5>`;
         document.getElementById("album_art_modal").innerHTML = `<img  id="album_art_modal" src ="${album_art_modal}" 
-        onerror="if (this.src != 'error.jpg') this.src = './assets/images/trackslogo.png';" alt="album picture">`;
+        onerror="if (this.src != 'error.jpg') this.src = './assets/images/trackslogo.png';" alt="album picture"><>`;
 
         for (let i = 0; i < dataFromApi.tracks.data.length; i++) {
 
@@ -295,7 +296,7 @@ function displayAlbumTracks(dataFromApi){
         // when the specfic album art is clicked a modal pops up and is injected with the acurate album data taken from the album id.
         track_list.innerHTML += "";
         for (let i = 0; i < albums_tracks.length; i++) {
-            let album_track_disp = `<div class="col track_name sm-12"><p><a onclick="goto('${artistName[i]}')">${artistName[i]}</a><br>${albums_tracks[i]}</p></div><audio source controls preload="none"
+            let album_track_disp = `<div class="col track_name sm-12"><p><a class="gotoArtistName" onclick="goto('${artistName[i]}')">${artistName[i]}</a><br>${albums_tracks[i]}</p></div><audio source controls preload="none"
             id="preview_music" src="${tracks_preview[i]}" onclick="togglePlay" class="preview_audio" type="audio/mpeg"></audio>`;
             track_list.innerHTML += album_track_disp;
         }
